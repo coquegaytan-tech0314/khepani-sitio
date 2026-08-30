@@ -1,0 +1,80 @@
+        </nav>
+
+        <div class="header__actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Cambiar a modo oscuro">
+            <i data-lucide="moon" style="width:20px;height:20px;"></i>
+          </button>
+          <button class="mobile-menu-btn" aria-label="Abrir menú" id="menuBtn">
+            <i data-lucide="menu" style="width:24px;height:24px;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+    <a href="#inicio" onclick="closeMobileMenu()">Inicio</a>
+    <a href="#niveles" onclick="closeMobileMenu()">Niveles Educativos</a>
+    <a href="#mision" onclick="closeMobileMenu()">Misión y Visión</a>
+    <a href="#ingles" onclick="closeMobileMenu()">Programa de Inglés</a>
+    <a href="#campus" onclick="closeMobileMenu()">Campus</a>
+    <a href="#nosotros" onclick="closeMobileMenu()">Sobre Nosotros</a>
+    <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+  </nav>
+
+  <main id="main">
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg">
+        <img src="./assets/campus-panoramic.jpg" alt="Vista panorámica del campus del Instituto Khépani con jardines, canchas y edificios" width="1920" height="1080" loading="eager">
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__badge">
+          <i data-lucide="graduation-cap" style="width:14px;height:14px;"></i>
+          19 años formando el futuro
+        </div>
+        <h1 class="hero__title">Formamos agentes de cambio para el mundo</h1>
+        <p class="hero__subtitle">Educación integral con estándares internacionales en Primaria, Secundaria y Preparatoria. Certificaciones Cambridge English y formación en valores.</p>
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--primary">Solicitar información</a>
+          <a href="#niveles" class="btn btn--outline">Conocer niveles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats" aria-label="Datos clave del instituto">
+      <div class="stats__grid">
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="350">0</div>
+          <div class="stats__label">Estudiantes</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="12">0</div>
+          <div class="stats__label">Grados</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="3">0</div>
+          <div class="stats__label">Niveles</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="19">0</div>
+          <div class="stats__label">Años de experiencia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION LEVELS ========== -->
+    <section class="section" id="niveles">
+      <div class="levels">
+        <div class="section__header fade-in">
+          <p class="section__eyebrow">Niveles Educativos</p>
+          <h2 class="section__title">Tres niveles, un camino de excelencia</h2>
+          <p class="section__desc">Desde Primaria hasta Preparatoria, ofrecemos programas consecutivos que aseguran la formación continua de nuestros alumnos.</p>
+        </div>
+        <div class="levels__grid">
+          <div class="levels__card fade-in">
+            <div class="levels__card-img-wrap">
+              <img class="levels__card-img" src="./assets/primaria-building.jpg" alt="Edificio de Primaria del Instituto Khépani con letrero CCT 11PPR1068V" width="1200" height="683" loading="lazy">
