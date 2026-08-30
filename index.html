@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+     ______                            __
+    / ____/___  ____ ___  ____  __  __/ /____  _____
+   / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+  / /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+  \____/\____/_/ /_/ /_/ .___/\__,_/\__/___/_/
+                      /_/
+          Created with Perplexity Computer
+          https://www.perplexity.ai/computer
+  -->
+  <meta name="generator" content="Perplexity Computer">
+  <meta name="author" content="Perplexity Computer">
+  <meta property="og:see_also" content="https://www.perplexity.ai/computer">
+  <link rel="author" href="https://www.perplexity.ai/computer">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Khépani — Formación Integral en Uriangato, Guanajuato</title>
+  <meta name="description" content="Instituto Khépani ofrece educación de calidad en Primaria, Secundaria y Preparatoria con certificaciones Cambridge English y formación integral en Uriangato, Guanajuato.">
+  <meta property="og:title" content="Instituto Khépani — Formación Integral en Guanajuato">
+  <meta property="og:description" content="Formando personas íntegras como agentes de cambio. Primaria, Secundaria y Preparatoria con certificación Cambridge.">
+
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+
+  <!-- Leaflet for map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Instituto Khépani",
+    "description": "Instituto educativo con niveles de Primaria, Secundaria y Preparatoria en Guanajuato, México.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Libramiento San Miguel No. 202",
+      "addressLocality": "Uriangato",
+      "addressRegion": "Guanajuato",
+      "addressCountry": "MX"
+    },
+    "telephone": "+52 445 103 0946",
+    "email": "contacto@institutokhepani.com",
+    "url": "https://institutokhepani.com",
+    "creator": {
+      "@type": "SoftwareApplication",
+      "name": "Perplexity Computer",
+      "url": "https://www.perplexity.ai/computer"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="sr-only" style="position:fixed;top:0;left:0;z-index:200;padding:12px;background:var(--color-primary);color:#fff;">Saltar al contenido</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="#" class="header__logo" aria-label="Instituto Khépani — Inicio">
+          <img src="./assets/fb-profile-logo.png" alt="Instituto Khépani Guanajuato" class="header__logo-img">
+        </a>
+
+        <nav class="header__nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#niveles">Niveles</a>
+          <a href="#mision">Misión</a>
+          <a href="#ingles">Inglés</a>
+          <a href="#campus">Campus</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="header__actions">
+          <button class="theme-toggle" data-theme-toggle aria-label="Cambiar a modo oscuro">
+            <i data-lucide="moon" style="width:20px;height:20px;"></i>
+          </button>
+          <button class="mobile-menu-btn" aria-label="Abrir menú" id="menuBtn">
+            <i data-lucide="menu" style="width:24px;height:24px;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil">
+    <a href="#inicio" onclick="closeMobileMenu()">Inicio</a>
+    <a href="#niveles" onclick="closeMobileMenu()">Niveles Educativos</a>
+    <a href="#mision" onclick="closeMobileMenu()">Misión y Visión</a>
+    <a href="#ingles" onclick="closeMobileMenu()">Programa de Inglés</a>
+    <a href="#campus" onclick="closeMobileMenu()">Campus</a>
+    <a href="#nosotros" onclick="closeMobileMenu()">Sobre Nosotros</a>
+    <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+  </nav>
+
+  <main id="main">
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg">
+        <img src="./assets/campus-panoramic.jpg" alt="Vista panorámica del campus del Instituto Khépani con jardines, canchas y edificios" width="1920" height="1080" loading="eager">
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__badge">
+          <i data-lucide="graduation-cap" style="width:14px;height:14px;"></i>
+          19 años formando el futuro
+        </div>
+        <h1 class="hero__title">Formamos agentes de cambio para el mundo</h1>
+        <p class="hero__subtitle">Educación integral con estándares internacionales en Primaria, Secundaria y Preparatoria. Certificaciones Cambridge English y formación en valores.</p>
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--primary">Solicitar información</a>
+          <a href="#niveles" class="btn btn--outline">Conocer niveles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="stats" aria-label="Datos clave del instituto">
+      <div class="stats__grid">
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="350">0</div>
+          <div class="stats__label">Estudiantes</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="12">0</div>
+          <div class="stats__label">Grados</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="3">0</div>
+          <div class="stats__label">Niveles</div>
+        </div>
+        <div class="stats__item">
+          <div class="stats__number counter" data-target="19">0</div>
+          <div class="stats__label">Años de experiencia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION LEVELS ========== -->
+    <section class="section" id="niveles">
+      <div class="levels">
+        <div class="section__header fade-in">
+          <p class="section__eyebrow">Niveles Educativos</p>
+          <h2 class="section__title">Tres niveles, un camino de excelencia</h2>
+          <p class="section__desc">Desde Primaria hasta Preparatoria, ofrecemos programas consecutivos que aseguran la formación continua de nuestros alumnos.</p>
+        </div>
+        <div class="levels__grid">
+          <div class="levels__card fade-in">
+            <div class="levels__card-img-wrap">
+              <img class="levels__card-img" src="./assets/primaria-building.jpg" alt="Edificio de Primaria del Instituto Khépani con letrero CCT 11PPR1068V" width="1200" height="683" loading="lazy">
+            </div>
+            <div class="levels__card-body">
+              <span class="levels__card-level levels__card-level--primaria">Primaria</span>
+              <h3 class="levels__card-title">La base de todo gran futuro</h3>
+              <p class="levels__card-cct">CCT 11PPR1068V · Acuerdo SEG 053/2013</p>
+              <p class="levels__card-desc">Desarrollo de habilidades fundamentales con un enfoque integral que incluye conocimientos teóricos, prácticos y valores humanos. Preparación para certificaciones KET for Schools.</p>
+            </div>
+          </div>
+          <div class="levels__card fade-in">
+            <div class="levels__card-img-wrap">
+              <img class="levels__card-img" src="./assets/secundaria-building.jpg" alt="Edificio de Secundaria del Instituto Khépani con cancha de basquetbol" width="600" height="400" loading="lazy">
+            </div>
+            <div class="levels__card-body">
+              <span class="levels__card-level levels__card-level--secundaria">Secundaria</span>
+              <h3 class="levels__card-title">Fortaleciendo competencias</h3>
+              <p class="levels__card-cct">CCT 11PES0464H · Acuerdo SEG 051/2013</p>
+              <p class="levels__card-desc">Consolidación académica con énfasis en habilidades del siglo XXI, certificaciones PET for Schools y desarrollo integral.</p>
+            </div>
+          </div>
+          <div class="levels__card fade-in">
+            <div class="levels__card-img-wrap">
+              <img class="levels__card-img" src="./assets/campus-wide.jpg" alt="Vista amplia del campus con canchas deportivas y edificios del Instituto Khépani" width="600" height="400" loading="lazy">
+            </div>
+            <div class="levels__card-body">
+              <span class="levels__card-level levels__card-level--preparatoria">Preparatoria</span>
+              <h3 class="levels__card-title">Listos para el mundo</h3>
+              <p class="levels__card-cct">CCT 11PBH0047S · Acuerdo SEG 048/2017</p>
+              <p class="levels__card-desc">Formación preuniversitaria que prepara a los alumnos para enfrentar los desafíos del mundo con conocimientos sólidos y valores humanos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MISSION & VISION ========== -->
+    <section class="section section--alt" id="mision">
+      <div class="mission">
+        <div class="mission__layout">
+          <button class="mission__image fade-in" data-lightbox="./assets/mision-sign.jpg" aria-label="Ampliar letrero oficial con Misión, Visión y Valores">
+            <img src="./assets/mision-sign.jpg" alt="Letrero oficial del Instituto Khépani con Misión, Visión y Valores completos" width="900" height="1600" loading="lazy">
+            <span class="mission__image-hint">
+              <i data-lucide="maximize-2" style="width:14px;height:14px;"></i>
+              Ampliar letrero
+            </span>
+          </button>
+          <div class="mission__content fade-in">
+            <p class="section__eyebrow">Nuestra Filosofía</p>
+            <h2 class="section__title">Comprometidos con la formación integral</h2>
+            <div class="mission__tab-nav" role="tablist">
+              <button class="mission__tab-btn active" role="tab" aria-selected="true" data-tab="mision-tab">Misión</button>
+              <button class="mission__tab-btn" role="tab" aria-selected="false" data-tab="vision-tab">Visión</button>
+              <button class="mission__tab-btn" role="tab" aria-selected="false" data-tab="valores-tab">Valores</button>
+            </div>
+            <div class="mission__tab-panel active" id="mision-tab" role="tabpanel">
+              <h3>Nuestra Misión</h3>
+              <p>Somos una Institución Educativa que promueve la formación de personas respetuosas, autónomas, responsables y competentes mediante el impulso y adquisición de competencias a través de conocimientos teóricos y prácticos con el fin de contribuir al desarrollo sustentable en la región sur del estado de Guanajuato.</p>
+            </div>
+            <div class="mission__tab-panel" id="vision-tab" role="tabpanel">
+              <h3>Nuestra Visión</h3>
+              <p>Ser una Institución formativa de personas íntegras, emprendedoras y sobresalientes capaces de enfrentar los desafíos, a través de procesos centrados en la formación del ser y el desarrollo de competencias que respondan a los altos estándares de calidad, promoviendo la individualidad y autonomía del estudiante.</p>
+            </div>
+            <div class="mission__tab-panel" id="valores-tab" role="tabpanel">
+              <h3>Nuestros Valores</h3>
+              <p style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span class="values-tag">Compromiso</span>
+                <span class="values-tag">Libertad</span>
+                <span class="values-tag">Tolerancia</span>
+                <span class="values-tag">Dignidad</span>
+                <span class="values-tag">Amor</span>
+                <span class="values-tag">Generosidad</span>
+                <span class="values-tag">Amistad</span>
+                <span class="values-tag">Respeto</span>
+                <span class="values-tag">Honestidad</span>
+                <span class="values-tag">Perseverancia</span>
+                <span class="values-tag">Responsabilidad</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ENGLISH PROGRAM ========== -->
+    <section class="section" id="ingles">
+      <div class="english">
+        <div class="english__layout">
+          <div class="english__content fade-in">
+            <p class="section__eyebrow">Programa Bilingüe</p>
+            <h2 class="section__title">Inglés como puerta al mundo</h2>
+            <p class="section__desc">Preparamos a nuestros alumnos no solo a aprender inglés, sino a saber usarlo para conocer más del mundo que nos rodea.</p>
+            <div class="english__features">
+              <div class="english__feature">
+                <div class="english__feature-icon">
+                  <i data-lucide="users" style="width:18px;height:18px;"></i>
+                </div>
+                <div class="english__feature-text">
+                  <h4>Maestros Capacitados</h4>
+                  <p>Docentes con formación especializada en enseñanza del inglés como lengua extranjera.</p>
+                </div>
+              </div>
+              <div class="english__feature">
+                <div class="english__feature-icon">
+                  <i data-lucide="clock" style="width:18px;height:18px;"></i>
+                </div>
+                <div class="english__feature-text">
+                  <h4>Elevado Número de Horas</h4>
+                  <p>Mayor exposición al idioma con un programa intensivo de horas clase.</p>
+                </div>
+              </div>
+              <div class="english__feature">
+                <div class="english__feature-icon">
+                  <i data-lucide="book-open" style="width:18px;height:18px;"></i>
+                </div>
+                <div class="english__feature-text">
+                  <h4>Material de Alto Nivel</h4>
+                  <p>Recursos bibliográficos y soporte en línea de estándares internacionales.</p>
+                </div>
+              </div>
+              <div class="english__feature">
+                <div class="english__feature-icon">
+                  <i data-lucide="bar-chart-3" style="width:18px;height:18px;"></i>
+                </div>
+                <div class="english__feature-text">
+                  <h4>Evaluación por Áreas</h4>
+                  <p>Comprensión lectora, auditiva, expresión escrita, oral y gramática.</p>
+                </div>
+              </div>
+            </div>
+            <a href="https://www.cambridgeenglish.org/es/" target="_blank" rel="noopener noreferrer" class="english__cambridge">
+              <i data-lucide="award" style="width:20px;height:20px;color:var(--color-accent);"></i>
+              <span>Certificaciones Cambridge English — KET & PET for Schools</span>
+              <i data-lucide="external-link" style="width:14px;height:14px;opacity:0.5;"></i>
+            </a>
+          </div>
+          <div class="english__image fade-in">
+            <img src="./assets/english-classroom.jpg" alt="Aula de inglés de Primaria — Miss Sandy's English Class" width="800" height="500" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LOGO MEANING ========== -->
+    <section class="section section--alt" id="nosotros">
+      <div class="logo-meaning">
+        <div class="section__header fade-in">
+          <p class="section__eyebrow">Identidad Institucional</p>
+          <h2 class="section__title">El significado de nuestro logo</h2>
+          <p class="section__desc">Cada elemento de nuestra identidad visual refleja los valores que nos definen como institución educativa.</p>
+        </div>
+        <div class="logo-meaning__grid">
+          <div class="logo-meaning__item fade-in">
+            <div class="logo-meaning__icon">
+              <i data-lucide="globe" style="width:22px;height:22px;"></i>
+            </div>
+            <h4>El Mundo Sin Fronteras</h4>
+            <p>Representa que todos somos un todo, que no existen fronteras. Nuestros alumnos son ciudadanos globales.</p>
+          </div>
+          <div class="logo-meaning__item fade-in">
+            <div class="logo-meaning__icon">
+              <i data-lucide="book-open" style="width:22px;height:22px;"></i>
+            </div>
+            <h4>El Conocimiento</h4>
+            <p>El libro abierto simboliza que sin conocimiento no podemos transformar nuestro entorno. Es la base de todo cambio.</p>
+          </div>
+          <div class="logo-meaning__item fade-in">
+            <div class="logo-meaning__icon">
+              <i data-lucide="case-upper" style="width:22px;height:22px;"></i>
+            </div>
+            <h4>Diversidad en Nuestro Nombre</h4>
+            <p>Las letras mayúsculas y minúsculas de Khépani simbolizan la diversidad como meta institucional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS (NEW) ========== -->
+    <section class="section">
+      <div class="testimonials">
+        <div class="section__header fade-in">
+          <p class="section__eyebrow">Testimonios</p>
+          <h2 class="section__title">Lo que dicen nuestras familias</h2>
+        </div>
+        <div class="testimonials__carousel">
+          <div class="testimonials__card">
+            <blockquote>"En Khépani mis hijos han encontrado un ambiente que los motiva a ser mejores cada día. La formación en valores es lo que más nos distingue."</blockquote>
+            <cite>María González<span>Madre de familia · Primaria</span></cite>
+          </div>
+          <div class="testimonials__card">
+            <blockquote>"El programa de inglés es extraordinario. Mi hija obtuvo su certificación Cambridge con excelentes resultados, algo que le abrirá muchas puertas."</blockquote>
+            <cite>Roberto Hernández<span>Padre de familia · Secundaria</span></cite>
+          </div>
+          <div class="testimonials__card">
+            <blockquote>"La preparación integral que recibí en Khépani me dio las herramientas para enfrentar la universidad con confianza y una perspectiva global."</blockquote>
+            <cite>Ana Sofía Ramírez<span>Exalumna · Generación 2023</span></cite>
+          </div>
+          <div class="testimonials__card">
+            <blockquote>"Los maestros realmente se preocupan por cada alumno. El seguimiento personalizado ha sido clave en el desarrollo académico de nuestro hijo."</blockquote>
+            <cite>Carlos y Patricia López<span>Padres de familia · Preparatoria</span></cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== VIRTUAL TOUR BANNER (NEW) ========== -->
+    <section class="tour-banner">
+      <div class="tour-banner__pattern"></div>
+      <div class="tour-banner__content fade-in">
+        <h2>Conoce nuestras instalaciones</h2>
+        <p>Agenda una visita personalizada y descubre por qué las familias de Guanajuato confían en Khépani para la educación de sus hijos.</p>
+        <a href="#contacto" class="btn btn--primary">Agendar visita</a>
+      </div>
+    </section>
+
+    <!-- ========== CAMPUS GALLERY ========== -->
+    <section class="section" id="campus">
+      <div class="gallery">
+        <div class="section__header fade-in">
+          <p class="section__eyebrow">Nuestras Instalaciones</p>
+          <h2 class="section__title">Un campus diseñado para aprender</h2>
+          <p class="section__desc">Espacios amplios, modernos y seguros que fomentan el aprendizaje integral de nuestros alumnos.</p>
+        </div>
+        <div class="gallery__grid fade-in">
+          <div class="gallery__item gallery__item--wide">
+            <img src="./assets/gallery-gardens.jpg" alt="Jardines del campus con palmeras, áreas verdes y edificio de Secundaria" loading="lazy">
+            <div class="gallery__caption">Jardines y Áreas Verdes</div>
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/gallery-courtyard.jpg" alt="Patio interior con bancas, árboles y vista al edificio de Primaria" loading="lazy">
+            <div class="gallery__caption">Patio de Primaria</div>
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/gallery-covered-court.jpg" alt="Cancha techada con estructura metálica y tableros de basquetbol" loading="lazy">
+            <div class="gallery__caption">Cancha Techada</div>
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/gallery-modern-building.jpg" alt="Edificio moderno con ventanales y jardines" loading="lazy">
+            <div class="gallery__caption">Auditorio</div>
+          </div>
+          <div class="gallery__item gallery__item--wide">
+            <img src="./assets/gallery-entrance.jpg" alt="Entrada principal del Instituto Khépani con caminos y letreros" loading="lazy">
+            <div class="gallery__caption">Entrada al Campus</div>
+          </div>
+          <div class="gallery__item">
+            <img src="./assets/gallery-building-detail.jpg" alt="Detalle del edificio de Secundaria con fachada blanca y terracota" loading="lazy">
+            <div class="gallery__caption">Edificio de Secundaria</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US (NEW — TIMELINE) ========== -->
+    <section class="section section--alt">
+      <div class="timeline">
+        <div class="section__header fade-in">
+          <p class="section__eyebrow">¿Por qué Khépani?</p>
+          <h2 class="section__title">Un trayecto educativo completo</h2>
+          <p class="section__desc">Acompañamos a nuestros alumnos desde los primeros años hasta su preparación preuniversitaria.</p>
+        </div>
+        <div class="timeline__items">
+          <div class="timeline__item fade-in">
+            <div class="timeline__content">
+              <h4>Formación Integral</h4>
+              <p>Desarrollo académico, físico, cívico, social, ecológico y espiritual en cada nivel educativo.</p>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__spacer"></div>
+          </div>
+          <div class="timeline__item fade-in">
+            <div class="timeline__spacer"></div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h4>Programa Bilingüe Consecutivo</h4>
+              <p>De Primaria a Preparatoria, nuestros programas de inglés son consecutivos y avanzan según el nivel del alumno.</p>
+            </div>
+          </div>
+          <div class="timeline__item fade-in">
+            <div class="timeline__content">
+              <h4>Certificaciones Internacionales</h4>
+              <p>Preparamos y evaluamos a los alumnos para las certificaciones KET y PET de Cambridge English.</p>
+            </div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__spacer"></div>
+          </div>
+          <div class="timeline__item fade-in">
+            <div class="timeline__spacer"></div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <h4>Valores para la Vida</h4>
+              <p>Formamos personas íntegras comprometidas con la justicia, la libertad y la verdad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contacto">
+      <div class="contact">
+        <div class="section__header fade-in">
+          <p class="section__eyebrow">Contáctanos</p>
+          <h2 class="section__title">Estamos para atenderte</h2>
+          <p class="section__desc">Visítanos o comunícate con nosotros para conocer más sobre nuestra oferta educativa.</p>
+        </div>
+        <div class="contact__layout">
+          <div class="contact__info fade-in">
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <i data-lucide="map-pin" style="width:20px;height:20px;"></i>
+              </div>
+              <div class="contact__detail-text">
+                <h4>Ubicación</h4>
+                <p>Libramiento San Miguel No. 202, Uriangato, Guanajuato</p>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <i data-lucide="phone" style="width:20px;height:20px;"></i>
+              </div>
+              <div class="contact__detail-text">
+                <h4>Teléfono</h4>
+                <a href="tel:+524451030946">(445) 103 0946</a>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <i data-lucide="mail" style="width:20px;height:20px;"></i>
+              </div>
+              <div class="contact__detail-text">
+                <h4>Correo electrónico</h4>
+                <a href="mailto:contacto@institutokhepani.com">contacto@institutokhepani.com</a>
+              </div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">
+                <i data-lucide="clock" style="width:20px;height:20px;"></i>
+              </div>
+              <div class="contact__detail-text">
+                <h4>Horario de atención</h4>
+                <p>Lunes a Viernes: 8:00 AM – 3:00 PM</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact__map fade-in" id="map-container">
+            <!-- Leaflet map -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo" aria-label="Instituto Khépani">
+            <img src="./assets/fb-profile-logo.png" alt="Instituto Khépani Guanajuato" width="180" height="180" class="footer__logo-img">
+          </a>
+          <p>Formando personas íntegras como agentes de cambio desde 2007. Primaria, Secundaria y Preparatoria en Uriangato, Guanajuato.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navegación</h4>
+          <a href="#inicio">Inicio</a>
+          <a href="#niveles">Niveles</a>
+          <a href="#mision">Misión</a>
+          <a href="#ingles">Inglés</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="footer__links">
+          <h4>Recursos</h4>
+          <a href="https://www.cambridgeenglish.org/es/" target="_blank" rel="noopener noreferrer">Cambridge English</a>
+          <a href="mailto:contacto@institutokhepani.com">Correo institucional</a>
+          <a href="tel:+524451030946">Llamar ahora</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Instituto Khépani. Todos los derechos reservados.</span>
+        <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox__close" aria-label="Cerrar" data-lightbox-close>
+      <i data-lucide="x" style="width:22px;height:22px;"></i>
+    </button>
+    <img class="lightbox__img" id="lightboxImg" alt="">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Lucide icons
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+
+      // --- Theme Toggle ---
+      const themeToggle = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let currentTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', currentTheme);
+      updateThemeIcon();
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', currentTheme);
+          updateThemeIcon();
+        });
+      }
+
+      function updateThemeIcon() {
+        if (!themeToggle) return;
+        const icon = themeToggle.querySelector('[data-lucide]');
+        if (icon) {
+          icon.setAttribute('data-lucide', currentTheme === 'dark' ? 'sun' : 'moon');
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+        themeToggle.setAttribute('aria-label', 'Cambiar a modo ' + (currentTheme === 'dark' ? 'claro' : 'oscuro'));
+      }
+
+      // --- Header Scroll Effect + Hero Parallax ---
+      const header = document.getElementById('header');
+      const heroBg = document.querySelector('.hero__bg img');
+      const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            const scrollY = window.scrollY;
+            if (scrollY > 40) header.classList.add('header--scrolled');
+            else header.classList.remove('header--scrolled');
+            // Subtle parallax on hero only
+            if (heroBg && !prefersReducedMotion && scrollY < window.innerHeight) {
+              heroBg.style.transform = 'translate3d(0,' + (scrollY * 0.28) + 'px,0) scale(1.06)';
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // --- Mobile Menu ---
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      let menuOpen = false;
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          menuOpen = !menuOpen;
+          mobileNav.classList.toggle('active', menuOpen);
+          const icon = menuBtn.querySelector('[data-lucide]');
+          if (icon) {
+            icon.setAttribute('data-lucide', menuOpen ? 'x' : 'menu');
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+          }
+        });
+      }
+
+      // --- Mission Tabs ---
+      document.querySelectorAll('.mission__tab-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.mission__tab-btn').forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          document.querySelectorAll('.mission__tab-panel').forEach(function(p) {
+            p.classList.remove('active');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          var target = btn.getAttribute('data-tab');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+
+      // --- Animated Counters ---
+      function animateCounters() {
+        document.querySelectorAll('.counter[data-target]').forEach(function(counter) {
+          if (counter.dataset.animated) return;
+          var target = parseInt(counter.dataset.target);
+          var duration = 1500;
+          var start = 0;
+          var startTime = null;
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = Math.round(eased * target);
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              counter.textContent = target + '+';
+              counter.dataset.animated = 'true';
+            }
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      // Trigger counter animation when stats section is visible
+      var statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      var statsSection = document.querySelector('.stats');
+      if (statsSection) statsObserver.observe(statsSection);
+
+      // --- Scroll-triggered reveals with stagger ---
+      var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.fade-in').forEach(function(el) { revealObs.observe(el); });
+      // Stagger for level cards + gallery items + timeline items
+      document.querySelectorAll('.levels__grid .levels__card, .gallery__grid .gallery__item, .timeline__items .timeline__item').forEach(function(el, i) {
+        el.style.setProperty('--reveal-delay', (i * 90) + 'ms');
+      });
+
+      // --- Lightbox ---
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightboxImg');
+      document.querySelectorAll('[data-lightbox]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          lightboxImg.src = el.getAttribute('data-lightbox');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      function closeLightbox() {
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(function() { lightboxImg.src = ''; }, 250);
+      }
+      document.querySelectorAll('[data-lightbox-close]').forEach(function(btn) {
+        btn.addEventListener('click', closeLightbox);
+      });
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') closeLightbox();
+      });
+
+      // --- Leaflet Map ---
+      if (typeof L !== 'undefined') {
+        setTimeout(function() {
+          var mapEl = document.getElementById('map-container');
+          if (!mapEl) return;
+          // Uriangato, Guanajuato — Libramiento San Miguel No. 202
+          var map = L.map(mapEl, { scrollWheelZoom: false }).setView([20.1408, -101.1826], 15);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(map);
+          L.marker([20.1408, -101.1826]).addTo(map)
+            .bindPopup('<strong>Instituto Khépani</strong><br>Libramiento San Miguel No. 202<br>Uriangato, Guanajuato');
+        }, 500);
+      }
+    });
+
+    function closeMobileMenu() {
+      var mobileNav = document.getElementById('mobileNav');
+      var menuBtn = document.getElementById('menuBtn');
+      if (mobileNav) mobileNav.classList.remove('active');
+      if (menuBtn) {
+        var icon = menuBtn.querySelector('[data-lucide]');
+        if (icon) {
+          icon.setAttribute('data-lucide', 'menu');
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
