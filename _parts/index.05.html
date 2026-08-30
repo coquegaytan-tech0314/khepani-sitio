@@ -1,0 +1,102 @@
+          var start = 0;
+          var startTime = null;
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = Math.round(eased * target);
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              counter.textContent = target + '+';
+              counter.dataset.animated = 'true';
+            }
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      // Trigger counter animation when stats section is visible
+      var statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      var statsSection = document.querySelector('.stats');
+      if (statsSection) statsObserver.observe(statsSection);
+
+      // --- Scroll-triggered reveals with stagger ---
+      var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            revealObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.fade-in').forEach(function(el) { revealObs.observe(el); });
+      // Stagger for level cards + gallery items + timeline items
+      document.querySelectorAll('.levels__grid .levels__card, .gallery__grid .gallery__item, .timeline__items .timeline__item').forEach(function(el, i) {
+        el.style.setProperty('--reveal-delay', (i * 90) + 'ms');
+      });
+
+      // --- Lightbox ---
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightboxImg');
+      document.querySelectorAll('[data-lightbox]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          lightboxImg.src = el.getAttribute('data-lightbox');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      function closeLightbox() {
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(function() { lightboxImg.src = ''; }, 250);
+      }
+      document.querySelectorAll('[data-lightbox-close]').forEach(function(btn) {
+        btn.addEventListener('click', closeLightbox);
+      });
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') closeLightbox();
+      });
+
+      // --- Leaflet Map ---
+      if (typeof L !== 'undefined') {
+        setTimeout(function() {
+          var mapEl = document.getElementById('map-container');
+          if (!mapEl) return;
+          // Uriangato, Guanajuato — Libramiento San Miguel No. 202
+          var map = L.map(mapEl, { scrollWheelZoom: false }).setView([20.1408, -101.1826], 15);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(map);
+          L.marker([20.1408, -101.1826]).addTo(map)
+            .bindPopup('<strong>Instituto Khépani</strong><br>Libramiento San Miguel No. 202<br>Uriangato, Guanajuato');
+        }, 500);
+      }
+    });
+
+    function closeMobileMenu() {
+      var mobileNav = document.getElementById('mobileNav');
+      var menuBtn = document.getElementById('menuBtn');
+      if (mobileNav) mobileNav.classList.remove('active');
+      if (menuBtn) {
+        var icon = menuBtn.querySelector('[data-lucide]');
+        if (icon) {
+          icon.setAttribute('data-lucide', 'menu');
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
