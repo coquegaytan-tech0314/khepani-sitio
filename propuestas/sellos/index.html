@@ -1,25 +1,2221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Instituto Khépani · Sellos</title>
-  <meta name="robots" content="noindex">
-</head>
-<body>
-  <p style="font-family:sans-serif;padding:24px;color:#5a6274">Cargando propuesta…</p>
-  <script src="b0.js"></script>
-  <script src="b1.js"></script>
-  <script src="b2.js"></script>
-  <script src="b3.js"></script>
-  <script src="b4.js"></script>
-  <script src="b5.js"></script>
-  <script src="b6.js"></script>
-  <script src="b7.js"></script>
-  <script src="b8.js"></script>
-  <script src="b9.js"></script>
-  <script src="b10.js"></script>
-  <script src="b11.js"></script>
-  <script src="page.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instituto Khépani · Primaria, Secundaria y Preparatoria · Uriangato, Gto.</title>
+    <meta
+      name="description"
+      content="Instituto Khépani. Formación con valores en Uriangato, Guanajuato. Primaria, Secundaria y Preparatoria incorporadas. Inscripciones abiertas."
+    />
+    <meta name="theme-color" content="#0b2a52" />
+    <link rel="icon" href="" data-k="favicon" type="image/jpeg" />
+
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=zodiak@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+/* base.css — Khépani */
+:root {
+  /* Type scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+  --text-hero: clamp(2.5rem, 1rem + 6vw, 5.5rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Palette — Khépani (blanco + naranja dominantes, azul acento) */
+  --color-bg: #ffffff;
+  --color-surface: #fffaf5;
+  --color-surface-2: #fef4ea;
+  --color-surface-offset: #fbeadb;
+  --color-border: #ecd6c0;
+  --color-divider: #f4e0cc;
+
+  --color-text: #14243d; /* azul marino tinta */
+  --color-text-muted: #5a6274;
+  --color-text-faint: #94a0b3;
+  --color-text-inverse: #ffffff;
+
+  --color-primary: #ea6a1a; /* naranja Khépani */
+  --color-primary-hover: #d15810;
+  --color-primary-active: #ae470b;
+  --color-primary-tint: #fde3ce;
+
+  --color-navy: #0b2a52; /* azul institucional */
+  --color-navy-hover: #0a2445;
+  --color-navy-tint: #dbe4f2;
+
+  --color-accent: #c3232b; /* rojo Khépani (solo detalles) */
+
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-interactive: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(20, 36, 61, 0.06);
+  --shadow-md: 0 8px 24px rgba(20, 36, 61, 0.08);
+  --shadow-lg: 0 20px 48px rgba(20, 36, 61, 0.14);
+
+  /* Widths */
+  --content-narrow: 640px;
+  --content-default: 1080px;
+  --content-wide: 1240px;
+
+  /* Fonts */
+  --font-body: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Zodiak', Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  line-height: 1.15;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-text);
+}
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in oklab, var(--color-primary) 60%, transparent);
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-primary) 30%, transparent);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a,
+button,
+[role='button'],
+input,
+select,
+textarea {
+  transition:
+    color var(--transition-interactive),
+    background var(--transition-interactive),
+    border-color var(--transition-interactive),
+    box-shadow var(--transition-interactive),
+    transform var(--transition-interactive);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: var(--space-4);
+  top: var(--space-4);
+  background: var(--color-navy);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  z-index: 100;
+}
+
+</style>
+    <style>
+/* style.css — Khépani */
+
+.container {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-4), 4vw, var(--space-8));
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+}
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+}
+.btn--lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-base);
+}
+.btn--primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+  color: white;
+}
+.btn--ghost {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+.hero__cta .btn--ghost {
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+.hero__cta .btn--ghost:hover {
+  background: var(--color-navy);
+  color: white;
+}
+
+/* ─── Header ─── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in oklab, white 88%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 200ms,
+    background 200ms;
+}
+.site-header.is-scrolled {
+  background: color-mix(in oklab, white 96%, transparent);
+  border-bottom-color: var(--color-divider);
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  min-height: 4.5rem;
+  padding-block: var(--space-3);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--color-text);
+}
+.brand__mark {
+  flex: none;
+  width: 42px;
+  height: 42px;
+}
+.brand__logo {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: white;
+}
+.site-footer .brand__logo {
+  width: 64px;
+  height: 64px;
+}
+.brand__word {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+.brand__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+}
+.brand__tag {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.brand__tag--header {
+  display: none;
+}
+@media (min-width: 640px) {
+  .brand__tag--header {
+    display: inline-block;
+  }
+}
+.nav {
+  margin-left: auto;
+}
+.nav ul {
+  display: flex;
+  gap: var(--space-6);
+  list-style: none;
+}
+.nav a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  position: relative;
+}
+.nav a:hover {
+  color: var(--color-primary);
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-interactive);
+  transform-origin: left;
+}
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+.nav-cta {
+  margin-left: var(--space-2);
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-3);
+  margin-left: auto;
+}
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 200ms;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  background: white;
+  border-top: 1px solid var(--color-divider);
+}
+.mobile-menu[hidden] {
+  display: none;
+}
+.mobile-menu a {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+}
+.mobile-menu a.btn {
+  margin-top: var(--space-2);
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .nav,
+  .nav-cta {
+    display: none;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ─── Hero ─── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--color-navy);
+  isolation: isolate;
+  background: #fffaf5;
+}
+@media (min-width: 900px) {
+  .hero { min-height: min(92vh, 820px); }
+}
+.hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+  animation: heroZoom 24s ease-out forwards;
+  transform-origin: center 60%;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.00); }
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 245, 0.12) 0%, rgba(255, 250, 245, 0.05) 38%, rgba(255, 250, 245, 0.42) 100%),
+    linear-gradient(90deg, rgba(255, 248, 240, 0.28) 0%, rgba(255, 248, 240, 0.04) 52%, rgba(255, 248, 240, 0) 100%);
+}
+.hero__panel {
+  background: rgba(255, 250, 245, 0.94);
+  border: 1px solid rgba(236, 214, 192, 0.95);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-6) var(--space-7);
+  max-width: 720px;
+  box-shadow: var(--shadow-md);
+}
+.hero__content {
+  padding-block: var(--space-12) var(--space-14);
+  max-width: 780px;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .hero__content { padding-block: var(--space-16) var(--space-20); }
+}
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  background: var(--color-primary-tint);
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-6);
+}
+.hero__eyebrow .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(234, 106, 26, 0.3);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(234, 106, 26, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(234, 106, 26, 0.05);
+  }
+}
+.hero__title {
+  font-size: clamp(2.4rem, 8vw, 4.2rem);
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  color: var(--color-navy);
+  margin-bottom: var(--space-6);
+}
+.hero__title em {
+  font-style: italic;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.hero__lede {
+  font-size: clamp(1rem, 2.4vw, 1.125rem);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  margin-bottom: var(--space-7);
+  line-height: 1.55;
+}
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+.hero__meta {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4) var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  max-width: 720px;
+}
+@media (min-width: 640px) {
+  .hero__meta { grid-template-columns: repeat(4, 1fr); gap: var(--space-6) var(--space-8); padding-top: var(--space-6); }
+}
+.hero__meta li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.hero__meta strong {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 640px) {
+  .hero__meta strong { font-size: 1.85rem; }
+}
+.hero__meta span {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+}
+.hero__title { text-shadow: none; }
+
+/* ─── Sections ─── */
+.section {
+  padding-block: clamp(var(--space-16), 9vw, var(--space-32));
+}
+.section--muted {
+  background: var(--color-surface-2);
+}
+.section--dark {
+  background: var(--color-navy);
+  color: white;
+}
+.section__head {
+  max-width: 720px;
+  margin-bottom: var(--space-12);
+}
+.section__head--light .section__eyebrow,
+.section__head--light .section__title,
+.section__head--light .section__lede {
+  color: white;
+}
+.section__head--light .section__eyebrow {
+  color: var(--color-primary);
+}
+.section__eyebrow {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.section__title {
+  font-size: var(--text-2xl);
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+.section--dark .section__title {
+  color: white;
+}
+.section__lede {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+.section--dark .section__lede {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ─── Niveles ─── */
+.levels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+.level {
+  background: white;
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition:
+    transform var(--transition-interactive),
+    box-shadow var(--transition-interactive),
+    border-color var(--transition-interactive);
+}
+.level:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-tint);
+}
+.level--featured {
+  background: linear-gradient(180deg, var(--color-surface) 0%, white 100%);
+  border-color: var(--color-primary-tint);
+  position: relative;
+}
+.level--featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(160deg, var(--color-primary) 0%, transparent 55%);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.level__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+.level__tag {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.level__title {
+  font-size: var(--text-xl);
+  font-family: var(--font-display);
+  color: var(--color-navy);
+}
+.level__desc {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+}
+.level__facts {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--color-divider);
+}
+.level__facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+}
+.level__facts dt {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+.level__facts dd {
+  color: var(--color-text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.level__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: var(--space-2);
+}
+.level__link:hover {
+  color: var(--color-primary-hover);
+  gap: var(--space-3);
+}
+
+/* ─── Propuesta ─── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-6);
+}
+.pillar {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.pillar__num {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pillar h3 {
+  font-size: var(--text-lg);
+  color: var(--color-navy);
+}
+.pillar p {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  max-width: 46ch;
+}
+
+/* ─── Misión / Visión / Valores ─── */
+.mv__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: clamp(var(--space-8), 6vw, var(--space-16));
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .mv__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.mv__figure {
+  margin: 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-surface-2);
+  position: sticky;
+  top: 6rem;
+}
+@media (max-width: 900px) {
+  .mv__figure {
+    position: static;
+  }
+}
+.mv__figure a {
+  display: block;
+}
+.mv__figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 720px;
+}
+.mv__figure figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  background: white;
+  border-top: 1px solid var(--color-divider);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.mv__intro {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+.mv__block {
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-divider);
+}
+.mv__block:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+.mv__block h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+.mv__block p {
+  color: var(--color-text);
+  line-height: 1.65;
+}
+.mv__valores {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-2) var(--space-3);
+  padding: 0;
+  margin: 0;
+}
+.mv__valores li {
+  padding: var(--space-2) var(--space-3);
+  background: white;
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-navy);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Galería del campus ─── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.gallery__item {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: transform 200ms, box-shadow 200ms;
+}
+.gallery__item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.gallery__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.gallery__item--wide {
+  grid-column: span 3;
+}
+.gallery__item--wide img {
+  aspect-ratio: 21 / 9;
+}
+.gallery__item figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-divider);
+}
+@media (max-width: 900px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery__item--wide { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .gallery { grid-template-columns: 1fr; }
+  .gallery__item--wide { grid-column: span 1; }
+}
+
+.tradiciones {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-6);
+}
+.tradiciones li {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.trad__year {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tradiciones h3 {
+  color: white;
+  font-size: var(--text-lg);
+}
+.tradiciones p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--text-sm);
+}
+
+/* ─── Reviews ─── */
+.reviews {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+.review {
+  background: white;
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+}
+.review::before {
+  content: '\201C';
+  position: absolute;
+  top: -12px;
+  left: var(--space-6);
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-primary);
+}
+.review blockquote {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-style: italic;
+  line-height: 1.5;
+}
+.review footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-divider);
+}
+.review cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-navy);
+  font-size: var(--text-sm);
+}
+.review footer span {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ─── Contacto ─── */
+.contact {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+.contact__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-6);
+  margin-block: var(--space-8);
+}
+.contact__list dt {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+.contact__list dd {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-weight: 500;
+}
+.contact__list a {
+  color: var(--color-navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-primary-tint);
+}
+.contact__list a:hover {
+  color: var(--color-primary);
+}
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.contact__actions .btn--ghost {
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+.contact__actions .btn--ghost:hover {
+  background: var(--color-navy);
+  color: white;
+}
+.contact__map {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-divider);
+  aspect-ratio: 4 / 5;
+  min-height: 400px;
+}
+.contact__map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ─── Footer ─── */
+.site-footer {
+  background: #0a1c37;
+  color: rgba(255, 255, 255, 0.75);
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-12);
+  padding-block: var(--space-16);
+}
+@media (max-width: 800px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+  }
+}
+.footer__brand {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+.footer__brand .brand__name {
+  color: white;
+  font-size: 1.4rem;
+}
+.footer__brand .brand__tag {
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-8);
+}
+.footer__cols h4 {
+  color: white;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-4);
+}
+.footer__cols ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+.footer__cols a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+.footer__cols a:hover {
+  color: var(--color-primary);
+}
+.footer__legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-block: var(--space-6);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.55);
+}
+.footer__legal .container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.preview-note {
+  color: var(--color-primary);
+}
+
+/* ─── Scroll reveal ─── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .hero__image img { animation: none; }
+}
+
+/* ─── Vida escolar · hero foto ─── */
+.vida__hero {
+  margin: 0 0 clamp(var(--space-10), 6vw, var(--space-16));
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  position: relative;
+  background: #000;
+}
+.vida__hero img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  opacity: 0.98;
+}
+@media (min-width: 700px) {
+  .vida__hero img { aspect-ratio: 16 / 10; }
+}
+.vida__hero figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.85) 100%);
+  color: white;
+}
+.vida__hero-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  line-height: 1.35;
+  font-style: italic;
+  max-width: 46ch;
+}
+.vida__hero-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ─── Galería estilo polaroid ─── */
+.gallery__item {
+  padding: var(--space-2) var(--space-2) var(--space-3);
+  background: white;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 12px 28px -12px rgba(11, 42, 82, 0.22);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms;
+  transform-origin: center bottom;
+}
+.gallery__item:nth-child(3n+1) { transform: rotate(-1.4deg); }
+.gallery__item:nth-child(3n+2) { transform: rotate(0.9deg); }
+.gallery__item:nth-child(3n)   { transform: rotate(-0.5deg); }
+.gallery__item:hover {
+  transform: rotate(0deg) translateY(-4px) scale(1.02);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 24px 40px -14px rgba(11, 42, 82, 0.3);
+  z-index: 2;
+}
+.gallery__item img {
+  border-radius: 3px;
+  aspect-ratio: 4 / 3;
+}
+.gallery__item--wide img { aspect-ratio: 21 / 9; }
+.gallery__item figcaption {
+  padding: var(--space-3) var(--space-2) var(--space-1);
+  font-family: 'Caveat', 'Segoe Script', cursive;
+  font-size: 1.15rem;
+  color: var(--color-navy);
+  border-top: none;
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* ─── WhatsApp floating button ─── */
+.wa-fab {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.5rem);
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.85rem 1.25rem 0.85rem 0.85rem;
+  border-radius: 999px;
+  background: #25D366;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow:
+    0 10px 30px -6px rgba(37, 211, 102, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 200ms, box-shadow 200ms;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+.wa-fab.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.wa-fab:hover {
+  transform: translateY(-2px);
+  color: white;
+  box-shadow:
+    0 14px 34px -6px rgba(37, 211, 102, 0.7),
+    0 6px 12px rgba(0, 0, 0, 0.18);
+}
+.wa-fab svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  background: white;
+  color: #25D366;
+  border-radius: 999px;
+  padding: 4px;
+}
+.wa-fab__label {
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .wa-fab__label { display: none; }
+  .wa-fab { padding: 0.85rem; }
+}
+
+/* ─── Japanese Khépani watermark + fotos en Niveles ─── */
+.section {
+  background-image: var(--kimg-watermark, none);
+  background-repeat: repeat;
+  background-size: 520px auto;
+  background-attachment: scroll;
+}
+.section--muted {
+  background-image: var(--kimg-watermark, none);
+}
+.section--dark,
+.hero {
+  background-image: none;
+}
+
+.level {
+  overflow: hidden;
+  padding-top: 0;
+  background: white;
+}
+.level__photo {
+  margin: 0 calc(var(--space-8) * -1) var(--space-4);
+  overflow: hidden;
+}
+.level__kids {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display: block;
+}
+.level:nth-child(2) .level__kids { object-position: 50% 40%; }
+.level:nth-child(3) .level__kids { object-position: 50% 28%; }
+.level__building {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0.55rem var(--space-8) 0;
+}
+.level__building img {
+  width: 92px;
+  height: 60px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.level:first-child .level__building img {
+  object-position: 40% 38%;
+}
+.level:nth-child(2) .level__building img {
+  object-position: 50% 45%;
+}
+.level:nth-child(3) .level__building img {
+  object-position: 70% 40%;
+}
+.level__building span {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.pillar,
+.review,
+.mv__copy .mv__block {
+  background: white;
+}
+
+
+/* ─── Credentials band (Cambridge + TOEFL) ─── */
+.credentials {
+  background: var(--color-surface-2);
+  padding-block: clamp(var(--space-10), 6vw, var(--space-16));
+  border-bottom: 1px solid var(--color-divider);
+}
+.credentials__eyebrow {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.credentials__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  color: var(--color-navy);
+  margin-bottom: var(--space-3);
+  max-width: 22ch;
+}
+.credentials__lede {
+  color: var(--color-text-muted);
+  max-width: 58ch;
+  margin-bottom: var(--space-7);
+}
+.credentials__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+@media (min-width: 760px) {
+  .credentials__grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+}
+.credential {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+.credential__kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+.credential h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--color-navy);
+  margin-bottom: var(--space-3);
+}
+.credential p { color: var(--color-text-muted); }
+.credential a { color: var(--color-primary); }
+.credential--toefl { border-color: var(--color-navy); }
+
+html[data-shot] .wa-fab { display: none !important; }
+html[data-shot] .site-header { display: none !important; }
+html[data-shot="hero"] .hero { min-height: 100vh; }
+html[data-shot="niveles"] .hero,
+html[data-shot="niveles"] .credentials,
+html[data-shot="niveles"] #propuesta,
+html[data-shot="niveles"] #mv,
+html[data-shot="niveles"] #campus,
+html[data-shot="niveles"] #vida,
+html[data-shot="niveles"] #comunidad,
+html[data-shot="niveles"] #contacto,
+html[data-shot="niveles"] .site-footer { display: none !important; }
+html[data-shot="credenciales"] .hero,
+html[data-shot="credenciales"] #niveles,
+html[data-shot="credenciales"] #propuesta,
+html[data-shot="credenciales"] #mv,
+html[data-shot="credenciales"] #campus,
+html[data-shot="credenciales"] #vida,
+html[data-shot="credenciales"] #comunidad,
+html[data-shot="credenciales"] #contacto,
+html[data-shot="credenciales"] .site-footer { display: none !important; }
+html[data-shot="credenciales"] .credentials { padding-top: 3rem; min-height: 100vh; }
+html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
+
+</style>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+
+    <header class="site-header" data-header>
+      <div class="container header__inner">
+        <a href="#top" class="brand" aria-label="Instituto Khépani, inicio">
+          <img src="" data-k="logo-oficial" alt="Instituto Khépani Guanajuato" class="brand__logo" width="56" height="56" />
+          <span class="brand__tag brand__tag--header">Creciendo en valores</span>
+        </a>
+
+        <nav class="nav" aria-label="Menú principal">
+          <ul>
+            <li><a href="#niveles">Niveles</a></li>
+            <li><a href="#propuesta">Propuesta</a></li>
+            <li><a href="#mv">Misión</a></li>
+            <li><a href="#campus">Campus</a></li>
+            <li><a href="#vida">Vida escolar</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <a href="#contacto" class="btn btn--primary btn--sm nav-cta">Inscripciones</a>
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" data-menu-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" data-mobile-menu hidden>
+        <a href="#niveles">Niveles</a>
+        <a href="#propuesta">Propuesta</a>
+        <a href="#mv">Misión</a>
+        <a href="#campus">Campus</a>
+        <a href="#vida">Vida escolar</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn btn--primary">Solicitar informes</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero__image" aria-hidden="true">
+          <img
+            src="" data-k="hero-campus"
+            alt=""
+            width="1600"
+            height="900"
+            fetchpriority="high"
+          />
+          <div class="hero__scrim"></div>
+        </div>
+
+        <div class="container hero__content">
+          <div class="hero__panel">
+          <p class="hero__eyebrow">
+            <span class="dot"></span> Inscripciones abiertas · ciclo 2026–2027
+          </p>
+          <h1 class="hero__title">
+            Formación con <em>valores</em><br />
+            en el sur de Guanajuato.
+          </h1>
+          <p class="hero__lede">
+            Primaria, Secundaria y Preparatoria incorporadas, en un mismo campus en Uriangato. Un
+            programa consecutivo pensado para acompañar a cada alumno de los 6 a los 18 años.
+          </p>
+          <div class="hero__cta">
+            <a href="#contacto" class="btn btn--primary btn--lg">Solicitar informes</a>
+            <a href="#niveles" class="btn btn--ghost btn--lg">Conocer los niveles</a>
+          </div>
+
+          <ul class="hero__meta" aria-label="Datos del instituto">
+            <li>
+              <strong>19</strong>
+              <span>años formando</span>
+            </li>
+            <li>
+              <strong>~350</strong>
+              <span>alumnos</span>
+            </li>
+            <li>
+              <strong>12</strong>
+              <span>grados (6&nbsp;+&nbsp;3&nbsp;+&nbsp;3)</span>
+            </li>
+            <li>
+              <strong>3</strong>
+              <span>niveles incorporados</span>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CREDENCIALES -->
+      <section class="credentials" id="credenciales" data-reveal>
+        <div class="container">
+          <p class="credentials__eyebrow">Inglés con certificación</p>
+          <h2 class="credentials__title">Cambridge English y TOEFL, en el mismo campus.</h2>
+          <p class="credentials__lede">
+            El inglés no es un extra: se trabaja de Primaria a Preparatoria, con certificaciones
+            reconocidas. Lo que sigue está documentado por la institución.
+          </p>
+          <div class="credentials__grid">
+            <article class="credential">
+              <p class="credential__kicker">Primaria y Secundaria</p>
+              <h3>Cambridge English · KET y PET for Schools</h3>
+              <p>
+                Preparación para las certificaciones internacionales
+                <a href="https://www.cambridgeenglish.org/es/" rel="noopener" target="_blank">KET y PET for Schools</a>,
+                con exámenes aplicados en la propia institución.
+              </p>
+            </article>
+            <article class="credential credential--toefl">
+              <p class="credential__kicker">Preparatoria</p>
+              <h3>Centro de evaluación TOEFL</h3>
+              <p>
+                Certificación TOEFL para Preparatoria. Los alumnos de sexto semestre reciben su
+                certificado TOEFL, que avala el nivel de inglés.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- NIVELES -->
+      <section class="section" id="niveles" data-reveal>
+        <div class="container">
+          <header class="section__head">
+            <p class="section__eyebrow">Oferta educativa</p>
+            <h2 class="section__title">Tres niveles, un mismo proyecto.</h2>
+            <p class="section__lede">
+              Programa consecutivo de Primaria a Preparatoria. Grupos pequeños (hasta 25 alumnos por
+              salón) y acompañamiento personalizado en cada etapa.
+            </p>
+          </header>
+
+          <div class="levels">
+            <article class="level">
+              <figure class="level__photo">
+                <img class="level__kids" src="" data-k="nivel-primaria-alumnos" alt="Alumnos de Primaria del Instituto Khépani en un festejo familiar del campus" width="800" height="500" loading="lazy" />
+                <figcaption class="level__building">
+                  <img src="" data-k="primaria" alt="Edificio de Primaria, CCT 11PPR1068V" width="320" height="200" loading="lazy" />
+                  <span>Fachada Primaria · CCT 11PPR1068V</span>
+                </figcaption>
+              </figure>
+              <header class="level__head">
+                <span class="level__tag">Nivel 1</span>
+                <h3 class="level__title">Primaria</h3>
+              </header>
+              <p class="level__desc">
+                Formación integral con bases sólidas en lecto-escritura, matemáticas e inglés desde
+                los primeros grados. 6 años del proyecto Khépani.
+              </p>
+              <dl class="level__facts">
+                <div><dt>CCT</dt><dd>11PPR1068V</dd></div>
+                <div><dt>Acuerdo</dt><dd>SEG 053/2013</dd></div>
+                <div><dt>Modalidad</dt><dd>Escolarizada</dd></div>
+              </dl>
+              <a href="#contacto" class="level__link">Informes de Primaria →</a>
+            </article>
+
+            <article class="level level--featured">
+              <figure class="level__photo">
+                <img class="level__kids" src="" data-k="nivel-secundaria-alumnos" alt="Alumnas de Secundaria del Instituto Khépani con uniforme deportivo en el campus" width="800" height="500" loading="lazy" />
+                <figcaption class="level__building">
+                  <img src="" data-k="secundaria" alt="Edificio de Secundaria, CCT 11PES0464H" width="320" height="200" loading="lazy" />
+                  <span>Edificio y cancha · CCT 11PES0464H</span>
+                </figcaption>
+              </figure>
+              <header class="level__head">
+                <span class="level__tag">Nivel 2</span>
+                <h3 class="level__title">Secundaria</h3>
+              </header>
+              <p class="level__desc">
+                Tres años que consolidan hábitos de estudio, pensamiento crítico y preparación para
+                bachillerato. Correo directo: secundaria@institutokhepani.com.
+              </p>
+              <dl class="level__facts">
+                <div><dt>CCT</dt><dd>11PES0464H</dd></div>
+                <div><dt>Acuerdo</dt><dd>SEG 051/2013</dd></div>
+                <div><dt>Modalidad</dt><dd>Escolarizada</dd></div>
+              </dl>
+              <a href="#contacto" class="level__link">Informes de Secundaria →</a>
+            </article>
+
+            <article class="level">
+              <figure class="level__photo">
+                <img class="level__kids" src="" data-k="nivel-preparatoria-alumnos" alt="Alumnos de Preparatoria del Instituto Khépani en uniforme escolar" width="800" height="500" loading="lazy" />
+                <figcaption class="level__building">
+                  <img src="" data-k="galeria-fachada-lateral" alt="Fachada lateral de Preparatoria, CCT 11PBH0047S" width="320" height="200" loading="lazy" />
+                  <span>Fachada lateral · CCT 11PBH0047S</span>
+                </figcaption>
+              </figure>
+              <header class="level__head">
+                <span class="level__tag">Nivel 3</span>
+                <h3 class="level__title">Preparatoria</h3>
+              </header>
+              <p class="level__desc">
+                Bachillerato general con orientación hacia la universidad y ciclo de conferencias
+                “Un café por mi futuro” para elegir carrera con seguridad.
+              </p>
+              <dl class="level__facts">
+                <div><dt>CCT</dt><dd>11PBH0047S</dd></div>
+                <div><dt>Acuerdo</dt><dd>SEG 048/2017</dd></div>
+                <div><dt>Modalidad</dt><dd>Escolarizada</dd></div>
+              </dl>
+              <a href="#contacto" class="level__link">Informes de Preparatoria →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROPUESTA -->
+      <section class="section section--muted" id="propuesta" data-reveal>
+        <div class="container propuesta">
+          <header class="section__head">
+            <p class="section__eyebrow">Lo que nos distingue</p>
+            <h2 class="section__title">Un modelo con carácter propio.</h2>
+          </header>
+
+          <div class="pillars">
+            <article class="pillar">
+              <span class="pillar__num">01</span>
+              <h3>Educación en valores</h3>
+              <p>
+                Un valor cada mes, presente en el campus y en el aula. Bajo el lema
+                <em>Creciendo en valores</em>, formamos personas respetuosas, autónomas,
+                responsables y competentes.
+              </p>
+            </article>
+
+            <article class="pillar">
+              <span class="pillar__num">02</span>
+              <h3>Formación católica</h3>
+              <p>
+                Educación inspirada en principios cristianos, con espacios de reflexión y
+                celebración que acompañan el desarrollo espiritual de cada alumno.
+              </p>
+            </article>
+
+            <article class="pillar">
+              <span class="pillar__num">03</span>
+              <h3>Inglés Cambridge</h3>
+              <p>
+                Preparación para las certificaciones internacionales
+                <a href="https://www.cambridgeenglish.org/es/" rel="noopener">KET y PET</a>, con
+                exámenes presentados en la institución. Validez académica y laboral en México y en
+                el extranjero.
+              </p>
+            </article>
+
+            <article class="pillar">
+              <span class="pillar__num">04</span>
+              <h3>Programa consecutivo</h3>
+              <p>
+                El paso de Primaria a Secundaria y de Secundaria a Preparatoria está diseñado como
+                un solo camino. El alumno crece con el mismo proyecto durante 12 grados.
+              </p>
+            </article>
+
+            <article class="pillar">
+              <span class="pillar__num">05</span>
+              <h3>Grupos pequeños</h3>
+              <p>
+                Salones con capacidad para 25 alumnos y atención personalizada. Cada docente conoce
+                a sus alumnos por nombre, ritmo y necesidades.
+              </p>
+            </article>
+
+            <article class="pillar">
+              <span class="pillar__num">06</span>
+              <h3>Familia Khépani</h3>
+              <p>
+                Bienvenida a Prepa, semana por la paz, aniversario de Uriangato, deletreo,
+                conferencias “Un café por mi futuro”. Tradición viva desde 2007.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISIÓN / VISIÓN / VALORES: letrero real transcrito -->
+      <section class="section mv" id="mv" data-reveal>
+        <div class="container mv__grid">
+          <figure class="mv__figure">
+            <a href="" data-k="letrero-misio-vision" target="_blank" rel="noopener" aria-label="Ver letrero de misión y visión en tamaño completo">
+              <img
+                src="" data-k="letrero-misio-vision"
+                alt="Letrero del Instituto Khépani en el campus, con misión, visión y valores impresos"
+                width="1200"
+                height="1800"
+                loading="lazy"
+              />
+            </a>
+            <figcaption>Letrero oficial del campus · Uriangato, Gto.</figcaption>
+          </figure>
+
+          <div class="mv__copy">
+            <p class="section__eyebrow">Misión, visión y valores</p>
+            <h2 class="section__title">Lo que decimos en la entrada del campus.</h2>
+            <p class="mv__intro">
+              Este es el texto tal cual aparece en el letrero de la entrada del Instituto Khépani.
+              Es la brújula del proyecto desde 2007.
+            </p>
+
+            <article class="mv__block">
+              <h3>Misión</h3>
+              <p>
+                Somos una Institución Educativa que promueve la formación de personas respetuosas,
+                autónomas, responsables y competentes mediante el impulso y adquisición de
+                competencias a través de conocimientos teóricos y prácticos con el fin de contribuir
+                al desarrollo sustentable en la región sur del estado de Guanajuato.
+              </p>
+            </article>
+
+            <article class="mv__block">
+              <h3>Visión</h3>
+              <p>
+                Ser una Institución formativa de personas íntegras, emprendedoras y sobresalientes
+                capaces de enfrentar los desafíos, a través de procesos centrados en la formación
+                del ser y el desarrollo de competencias que responden a los altos estándares de
+                calidad, promoviendo la individualidad y autonomía del estudiante.
+              </p>
+            </article>
+
+            <article class="mv__block">
+              <h3>Valores</h3>
+              <ul class="mv__valores">
+                <li>Compromiso</li>
+                <li>Libertad</li>
+                <li>Tolerancia</li>
+                <li>Dignidad</li>
+                <li>Amor</li>
+                <li>Generosidad</li>
+                <li>Amistad</li>
+                <li>Respeto</li>
+                <li>Honestidad</li>
+                <li>Perseverancia</li>
+                <li>Responsabilidad</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERÍA del campus (fotos reales) -->
+      <section class="section section--muted" id="campus" data-reveal>
+        <div class="container">
+          <header class="section__head">
+            <p class="section__eyebrow">El campus</p>
+            <h2 class="section__title">Un solo campus para los tres niveles.</h2>
+            <p class="section__lede">
+              Edificios de Primaria y Secundaria, canchas techadas, jardines y áreas de estudio en
+              La Joyita, Uriangato.
+            </p>
+          </header>
+
+          <div class="gallery">
+            <figure class="gallery__item gallery__item--wide">
+              <img src="" data-k="campus-cancha-cubierta" alt="Cancha techada con estructura curva y edificio principal del campus Khépani" loading="lazy" />
+              <figcaption>Cancha techada y explanada central</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="primaria" alt="Edificio de Primaria del Instituto Khépani, CCT 11PPR1068V" loading="lazy" />
+              <figcaption>Primaria · CCT 11PPR1068V</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="secundaria" alt="Edificio de Secundaria del Instituto Khépani, CCT 11PES0464H" loading="lazy" />
+              <figcaption>Secundaria · CCT 11PES0464H</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="miss-sandy-english" alt="Corredor de aulas con puerta que dice Miss Sandy&#39;s English Class y carteles de películas en pared" loading="lazy" />
+              <figcaption>Miss Sandy&rsquo;s English Class</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="galeria-entrada" alt="Entrada del campus Khépani con letrero de misión y edificio al fondo" loading="lazy" />
+              <figcaption>Entrada del campus</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="galeria-explanada" alt="Explanada del campus con edificio y áreas verdes" loading="lazy" />
+              <figcaption>Explanada y áreas verdes</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="galeria-cancha-frontal" alt="Vista frontal de la cancha y edificio de Secundaria" loading="lazy" />
+              <figcaption>Cancha frontal · Secundaria</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="galeria-edificio-moderno" alt="Edificio moderno de estudio en el campus Khépani" loading="lazy" />
+              <figcaption>Edificio de estudio</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="" data-k="galeria-fachada-lateral" alt="Fachada lateral del edificio principal, blanco con detalles naranjas" loading="lazy" />
+              <figcaption>Preparatoria · fachada lateral</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDA ESCOLAR -->
+      <section class="section section--dark" id="vida" data-reveal>
+        <div class="container">
+          <header class="section__head section__head--light">
+            <p class="section__eyebrow">Vida escolar</p>
+            <h2 class="section__title">Más que una prepa, una familia.</h2>
+            <p class="section__lede">
+              Actividades y tradiciones documentadas por la comunidad Khépani en los últimos años.
+            </p>
+          </header>
+
+          <figure class="vida__hero" data-reveal>
+            <img
+              src="" data-k="vida-paz"
+              alt="Alumnos del Instituto Khépani formando letras en la cancha durante la Semana por la Paz"
+              width="1600"
+              height="1200"
+              loading="lazy"
+            />
+            <figcaption>
+              <span class="vida__hero-quote">“Crece con amor, vive con valor y da un abrazo lleno de paz a todo el que esté a tu alrededor.”</span>
+              <span class="vida__hero-tag">Semana por la Paz · Instituto Khépani</span>
+            </figcaption>
+          </figure>
+
+          <ul class="tradiciones">
+            <li>
+              <span class="trad__year">Cada año</span>
+              <h3>Semana por la Paz</h3>
+              <p>
+                Toda la comunidad se reúne para conmemorar el Día Internacional de la Paz. Alumnos
+                de todos los niveles forman figuras y frases sobre la cancha central del campus.
+              </p>
+            </li>
+            <li>
+              <span class="trad__year">Bachillerato</span>
+              <h3>Un café por mi futuro</h3>
+              <p>
+                Ciclo de conferencias con profesionistas invitados. Los alumnos de tercer semestre
+                escuchan de primera mano cómo eligieron carrera, para tomar mejores decisiones.
+              </p>
+            </li>
+            <li>
+              <span class="trad__year">Secundaria</span>
+              <h3>Concurso de deletreo</h3>
+              <p>
+                Cuatro ediciones (y contando) del concurso de deletreo Khepani Secundaria, que pone
+                a prueba vocabulario, memoria y trabajo en equipo.
+              </p>
+            </li>
+            <li>
+              <span class="trad__year">Preparatoria</span>
+              <h3>Bienvenida Prepa</h3>
+              <p>
+                Cada agosto, la generación entrante recibe la bienvenida con actividades de
+                integración fuera del campus. Convivencia real antes del primer día de clases.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- COMUNIDAD / testimonios reales de FB -->
+      <section class="section" id="comunidad" data-reveal>
+        <div class="container">
+          <header class="section__head">
+            <p class="section__eyebrow">La comunidad opina</p>
+            <h2 class="section__title">Voces reales de Facebook.</h2>
+            <p class="section__lede">
+              Comentarios publicados por miembros de la comunidad en la página oficial de Khepani
+              Prepa.
+            </p>
+          </header>
+
+          <ul class="reviews">
+            <li class="review">
+              <blockquote>
+                “Felicidades gran acción de informar para tomar decisiones, la prepa en un nivel en
+                donde debemos preparar a los jóvenes para…”
+              </blockquote>
+              <footer>
+                <cite>Wilfrido Contreras</cite>
+                <span>Sobre <em>Un café por mi futuro</em> · 19 oct 2018</span>
+              </footer>
+            </li>
+
+            <li class="review">
+              <blockquote>
+                “Muchas felicidades a nuestros queridos alumnos <span aria-hidden="true">🤩</span>”
+              </blockquote>
+              <footer>
+                <cite>Candy Moreno Sánchez</cite>
+                <span>Cuarto Concurso de Deletreo · 20 jun 2019</span>
+              </footer>
+            </li>
+
+            <li class="review">
+              <blockquote>“¡Qué padreeee!!!”</blockquote>
+              <footer>
+                <cite>Brenda Zavala</cite>
+                <span>Día Internacional de la Paz · 21 sept 2019</span>
+              </footer>
+            </li>
+
+            <li class="review">
+              <blockquote>“¡Qué bonito!!”</blockquote>
+              <footer>
+                <cite>Merit CV</cite>
+                <span>Bienvenida Prepa Khépani · 19 ago 2018</span>
+              </footer>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section class="section section--muted" id="contacto" data-reveal>
+        <div class="container contact">
+          <div class="contact__copy">
+            <p class="section__eyebrow">Inscripciones e informes</p>
+            <h2 class="section__title">Escríbenos, con gusto te atendemos.</h2>
+            <p>
+              Estamos en Uriangato, Guanajuato. Nuestro equipo responde por teléfono, WhatsApp o
+              correo en horario escolar.
+            </p>
+
+            <dl class="contact__list">
+              <div>
+                <dt>Dirección</dt>
+                <dd>Libramiento San Miguel No. 202<br />La Joyita, Uriangato, Gto.</dd>
+              </div>
+              <div>
+                <dt>Teléfono / WhatsApp</dt>
+                <dd><a href="tel:+524451030946">445 103 0946</a></dd>
+              </div>
+              <div>
+                <dt>Correo general</dt>
+                <dd>
+                  <a href="mailto:contacto@institutokhepani.com">contacto@institutokhepani.com</a>
+                </dd>
+              </div>
+              <div>
+                <dt>Secundaria</dt>
+                <dd>
+                  <a href="mailto:secundaria@institutokhepani.com"
+                    >secundaria@institutokhepani.com</a
+                  >
+                </dd>
+              </div>
+              <div>
+                <dt>Preparatoria</dt>
+                <dd>
+                  <a href="mailto:preparatoria@institutokhepani.com"
+                    >preparatoria@institutokhepani.com</a
+                  >
+                </dd>
+              </div>
+              <div>
+                <dt>Horario</dt>
+                <dd>Lunes a viernes, 8:00 a 15:00</dd>
+              </div>
+            </dl>
+
+            <div class="contact__actions">
+              <a
+                class="btn btn--primary btn--lg"
+                href="https://wa.me/524451030946?text=Hola%2C%20quiero%20informes%20de%20inscripciones%20ciclo%202026-2027%2C%20Instituto%20Kh%C3%A9pani%20Uriangato."
+                rel="noopener"
+                target="_blank"
+                >WhatsApp: pedir informes</a
+              >
+              <a class="btn btn--ghost btn--lg" href="tel:+524451030946">Llamar ahora</a>
+            </div>
+          </div>
+
+          <aside class="contact__map">
+            <iframe
+              title="Mapa: Libramiento San Miguel 202, La Joyita, Uriangato"
+              src="https://www.google.com/maps?q=Libramiento+San+Miguel+202,+La+Joyita,+Uriangato,+Guanajuato&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <img src="" data-k="logo-oficial" alt="" class="brand__logo" width="64" height="64" />
+          <div>
+            <p class="brand__name">Instituto Khépani</p>
+            <p class="brand__tag">Creciendo en valores · desde 2007</p>
+          </div>
+        </div>
+        <div class="footer__cols">
+          <div>
+            <h4>Niveles</h4>
+            <ul>
+              <li>Primaria · CCT 11PPR1068V</li>
+              <li>Secundaria · CCT 11PES0464H</li>
+              <li>Preparatoria · CCT 11PBH0047S</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contacto</h4>
+            <ul>
+              <li>
+                <a href="tel:+524451030946">445 103 0946</a>
+              </li>
+              <li>
+                <a href="mailto:contacto@institutokhepani.com">contacto@institutokhepani.com</a>
+              </li>
+              <li>Libramiento San Miguel 202, Uriangato</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Comunidad</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.facebook.com/InstitutoKhepaniPrepaOficial"
+                  rel="noopener"
+                  target="_blank"
+                  >Khepani Prepa en Facebook</a
+                >
+              </li>
+              <li>
+                <a href="https://www.cambridgeenglish.org/es/" rel="noopener" target="_blank"
+                  >Cambridge English</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <div class="container">
+          <p>© 2007–2026 Instituto Khépani. Uriangato, Guanajuato, México.</p>
+          <p class="preview-note">
+            Vista previa de nuevo diseño · No sustituye al sitio actual institutokhepani.com.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      class="wa-fab"
+      href="https://wa.me/524451030946?text=Hola%2C%20quiero%20informes%20de%20inscripciones%20ciclo%202026-2027%2C%20Instituto%20Kh%C3%A9pani%20Uriangato."
+      target="_blank"
+      rel="noopener"
+      aria-label="Escribir por WhatsApp a Instituto Khépani"
+      data-wa-fab
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.52 3.48A11.94 11.94 0 0012.02 0C5.4 0 .01 5.39.01 12.01c0 2.12.56 4.19 1.62 6.01L0 24l6.15-1.61a11.98 11.98 0 005.86 1.5h.01c6.62 0 12.01-5.39 12.01-12.01 0-3.21-1.25-6.22-3.51-8.4zM12.02 21.8h-.01a9.79 9.79 0 01-4.99-1.37l-.36-.21-3.65.96.97-3.56-.23-.37a9.79 9.79 0 01-1.5-5.24c0-5.42 4.41-9.82 9.83-9.82 2.62 0 5.09 1.02 6.94 2.88a9.75 9.75 0 012.87 6.94c0 5.42-4.41 9.83-9.86 9.83zm5.4-7.36c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.36.19 1.87.12.57-.08 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/>
+      </svg>
+      <span class="wa-fab__label">Informes por WhatsApp</span>
+    </a>
+    <script>
+// Khépani – interactions
+(function () {
+  const header = document.querySelector('[data-header]');
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector('[data-mobile-menu]');
+  const fab = document.querySelector('[data-wa-fab]');
+
+  // Header shadow on scroll + FAB visibility
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (header) header.classList.toggle('is-scrolled', y > 8);
+    if (fab) fab.classList.toggle('is-visible', y > 400);
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu toggle
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.hasAttribute('hidden');
+      if (open) {
+        menu.removeAttribute('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+      } else {
+        menu.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    menu.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        menu.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      }),
+    );
+  }
+
+  // Scroll reveal
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const targets = document.querySelectorAll('[data-reveal]');
+  if (reduced || !('IntersectionObserver' in window)) {
+    targets.forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+  );
+  targets.forEach((el) => io.observe(el));
+})();
+
+</script>
+    <script>
+      (function () {
+        var shot = new URLSearchParams(location.search).get("shot");
+        if (shot) document.documentElement.setAttribute("data-shot", shot);
+      })();
+    </script>
+    <script src="../media/campus-cancha-cubierta.js"></script>
+  <script src="../media/favicon.js"></script>
+  <script src="../media/galeria-cancha-frontal.js"></script>
+  <script src="../media/galeria-edificio-moderno.js"></script>
+  <script src="../media/galeria-entrada.js"></script>
+  <script src="../media/galeria-explanada.js"></script>
+  <script src="../media/galeria-fachada-lateral.js"></script>
+  <script src="../media/hero-campus.js"></script>
+  <script src="../media/letrero-misio-vision.js"></script>
+  <script src="../media/logo-oficial.js"></script>
+  <script src="../media/miss-sandy-english.js"></script>
+  <script src="../media/nivel-preparatoria-alumnos.js"></script>
+  <script src="../media/nivel-primaria-alumnos.js"></script>
+  <script src="../media/nivel-secundaria-alumnos.js"></script>
+  <script src="../media/primaria.js"></script>
+  <script src="../media/secundaria.js"></script>
+  <script src="../media/vida-paz.js"></script>
+  <script src="../media/watermark.js"></script>
+<script>
+(function () {
+  var M = window.KHEPANI_IMG || {};
+  document.querySelectorAll("[data-k]").forEach(function (el) {
+    var u = M[el.getAttribute("data-k")];
+    if (!u) return;
+    if (el.tagName === "IMG") el.src = u;
+    else if (el.hasAttribute("href")) el.setAttribute("href", u);
+  });
+  var root = document.documentElement;
+  Object.keys(M).forEach(function (k) {
+    root.style.setProperty("--kimg-" + k, "url(" + JSON.stringify(M[k]) + ")");
+  });
+})();
+</script>
 </body>
 </html>
