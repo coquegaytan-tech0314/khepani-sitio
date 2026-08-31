@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tres propuestas — Instituto Khépani</title>
+  <meta name="description" content="Tres borradores de diseño para Instituto Khépani en Uriangato, Guanajuato. Sellos, Editorial y Academia. No es el sitio en vivo.">
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      --cream: #fffaf5;
+      --cream-2: #fef4ea;
+      --naranja: #ea6a1a;
+      --naranja-dark: #d15810;
+      --navy: #0b2a52;
+      --ink: #14243d;
+      --muted: #5a6274;
+      --border: #ecd6c0;
+      --tab-h: 58px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow: hidden;
+    }
+    .chrome {
+      height: var(--tab-h);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 14px;
+      background: linear-gradient(180deg, #fffefb, var(--cream-2));
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 0 rgba(234,106,26,.08);
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      min-width: 0;
+      flex: 0 1 auto;
+    }
+    .brand b {
+      font-size: 13px;
+      color: var(--navy);
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+    .brand span {
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-left: auto;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+    }
+    .tab {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--navy);
+      font-weight: 650;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .tab[aria-selected="true"] {
+      background: var(--naranja);
+      border-color: var(--naranja);
+      color: #fff;
+    }
+    .tab:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+    .note {
+      display: none;
+      font-size: 11px;
+      color: var(--muted);
+      padding-left: 8px;
+      border-left: 1px solid var(--border);
+      max-width: 280px;
+    }
+    @media (min-width: 840px) {
+      .note { display: block; }
+    }
+    .frames { height: calc(100% - var(--tab-h)); position: relative; background: #fff; }
+    iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0; background: #fff;
+    }
+    iframe[hidden] { display: none; }
+  </style>
+</head>
+<body>
+  <div class="chrome">
+    <div class="brand">
+      <b>Instituto Khépani</b>
+      <span>Uriangato · tres borradores</span>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Propuestas de diseño">
+      <button class="tab" role="tab" id="tab-sellos" aria-controls="view-sellos" aria-selected="true" data-tab="sellos">Sellos</button>
+      <button class="tab" role="tab" id="tab-editorial" aria-controls="view-editorial" aria-selected="false" data-tab="editorial">Editorial</button>
+      <button class="tab" role="tab" id="tab-academia" aria-controls="view-academia" aria-selected="false" data-tab="academia">Academia</button>
+    </div>
+    <p class="note">Borradores de diseño. No sustituyen al sitio en vivo institutokhepani.com · Desde 2007 · ~350 alumnos · 12 grados</p>
+  </div>
+  <div class="frames">
+    <iframe id="view-sellos" title="Propuesta Sellos" src="sellos/" allow="clipboard-write"></iframe>
+    <iframe id="view-editorial" title="Propuesta Editorial" src="editorial/" hidden allow="clipboard-write"></iframe>
+    <iframe id="view-academia" title="Propuesta Academia" src="academia/" hidden allow="clipboard-write"></iframe>
+  </div>
+  <script>
+    (function () {
+      var names = ["sellos", "editorial", "academia"];
+      function show(name) {
+        if (names.indexOf(name) === -1) name = "sellos";
+        names.forEach(function (n) {
+          var tab = document.getElementById("tab-" + n);
+          var view = document.getElementById("view-" + n);
+          var on = n === name;
+          tab.setAttribute("aria-selected", on ? "true" : "false");
+          if (on) view.removeAttribute("hidden");
+          else view.setAttribute("hidden", "");
+        });
+        if (location.hash.slice(1) !== name) {
+          history.replaceState(null, "", "#" + name);
+        }
+      }
+      document.querySelectorAll("[data-tab]").forEach(function (btn) {
+        btn.addEventListener("click", function () { show(btn.getAttribute("data-tab")); });
+      });
+      window.addEventListener("hashchange", function () {
+        show(location.hash.replace("#", "") || "sellos");
+      });
+      show(location.hash.replace("#", "") || "sellos");
+    })();
+  </script>
+</body>
+</html>
