@@ -1,0 +1,1 @@
+Concat NN.txt in order, base64-decode to propuestas/photos/KEY.webp. Keys: primaria, galeria-fachada-lateral, letrero-misio-vision, miss-sandy-english.
