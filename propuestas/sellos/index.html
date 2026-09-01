@@ -467,7 +467,7 @@ textarea {
 /* ─── Hero ─── */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: min(82svh, 720px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -488,27 +488,21 @@ textarea {
   height: 100%;
   object-fit: cover;
   object-position: center 55%;
-  animation: heroZoom 24s ease-out forwards;
-  transform-origin: center 60%;
-}
-@keyframes heroZoom {
-  from { transform: scale(1.06); }
-  to   { transform: scale(1.00); }
 }
 .hero__scrim {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255, 250, 245, 0.12) 0%, rgba(255, 250, 245, 0.05) 38%, rgba(255, 250, 245, 0.42) 100%),
-    linear-gradient(90deg, rgba(255, 248, 240, 0.28) 0%, rgba(255, 248, 240, 0.04) 52%, rgba(255, 248, 240, 0) 100%);
+    linear-gradient(90deg, rgba(255,250,245,0.90) 0%, rgba(255,250,245,0.58) 38%, rgba(255,250,245,0.10) 72%, rgba(255,250,245,0) 100%),
+    linear-gradient(180deg, rgba(255,250,245,0.18) 0%, rgba(255,250,245,0.04) 42%, rgba(255,250,245,0.78) 100%);
 }
 .hero__panel {
-  background: rgba(255, 250, 245, 0.94);
-  border: 1px solid rgba(236, 214, 192, 0.95);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6) var(--space-6) var(--space-7);
-  max-width: 720px;
-  box-shadow: var(--shadow-md);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  max-width: 640px;
+  box-shadow: none;
 }
 .hero__content {
   padding-block: var(--space-12) var(--space-14);
