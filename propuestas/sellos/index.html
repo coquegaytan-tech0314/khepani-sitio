@@ -915,6 +915,11 @@ textarea {
 }
 .gallery__item--wide img {
   aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+img[data-k="campus-cancha-cubierta"] {
+  object-fit: cover;
+  object-position: center 45%;
 }
 .gallery__item figcaption {
   padding: var(--space-3) var(--space-4);
@@ -1237,7 +1242,10 @@ textarea {
   border-radius: 3px;
   aspect-ratio: 4 / 3;
 }
-.gallery__item--wide img { aspect-ratio: 21 / 9; }
+.gallery__item--wide img {
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
 .gallery__item figcaption {
   padding: var(--space-3) var(--space-2) var(--space-1);
   font-family: 'Caveat', 'Segoe Script', cursive;
@@ -1499,7 +1507,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
       <section class="hero" id="top">
         <div class="hero__image" aria-hidden="true">
           <img
-            src="" data-k="hero-campus"
+            src="../photos/hero-campus.webp" data-k="hero-campus"
             alt=""
             width="1600"
             height="900"
@@ -1740,9 +1748,9 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
       <section class="section mv" id="mv" data-reveal>
         <div class="container mv__grid">
           <figure class="mv__figure">
-            <a href="" data-k="letrero-misio-vision" target="_blank" rel="noopener" aria-label="Ver letrero de misión y visión en tamaño completo">
+            <a href="../photos/letrero-misio-vision.webp" data-k="letrero-misio-vision" target="_blank" rel="noopener" aria-label="Ver letrero de misión y visión en tamaño completo">
               <img
-                src="" data-k="letrero-misio-vision"
+                src="../photos/letrero-misio-vision.webp" data-k="letrero-misio-vision"
                 alt="Letrero del Instituto Khépani en el campus, con misión, visión y valores impresos"
                 width="1200"
                 height="1800"
@@ -1814,7 +1822,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
 
           <div class="gallery">
             <figure class="gallery__item gallery__item--wide">
-              <img src="" data-k="campus-cancha-cubierta" alt="Cancha techada con estructura curva y edificio principal del campus Khépani" loading="lazy" />
+              <img src="../photos/campus-cancha-cubierta.webp" data-k="campus-cancha-cubierta" alt="Cancha techada con estructura curva y edificio principal del campus Khépani" loading="lazy" />
               <figcaption>Cancha techada y explanada central</figcaption>
             </figure>
             <figure class="gallery__item">
@@ -1830,7 +1838,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
               <figcaption>Miss Sandy&rsquo;s English Class</figcaption>
             </figure>
             <figure class="gallery__item">
-              <img src="" data-k="galeria-entrada" alt="Entrada del campus Khépani con letrero de misión y edificio al fondo" loading="lazy" />
+              <img src="../photos/galeria-entrada.webp" data-k="galeria-entrada" alt="Entrada del campus Khépani con letrero de misión y edificio al fondo" loading="lazy" />
               <figcaption>Entrada del campus</figcaption>
             </figure>
             <figure class="gallery__item">
@@ -1842,7 +1850,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
               <figcaption>Cancha frontal · Secundaria</figcaption>
             </figure>
             <figure class="gallery__item">
-              <img src="" data-k="galeria-edificio-moderno" alt="Edificio moderno de estudio en el campus Khépani" loading="lazy" />
+              <img src="../photos/galeria-edificio-moderno.webp" data-k="galeria-edificio-moderno" alt="Edificio moderno de estudio en el campus Khépani" loading="lazy" />
               <figcaption>Edificio de estudio</figcaption>
             </figure>
             <figure class="gallery__item">
@@ -1866,7 +1874,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
 
           <figure class="vida__hero" data-reveal>
             <img
-              src="" data-k="vida-paz"
+              src="../photos/vida-paz.webp" data-k="vida-paz"
               alt="Alumnos del Instituto Khépani formando letras en la cancha durante la Semana por la Paz"
               width="1600"
               height="1200"
@@ -2178,15 +2186,10 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
         if (shot) document.documentElement.setAttribute("data-shot", shot);
       })();
     </script>
-    <script src="../media/campus-cancha-cubierta.js"></script>
   <script src="../media/favicon.js"></script>
   <script src="../media/galeria-cancha-frontal.js"></script>
-  <script src="../media/galeria-edificio-moderno.js"></script>
-  <script src="../media/galeria-entrada.js"></script>
   <script src="../media/galeria-explanada.js"></script>
   <script src="../media/galeria-fachada-lateral.js"></script>
-  <script src="../media/hero-campus.js"></script>
-  <script src="../media/letrero-misio-vision.js"></script>
   <script src="../media/logo-oficial.js"></script>
   <script src="../media/miss-sandy-english.js"></script>
   <script src="../media/nivel-preparatoria-alumnos.js"></script>
@@ -2194,7 +2197,6 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
   <script src="../media/nivel-secundaria-alumnos.js"></script>
   <script src="../media/primaria.js"></script>
   <script src="../media/secundaria.js"></script>
-  <script src="../media/vida-paz.js"></script>
   <script src="../media/watermark.js"></script>
 <script>
 (function () {
@@ -2202,6 +2204,8 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
   document.querySelectorAll("[data-k]").forEach(function (el) {
     var u = M[el.getAttribute("data-k")];
     if (!u) return;
+    var cur = el.getAttribute("src") || el.getAttribute("href") || "";
+    if (cur.indexOf("../photos/") === 0) return;
     if (el.tagName === "IMG") el.src = u;
     else if (el.hasAttribute("href")) el.setAttribute("href", u);
   });
