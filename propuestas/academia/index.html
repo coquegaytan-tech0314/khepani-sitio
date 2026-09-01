@@ -1050,7 +1050,7 @@ html.shot-mision #credenciales { display: none !important; }
         <div class="hero__stage">
           <figure class="hero__plate">
             <img
-              src="" data-k="hero-campus"
+              src="../photos/hero-campus.webp" data-k="hero-campus"
               alt="Campus del Instituto Khépani en Uriangato: edificios, jardines y cancha central"
               width="1600"
               height="900"
@@ -1310,7 +1310,7 @@ html.shot-mision #credenciales { display: none !important; }
 
         <figure class="sign">
           <img
-            src="" data-k="letrero-misio-vision"
+            src="../photos/letrero-misio-vision.webp" data-k="letrero-misio-vision"
             alt="Letrero oficial del Instituto Khépani con misión, visión y los once valores, en el campus de Uriangato"
             width="900"
             height="1400"
@@ -1371,7 +1371,7 @@ html.shot-mision #credenciales { display: none !important; }
 
         <div class="gallery">
           <figure class="gallery__item gallery__item--wide">
-            <img src="" data-k="campus-cancha-cubierta" alt="Cancha techada con estructura curva y edificio principal del campus Khépani" loading="lazy" />
+            <img src="../photos/campus-cancha-cubierta.webp" data-k="campus-cancha-cubierta" alt="Cancha techada con estructura curva y edificio principal del campus Khépani" loading="lazy" />
             <figcaption>Cancha techada y explanada central</figcaption>
           </figure>
           <figure class="gallery__item">
@@ -1387,7 +1387,7 @@ html.shot-mision #credenciales { display: none !important; }
             <figcaption>Preparatoria · fachada lateral</figcaption>
           </figure>
           <figure class="gallery__item">
-            <img src="" data-k="galeria-entrada" alt="Entrada del campus Khépani con el letrero de misión al fondo" loading="lazy" />
+            <img src="../photos/galeria-entrada.webp" data-k="galeria-entrada" alt="Entrada del campus Khépani con el letrero de misión al fondo" loading="lazy" />
             <figcaption>Entrada del campus</figcaption>
           </figure>
           <figure class="gallery__item">
@@ -1403,7 +1403,7 @@ html.shot-mision #credenciales { display: none !important; }
             <figcaption>Cancha frontal · Secundaria</figcaption>
           </figure>
           <figure class="gallery__item">
-            <img src="" data-k="galeria-edificio-moderno" alt="Edificio de estudio en el campus Khépani" loading="lazy" />
+            <img src="../photos/galeria-edificio-moderno.webp" data-k="galeria-edificio-moderno" alt="Edificio de estudio en el campus Khépani" loading="lazy" />
             <figcaption>Edificio de estudio</figcaption>
           </figure>
           <figure class="gallery__item">
@@ -1425,7 +1425,7 @@ html.shot-mision #credenciales { display: none !important; }
 
         <figure class="vida-plate">
           <img
-            src="" data-k="vida-paz"
+            src="../photos/vida-paz.webp" data-k="vida-paz"
             alt="Alumnos del Instituto Khépani formando letras en la cancha durante la Semana por la Paz"
             width="1600"
             height="1200"
@@ -1662,16 +1662,11 @@ html.shot-mision #credenciales { display: none !important; }
         });
       })();
     </script>
-    <script src="../media/campus-cancha-cubierta.js"></script>
   <script src="../media/favicon.js"></script>
   <script src="../media/galeria-cancha-frontal.js"></script>
-  <script src="../media/galeria-edificio-moderno.js"></script>
-  <script src="../media/galeria-entrada.js"></script>
   <script src="../media/galeria-explanada.js"></script>
   <script src="../media/galeria-fachada-lateral.js"></script>
   <script src="../media/galeria-jardines.js"></script>
-  <script src="../media/hero-campus.js"></script>
-  <script src="../media/letrero-misio-vision.js"></script>
   <script src="../media/logo-oficial.js"></script>
   <script src="../media/miss-sandy-english.js"></script>
   <script src="../media/nivel-preparatoria-alumnos.js"></script>
@@ -1679,13 +1674,14 @@ html.shot-mision #credenciales { display: none !important; }
   <script src="../media/nivel-secundaria-alumnos.js"></script>
   <script src="../media/primaria.js"></script>
   <script src="../media/secundaria.js"></script>
-  <script src="../media/vida-paz.js"></script>
 <script>
 (function () {
   var M = window.KHEPANI_IMG || {};
   document.querySelectorAll("[data-k]").forEach(function (el) {
     var u = M[el.getAttribute("data-k")];
     if (!u) return;
+    var cur = el.getAttribute("src") || el.getAttribute("href") || "";
+    if (cur.indexOf("../photos/") === 0) return;
     if (el.tagName === "IMG") el.src = u;
     else if (el.hasAttribute("href")) el.setAttribute("href", u);
   });

@@ -1084,7 +1084,7 @@ html[data-shot] .wa-fab { display: none !important; }
   <main id="inicio">
     <section class="hero" id="hero" aria-label="Portada">
       <div class="hero-photo">
-        <img src="" data-k="hero-campus" alt="Vista panorámica del campus de Instituto Khépani en Uriangato, Guanajuato">
+        <img src="../photos/hero-campus.webp" data-k="hero-campus" alt="Vista panorámica del campus de Instituto Khépani en Uriangato, Guanajuato">
       </div>
       <div class="hero-copy">
         <span class="kicker">Instituto Khépani · Uriangato</span>
@@ -1276,7 +1276,7 @@ html[data-shot] .wa-fab { display: none !important; }
         </header>
         <div class="mision-layout">
           <figure class="mision-sign">
-            <img src="" data-k="letrero-misio-vision" alt="Letrero oficial de misión, visión y valores de Instituto Khépani">
+            <img src="../photos/letrero-misio-vision.webp" data-k="letrero-misio-vision" alt="Letrero oficial de misión, visión y valores de Instituto Khépani">
             <figcaption class="photo-cap">Letrero de misión, visión y valores, en el jardín del campus.</figcaption>
           </figure>
           <div>
@@ -1318,7 +1318,7 @@ html[data-shot] .wa-fab { display: none !important; }
         </header>
         <div class="essay">
           <figure class="plate plate--lead">
-            <img src="" data-k="galeria-edificio-moderno" alt="Edificio del campus Instituto Khépani">
+            <img src="../photos/galeria-edificio-moderno.webp" data-k="galeria-edificio-moderno" alt="Edificio del campus Instituto Khépani">
             <figcaption>Edificio del campus, contra el cielo de Uriangato.</figcaption>
           </figure>
           <figure class="plate plate--wide">
@@ -1326,7 +1326,7 @@ html[data-shot] .wa-fab { display: none !important; }
             <figcaption>Jardines y arbolado frente a los edificios.</figcaption>
           </figure>
           <figure class="plate plate--sq">
-            <img src="" data-k="galeria-entrada" alt="Entrada al campus Instituto Khépani">
+            <img src="../photos/galeria-entrada.webp" data-k="galeria-entrada" alt="Entrada al campus Instituto Khépani">
             <figcaption>Entrada al campus, Libramiento San Miguel.</figcaption>
           </figure>
           <figure class="plate plate--wide">
@@ -1334,7 +1334,7 @@ html[data-shot] .wa-fab { display: none !important; }
             <figcaption>Cancha frontal, al centro de la vida cotidiana.</figcaption>
           </figure>
           <figure class="plate plate--sq">
-            <img src="" data-k="campus-cancha-cubierta" alt="Cancha cubierta del campus">
+            <img src="../photos/campus-cancha-cubierta.webp" data-k="campus-cancha-cubierta" alt="Cancha cubierta del campus">
             <figcaption>Cancha cubierta.</figcaption>
           </figure>
         </div>
@@ -1355,7 +1355,7 @@ html[data-shot] .wa-fab { display: none !important; }
       <div class="wrap-wide">
         <div class="vida-layout">
           <figure class="vida-photo">
-            <img src="" data-k="vida-paz" alt="Alumnos de Instituto Khépani formando la palabra PAZ en la cancha, Semana por la Paz">
+            <img src="../photos/vida-paz.webp" data-k="vida-paz" alt="Alumnos de Instituto Khépani formando la palabra PAZ en la cancha, Semana por la Paz">
             <figcaption class="photo-cap">Semana por la Paz. Alumnas y alumnos del campus forman la palabra PAZ en la cancha.</figcaption>
           </figure>
           <div class="vida-copy">
@@ -1466,16 +1466,11 @@ html[data-shot] .wa-fab { display: none !important; }
       document.documentElement.setAttribute('data-shot', shot);
     })();
   </script>
-  <script src="../media/campus-cancha-cubierta.js"></script>
   <script src="../media/favicon.js"></script>
   <script src="../media/galeria-cancha-frontal.js"></script>
-  <script src="../media/galeria-edificio-moderno.js"></script>
-  <script src="../media/galeria-entrada.js"></script>
   <script src="../media/galeria-explanada.js"></script>
   <script src="../media/galeria-fachada-lateral.js"></script>
   <script src="../media/galeria-jardines.js"></script>
-  <script src="../media/hero-campus.js"></script>
-  <script src="../media/letrero-misio-vision.js"></script>
   <script src="../media/logo-oficial.js"></script>
   <script src="../media/miss-sandy-english.js"></script>
   <script src="../media/nivel-preparatoria-alumnos.js"></script>
@@ -1483,13 +1478,14 @@ html[data-shot] .wa-fab { display: none !important; }
   <script src="../media/nivel-secundaria-alumnos.js"></script>
   <script src="../media/primaria.js"></script>
   <script src="../media/secundaria.js"></script>
-  <script src="../media/vida-paz.js"></script>
 <script>
 (function () {
   var M = window.KHEPANI_IMG || {};
   document.querySelectorAll("[data-k]").forEach(function (el) {
     var u = M[el.getAttribute("data-k")];
     if (!u) return;
+    var cur = el.getAttribute("src") || el.getAttribute("href") || "";
+    if (cur.indexOf("../photos/") === 0) return;
     if (el.tagName === "IMG") el.src = u;
     else if (el.hasAttribute("href")) el.setAttribute("href", u);
   });
