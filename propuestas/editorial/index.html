@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Instituto Khépani — Editorial · Uriangato, Guanajuato</title>
   <meta name="description" content="Instituto Khépani Guanajuato en Uriangato. Primaria, secundaria y preparatoria escolarizadas. Creciendo en Valores. Propuesta editorial de vista previa.">
-  <link rel="icon" href="" data-k="favicon" type="image/jpeg">
+  <link rel="icon" href="../photos/logo-oficial.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -1061,7 +1061,7 @@ html[data-shot] .wa-fab { display: none !important; }
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#inicio">
-        <img src="" data-k="logo-oficial" alt="Instituto Khépani Guanajuato">
+        <img src="../photos/logo-oficial.png" alt="Instituto Khépani Guanajuato">
         <span class="brand-text">
           <strong>Instituto Khépani</strong>
           <span>Uriangato · Guanajuato</span>
@@ -1151,7 +1151,7 @@ html[data-shot] .wa-fab { display: none !important; }
 
         <article class="nivel nivel--primaria">
           <figure class="nivel-photo">
-            <img src="" data-k="nivel-primaria-alumnos" alt="Alumnos de Primaria del Instituto Khépani en un festejo familiar del campus">
+            <img src="../photos/nivel-primaria-alumnos.jpg" alt="Alumnos de Primaria del Instituto Khépani en un festejo familiar del campus">
           </figure>
           <div class="nivel-copy">
             <span class="kicker">01</span>
@@ -1159,7 +1159,7 @@ html[data-shot] .wa-fab { display: none !important; }
             <p class="cct">CCT 11PPR1068V · Modalidad escolarizada</p>
             <p>Seis grados en el edificio de Primaria. Formación en valores, inglés con Miss Sandy y el comienzo del trayecto Cambridge. El letrero de la fachada identifica la clave oficial del centro.</p>
             <figure class="nivel-building">
-              <img src="" data-k="primaria" alt="Fachada de Primaria Instituto Khépani, CCT 11PPR1068V">
+              <img src="../photos/primaria.jpg" alt="Fachada de Primaria Instituto Khépani, CCT 11PPR1068V">
               <figcaption class="photo-cap">Fachada de Primaria. CCT 11PPR1068V, modalidad escolarizada.</figcaption>
             </figure>
           </div>
@@ -1344,7 +1344,7 @@ html[data-shot] .wa-fab { display: none !important; }
             <figcaption>Explanada del campus.</figcaption>
           </figure>
           <figure class="plate">
-            <img src="../photos/miss-sandy-english.webp" data-k="miss-sandy-english" alt="Aula Miss Sandy English, segundo grado de Primaria">
+            <img src="../photos/miss-sandy-english.jpg" alt="Aula Miss Sandy English, segundo grado de Primaria">
             <figcaption>Miss Sandy English. Pasillo de 2° de Primaria.</figcaption>
           </figure>
         </div>
@@ -1466,18 +1466,24 @@ html[data-shot] .wa-fab { display: none !important; }
       document.documentElement.setAttribute('data-shot', shot);
     })();
   </script>
-  <script src="../media/favicon.js"></script>
   <script src="../media/galeria-jardines.js"></script>
-  <script src="../media/logo-oficial.js"></script>
   <script src="../media/nivel-preparatoria-alumnos.js"></script>
-  <script src="../media/nivel-primaria-alumnos.js"></script>
   <script src="../media/nivel-secundaria-alumnos.js"></script>
-  <script src="../media/primaria.js"></script>
 <script>
 (function () {
+  var SKIP = {
+    "logo-oficial": 1,
+    "nivel-primaria-alumnos": 1,
+    "miss-sandy-english": 1,
+    "primaria": 1,
+    "watermark": 1,
+    "favicon": 1
+  };
   var M = window.KHEPANI_IMG || {};
   document.querySelectorAll("[data-k]").forEach(function (el) {
-    var u = M[el.getAttribute("data-k")];
+    var k = el.getAttribute("data-k");
+    if (SKIP[k]) return;
+    var u = M[k];
     if (!u) return;
     var cur = el.getAttribute("src") || el.getAttribute("href") || "";
     if (cur.indexOf("../photos/") === 0) return;
@@ -1486,6 +1492,7 @@ html[data-shot] .wa-fab { display: none !important; }
   });
   var root = document.documentElement;
   Object.keys(M).forEach(function (k) {
+    if (SKIP[k]) return;
     root.style.setProperty("--kimg-" + k, "url(" + JSON.stringify(M[k]) + ")");
   });
 })();

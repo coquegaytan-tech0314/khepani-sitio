@@ -9,7 +9,7 @@
       content="Instituto Khépani. Formación con valores en Uriangato, Guanajuato. Primaria, Secundaria y Preparatoria incorporadas. Inscripciones abiertas."
     />
     <meta name="theme-color" content="#0b2a52" />
-    <link rel="icon" href="" data-k="favicon" type="image/jpeg" />
+    <link rel="icon" href="../photos/logo-oficial.png" type="image/png" />
 
     <link
       href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=zodiak@400,500,600,700&display=swap"
@@ -1312,13 +1312,13 @@ img[data-k="campus-cancha-cubierta"] {
 
 /* ─── Japanese Khépani watermark + fotos en Niveles ─── */
 .section {
-  background-image: var(--kimg-watermark, none);
+  background-image: url("../photos/watermark.png");
   background-repeat: repeat;
-  background-size: 520px auto;
+  background-size: 420px 525px;
   background-attachment: scroll;
 }
 .section--muted {
-  background-image: var(--kimg-watermark, none);
+  background-image: url("../photos/watermark.png");
 }
 .section--dark,
 .hero {
@@ -1471,7 +1471,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
     <header class="site-header" data-header>
       <div class="container header__inner">
         <a href="#top" class="brand" aria-label="Instituto Khépani, inicio">
-          <img src="" data-k="logo-oficial" alt="Instituto Khépani Guanajuato" class="brand__logo" width="56" height="56" />
+          <img src="../photos/logo-oficial.png" alt="Instituto Khépani Guanajuato" class="brand__logo" width="56" height="56" />
           <span class="brand__tag brand__tag--header">Creciendo en valores</span>
         </a>
 
@@ -1602,9 +1602,9 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
           <div class="levels">
             <article class="level">
               <figure class="level__photo">
-                <img class="level__kids" src="" data-k="nivel-primaria-alumnos" alt="Alumnos de Primaria del Instituto Khépani en un festejo familiar del campus" width="800" height="500" loading="lazy" />
+                <img class="level__kids" src="../photos/nivel-primaria-alumnos.jpg" alt="Alumnos de Primaria del Instituto Khépani en un festejo familiar del campus" width="800" height="500" loading="lazy" />
                 <figcaption class="level__building">
-                  <img src="" data-k="primaria" alt="Edificio de Primaria, CCT 11PPR1068V" width="320" height="200" loading="lazy" />
+                  <img src="../photos/primaria.jpg" alt="Edificio de Primaria, CCT 11PPR1068V" width="320" height="200" loading="lazy" />
                   <span>Fachada Primaria · CCT 11PPR1068V</span>
                 </figcaption>
               </figure>
@@ -1826,7 +1826,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
               <figcaption>Cancha techada y explanada central</figcaption>
             </figure>
             <figure class="gallery__item">
-              <img src="" data-k="primaria" alt="Edificio de Primaria del Instituto Khépani, CCT 11PPR1068V" loading="lazy" />
+              <img src="../photos/primaria.jpg" alt="Edificio de Primaria del Instituto Khépani, CCT 11PPR1068V" loading="lazy" />
               <figcaption>Primaria · CCT 11PPR1068V</figcaption>
             </figure>
             <figure class="gallery__item">
@@ -1834,7 +1834,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
               <figcaption>Secundaria · CCT 11PES0464H</figcaption>
             </figure>
             <figure class="gallery__item">
-              <img src="../photos/miss-sandy-english.webp" data-k="miss-sandy-english" alt="Corredor de aulas con puerta que dice Miss Sandy&#39;s English Class y carteles de películas en pared" loading="lazy" />
+              <img src="../photos/miss-sandy-english.jpg" alt="Corredor de aulas con puerta que dice Miss Sandy&#39;s English Class y carteles de películas en pared" loading="lazy" />
               <figcaption>Miss Sandy&rsquo;s English Class</figcaption>
             </figure>
             <figure class="gallery__item">
@@ -2051,7 +2051,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
     <footer class="site-footer">
       <div class="container footer__inner">
         <div class="footer__brand">
-          <img src="" data-k="logo-oficial" alt="" class="brand__logo" width="64" height="64" />
+          <img src="../photos/logo-oficial.png" alt="" class="brand__logo" width="64" height="64" />
           <div>
             <p class="brand__name">Instituto Khépani</p>
             <p class="brand__tag">Creciendo en valores · desde 2007</p>
@@ -2186,18 +2186,23 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
         if (shot) document.documentElement.setAttribute("data-shot", shot);
       })();
     </script>
-  <script src="../media/favicon.js"></script>
-  <script src="../media/logo-oficial.js"></script>
   <script src="../media/nivel-preparatoria-alumnos.js"></script>
-  <script src="../media/nivel-primaria-alumnos.js"></script>
   <script src="../media/nivel-secundaria-alumnos.js"></script>
-  <script src="../media/primaria.js"></script>
-  <script src="../media/watermark.js"></script>
 <script>
 (function () {
+  var SKIP = {
+    "logo-oficial": 1,
+    "nivel-primaria-alumnos": 1,
+    "miss-sandy-english": 1,
+    "primaria": 1,
+    "watermark": 1,
+    "favicon": 1
+  };
   var M = window.KHEPANI_IMG || {};
   document.querySelectorAll("[data-k]").forEach(function (el) {
-    var u = M[el.getAttribute("data-k")];
+    var k = el.getAttribute("data-k");
+    if (SKIP[k]) return;
+    var u = M[k];
     if (!u) return;
     var cur = el.getAttribute("src") || el.getAttribute("href") || "";
     if (cur.indexOf("../photos/") === 0) return;
@@ -2206,6 +2211,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
   });
   var root = document.documentElement;
   Object.keys(M).forEach(function (k) {
+    if (SKIP[k]) return;
     root.style.setProperty("--kimg-" + k, "url(" + JSON.stringify(M[k]) + ")");
   });
 })();
