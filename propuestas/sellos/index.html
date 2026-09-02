@@ -1439,6 +1439,67 @@ img[data-k="campus-cancha-cubierta"] {
 .credential a { color: var(--color-primary); }
 .credential--toefl { border-color: var(--color-navy); }
 
+/* ─── Intro type over Chiba stickers (cream halo + faint local wash, no white card) ─── */
+.section:not(.section--dark) .section__title,
+.section:not(.section--dark) .section__lede,
+.section:not(.section--dark) .section__eyebrow,
+.mv__intro,
+.mv__block h3,
+.mv__block p,
+.contact__copy > p,
+.contact__list dt,
+.contact__list dd {
+  text-shadow:
+    0 0 0.04em #fff8f0,
+    0 0 0.08em #fff8f0,
+    0 0 0.12em #fffaf5,
+    0.03em 0.02em 0.08em rgba(255, 248, 240, 0.95),
+    -0.03em 0.02em 0.08em rgba(255, 248, 240, 0.95),
+    0.03em -0.02em 0.08em rgba(255, 248, 240, 0.95),
+    -0.03em -0.02em 0.08em rgba(255, 248, 240, 0.95);
+}
+
+.section:not(.section--dark) .section__head,
+.mv__copy,
+.contact__copy {
+  position: relative;
+  isolation: isolate;
+}
+
+.section:not(.section--dark) .section__head::before,
+.mv__copy::before,
+.contact__copy::before {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 1.35rem;
+  background: radial-gradient(
+    ellipse 92% 88% at 18% 24%,
+    rgba(255, 248, 240, 0.72) 0%,
+    rgba(255, 248, 240, 0.36) 48%,
+    rgba(255, 248, 240, 0) 76%
+  );
+}
+
+.section:not(.section--dark) .section__head::before {
+  inset: -0.9rem -1.2rem -0.55rem;
+}
+
+.mv__copy::before {
+  top: -0.9rem;
+  right: -1.2rem;
+  left: -1.2rem;
+  height: 13.5rem;
+}
+
+.contact__copy::before {
+  top: -0.9rem;
+  right: -1.2rem;
+  bottom: 4.75rem;
+  left: -1.2rem;
+}
+
 html[data-shot] .wa-fab { display: none !important; }
 html[data-shot] .site-header { display: none !important; }
 html[data-shot="hero"] .hero { min-height: 100vh; }
