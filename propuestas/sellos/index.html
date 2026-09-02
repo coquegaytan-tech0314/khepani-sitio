@@ -49,11 +49,23 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Palette — Khépani (blanco + naranja dominantes, azul acento) */
-  --color-bg: #ffffff;
+  /* Palette — Khépani (cream paper + naranja dominantes, azul acento) */
+  --color-bg: #faf6ef;
   --color-surface: #fffaf5;
   --color-surface-2: #fef4ea;
   --color-surface-offset: #fbeadb;
+  --color-paper-muted: #f3ece3;
+  --paper-grain:
+    repeating-linear-gradient(
+      0deg,
+      rgba(40, 28, 16, 0.028) 0 1px,
+      transparent 1px 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(40, 28, 16, 0.02) 0 1px,
+      transparent 1px 4px
+    );
   --color-border: #ecd6c0;
   --color-divider: #f4e0cc;
 
@@ -124,6 +136,7 @@ body {
   font-size: var(--text-base);
   color: var(--color-text);
   background-color: var(--color-bg);
+  background-image: var(--paper-grain);
 }
 
 img,
@@ -614,7 +627,7 @@ textarea {
   padding-block: clamp(var(--space-16), 9vw, var(--space-32));
 }
 .section--muted {
-  background: var(--color-surface-2);
+  background-color: var(--color-paper-muted);
 }
 .section--dark {
   background: var(--color-navy);
@@ -1310,15 +1323,14 @@ img[data-k="campus-cancha-cubierta"] {
   .wa-fab { padding: 0.85rem; }
 }
 
-/* ─── Japanese Khépani watermark + fotos en Niveles ─── */
+/* ─── Cream notebook paper (no Chiba sticker wallpaper) ─── */
 .section {
-  background-image: url("../photos/watermark.png");
-  background-repeat: repeat;
-  background-size: 420px 525px;
-  background-attachment: scroll;
+  background-color: var(--color-bg);
+  background-image: var(--paper-grain);
 }
 .section--muted {
-  background-image: url("../photos/watermark.png");
+  background-color: var(--color-paper-muted);
+  background-image: var(--paper-grain);
 }
 .section--dark,
 .hero {
