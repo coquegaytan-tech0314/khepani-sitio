@@ -1,8 +1,9 @@
 # Campus Sep17 photo refresh (branch campus-sep17-refresh)
 
 ## Status
-- HTML patches ready locally; JPEG exact bytes staged on Google Drive (and on the box).
-- Live institutokhepani.com NOT touched.
+- Four exact-byte JPEGs are on this branch under `propuestas/photos/` (hashes match `CAMPUS_SEP17_MANIFEST.json`).
+- HTML applied via `python3 propuestas/apply_campus_sep17_html.py` on Editorial / Sellos / Academia.
+- Live institutokhepani.com NOT touched. GitHub Pages source is `main` — github.io will not pick this up until merge + Pages rebuild.
 - PR #22 (editorial hero HTML only, no JPEG) should be superseded by this branch.
 
 ## Exact JPEG bytes (sha256)
