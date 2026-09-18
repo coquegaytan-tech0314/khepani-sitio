@@ -1,0 +1,26 @@
+{
+  "campus-bandera-sep17.jpg": {
+    "bytes": 1072480,
+    "w": 1800,
+    "h": 2400,
+    "sha256": "cb93d33a351809d70bc59902a5c327d114894e314cc46274aefe50b73fb1a977"
+  },
+  "campus-secundaria-portrait-sep17.jpg": {
+    "bytes": 452568,
+    "w": 1800,
+    "h": 2400,
+    "sha256": "9f7fa03a0f0a1dcb1da480bf49c13c946fd6758951647b892764eb8318a0d500"
+  },
+  "campus-secundaria-sep17.jpg": {
+    "bytes": 595382,
+    "w": 2400,
+    "h": 1800,
+    "sha256": "d5a373918aaddd968d60ae153137e2259fdf2c6d7e6de8770ec63b988f76d105"
+  },
+  "hero-campus-hd.jpg": {
+    "bytes": 522770,
+    "w": 2400,
+    "h": 1800,
+    "sha256": "89a042d305d91fa05cd94c6cf3e50239316d1dd84e2239dc11678c353c78051e"
+  }
+}

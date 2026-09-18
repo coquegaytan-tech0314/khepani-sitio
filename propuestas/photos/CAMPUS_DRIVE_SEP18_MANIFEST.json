@@ -1,0 +1,39 @@
+{
+  "branch": "campus-sep17-refresh",
+  "pr": 23,
+  "cloudagent": "unavailable_to_subagent_use_ferry",
+  "photos": [
+    {
+      "file": "hero-campus-hd.jpg",
+      "bytes": 706167,
+      "sha256": "561a744eacdeb319526f116ad85a8b70e6a67ce82854beff4278c35ff96a3f6b",
+      "src": "IMG_8784.jpg"
+    },
+    {
+      "file": "campus-primaria-sep18.jpg",
+      "bytes": 662271,
+      "sha256": "d5e90356c2f1376f84a11fda622f1155943f39fb40047e91558486112a5e84f7",
+      "src": "IMG_8817.jpg"
+    },
+    {
+      "file": "campus-cancha-cubierta-sep18.jpg",
+      "bytes": 577790,
+      "sha256": "c694065d2fb7a9dc91682d3a478ffd6fd149c200cff3ead5c46cbbd1a41c5f6c",
+      "src": "IMG_8829.jpg"
+    },
+    {
+      "file": "campus-bandera-sep18.jpg",
+      "bytes": 780082,
+      "sha256": "143ac3bd1fbc5c04a4ed8f3470e5c151359b7f2bd01e1a42772ebc8371f7dd7d",
+      "src": "IMG_8800.jpg"
+    },
+    {
+      "file": "campus-secundaria-flag-sep18.jpg",
+      "bytes": 570262,
+      "sha256": "55026cfac553bbcd85983b0abdec091e95369d87b0c9018092fcb9cb5e731cb6",
+      "src": "IMG_8779.jpg"
+    }
+  ],
+  "box_ship_dir": "/workspace/khep-hq/assets/campus-drive-sep18/ship/",
+  "note": "JPEGs landed with exact bytes. HTML patched via apply_campus_drive_sep18.py. PR #23 remains draft."
+}
