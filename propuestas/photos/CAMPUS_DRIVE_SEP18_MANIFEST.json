@@ -35,5 +35,5 @@
     }
   ],
   "box_ship_dir": "/workspace/khep-hq/assets/campus-drive-sep18/ship/",
-  "note": "HTML patched via apply script. JPEG exact bytes still need ferry into propuestas/photos/."
+  "note": "JPEGs landed with exact bytes. HTML patched via apply_campus_drive_sep18.py. PR #23 remains draft."
 }

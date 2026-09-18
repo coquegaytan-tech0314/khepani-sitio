@@ -1,7 +1,6 @@
 # JPEG ferry — Drive shortlist Sep18 (exact bytes)
 
-CloudAgent unavailable to this executor subagent (GetDynamicTools/CloudAgent not in tool list).
-HTML + apply script are pushed on `campus-sep17-refresh`. Copy these 5 JPEGs into `propuestas/photos/` with **exact** bytes (no recompress):
+Drive shortlist Sep18 JPEGs landed in `propuestas/photos/` with exact bytes (no recompress). HTML patched via `apply_campus_drive_sep18.py`. PR #23 remains draft.
 
 | file | bytes | sha256 |
 |------|------:|--------|
