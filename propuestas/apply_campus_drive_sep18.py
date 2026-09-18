@@ -47,7 +47,7 @@ def patch(html: str) -> str:
     )
     html = re.sub(
         r'(src=\"../photos/hero-campus-hd\\.jpg\")\\s+data-k=\"hero-campus\"',
-        r\"\\1\",
+        r'\\1',
         html,
     )
     html = re.sub(
@@ -62,12 +62,12 @@ def patch(html: str) -> str:
     )
     html = re.sub(
         r'(src=\"../photos/campus-primaria-sep18\\.jpg\")\\s+data-k=\"primaria\"',
-        r\"\\1\",
+        r'\\1',
         html,
     )
     html = re.sub(
         r'(src=\"../photos/campus-secundaria-sep17\\.jpg\")\\s+data-k=\"secundaria\"',
-        r\"\\1\",
+        r'\\1',
         html,
     )
     html = re.sub(
@@ -77,7 +77,7 @@ def patch(html: str) -> str:
     )
     html = re.sub(
         r'(src=\"../photos/campus-cancha-cubierta-sep18\\.jpg\")\\s+data-k=\"campus-cancha-cubierta\"',
-        r\"\\1\",
+        r'\\1',
         html,
     )
     missing = [FIGS[k] for k in FIGS if k not in html]
@@ -89,39 +89,39 @@ def patch(html: str) -> str:
                 html,
             )
         if not m:
-            raise SystemExit(\"campus gallery anchor not found\")
-        html = html[: m.end()] + \"\".join(missing) + html[m.end() :]
+            raise SystemExit('campus gallery anchor not found')
+        html = html[: m.end()] + ''.join(missing) + html[m.end() :]
     return html
 
 
 def main() -> None:
-    base = Path(\"propuestas\")
+    base = Path('propuestas')
     targets = []
-    for prop in (\"editorial\", \"sellos\", \"academia\"):
-        for fname in (\"index.html\", \"full.html\"):
+    for prop in ('editorial', 'sellos', 'academia'):
+        for fname in ('index.html', 'full.html'):
             p = base / prop / fname
             if p.exists():
                 targets.append(p)
     if not targets:
-        print(\"no propuestas HTML found — run from repo root\", file=sys.stderr)
+        print('no propuestas HTML found — run from repo root', file=sys.stderr)
         sys.exit(1)
     for p in targets:
-        old = p.read_text(encoding=\"utf-8\")
+        old = p.read_text(encoding='utf-8')
         new = patch(old)
-        p.write_text(new, encoding=\"utf-8\")
+        p.write_text(new, encoding='utf-8')
         print(
-            \"patched\",
+            'patched',
             p,
-            \"hero-hd\", new.count(\"hero-campus-hd.jpg\"),
-            \"primaria18\", new.count(\"campus-primaria-sep18.jpg\"),
-            \"cancha18\", new.count(\"campus-cancha-cubierta-sep18.jpg\"),
-            \"bandera18\", new.count(\"campus-bandera-sep18.jpg\"),
-            \"secflag18\", new.count(\"campus-secundaria-flag-sep18.jpg\"),
-            \"sec17\", new.count(\"campus-secundaria-sep17.jpg\"),
-            \"data-k-hero\", new.count('data-k=\"hero-campus\"'),
-            \"data-k-cancha\", new.count('data-k=\"campus-cancha-cubierta\"'),
+            'hero-hd', new.count('hero-campus-hd.jpg'),
+            'primaria18', new.count('campus-primaria-sep18.jpg'),
+            'cancha18', new.count('campus-cancha-cubierta-sep18.jpg'),
+            'bandera18', new.count('campus-bandera-sep18.jpg'),
+            'secflag18', new.count('campus-secundaria-flag-sep18.jpg'),
+            'sec17', new.count('campus-secundaria-sep17.jpg'),
+            'data-k-hero', new.count('data-k="hero-campus"'),
+            'data-k-cancha', new.count('data-k="campus-cancha-cubierta"'),
         )
 
 
-if __name__ == \"__main__\":
+if __name__ == '__main__':
     main()
