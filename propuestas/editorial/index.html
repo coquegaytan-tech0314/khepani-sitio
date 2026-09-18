@@ -1,1 +1,30 @@
-file:///tmp/editorial-restore-content.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instituto Khépani · Editorial (restaurando)</title>
+  <script>
+  // Temporary loader: branch file was accidentally replaced with a placeholder.
+  // CloudAgent will replace this with the patched full HTML.
+  fetch('https://raw.githubusercontent.com/coquegaytan-tech0314/khepani-sitio/main/propuestas/editorial/index.html')
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      // Apply the same CSS-first facade fix the PR intends
+      html = html.replace(
+        'object-position: 50% 42%;',
+        'object-position: 32% 48%;'
+      );
+      document.open();
+      document.write(html);
+      document.close();
+    })
+    .catch(function (e) {
+      document.body.textContent = 'No se pudo cargar Editorial desde main: ' + e;
+    });
+  </script>
+</head>
+<body>
+  <p style="font-family:system-ui;padding:2rem">Cargando propuesta Editorial…</p>
+</body>
+</html>
