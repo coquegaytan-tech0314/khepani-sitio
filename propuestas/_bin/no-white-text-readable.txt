@@ -1,0 +1,4 @@
+# no-white-text-readable
+
+Draft branch for navy-readable text (no washed white letters on photo/cream).
+Parent merges after Koke OK.
