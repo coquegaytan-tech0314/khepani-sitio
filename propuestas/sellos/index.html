@@ -959,13 +959,14 @@ img[data-k="campus-cancha-cubierta"] {
   gap: var(--space-6);
 }
 .tradiciones li {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: white;
+  border: 1px solid color-mix(in oklab, var(--color-navy) 12%, transparent);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(11, 42, 82, 0.06));
 }
 .trad__year {
   font-size: var(--text-xs);
@@ -975,13 +976,21 @@ img[data-k="campus-cancha-cubierta"] {
   text-transform: uppercase;
 }
 .tradiciones h3 {
-  color: white;
+  color: var(--color-navy);
   font-size: var(--text-lg);
 }
 .tradiciones p {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text);
   font-size: var(--text-sm);
 }
+/* If a dark panel ever reuses .tradiciones, keep white type there */
+.section--dark .tradiciones li {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+.section--dark .tradiciones h3 { color: white; }
+.section--dark .tradiciones p { color: rgba(255, 255, 255, 0.72); }
 
 /* ─── Reviews ─── */
 .reviews {
@@ -1341,6 +1350,11 @@ img[data-k="campus-cancha-cubierta"] {
 .hero {
   background-image: none;
 }
+/* Keep solid navy on dark panels even after cream paper .section background-color */
+.section--dark {
+  background-color: var(--color-navy);
+  color: white;
+}
 
 .level {
   overflow: hidden;
@@ -1456,6 +1470,17 @@ img[data-k="campus-cancha-cubierta"] {
 .credential a { color: var(--color-primary); }
 .credential--toefl { border-color: var(--color-navy); }
 
+
+/* VIDA ESCOLAR on cream: force readable ink (never white-on-cream) */
+#vida.section--muted .section__title {
+  color: var(--color-navy);
+}
+#vida.section--muted .section__lede {
+  color: var(--color-text);
+}
+#vida.section--muted .section__eyebrow {
+  color: var(--color-primary);
+}
 /* ─── Soft cream scrim only — no white letter-halos on paper/photo ─── */
 .section:not(.section--dark) .section__title,
 .section:not(.section--dark) .section__lede,
@@ -1966,9 +1991,9 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
       </section>
 
       <!-- VIDA ESCOLAR -->
-      <section class="section section--dark" id="vida" data-reveal>
+      <section class="section section--muted" id="vida" data-reveal>
         <div class="container">
-          <header class="section__head section__head--light">
+          <header class="section__head">
             <p class="section__eyebrow">Vida escolar</p>
             <h2 class="section__title">Más que una prepa, una familia.</h2>
             <p class="section__lede">
