@@ -1,7 +1,7 @@
 /* Propuesta Presidencial — Instituto Khépani
    Tinta blanca solo sobre relleno navy sólido:
    .util, .hero__copy, .band, .chat-head, .bubble--user, .btn--navy, .site-footer, .skip:focus
-   El botón de WhatsApp replica el de las otras propuestas (verde sólido). */
+   El botón de WhatsApp es verde sólido. El texto blanco solo aparece con cursor o foco de teclado. */
 
 :root {
   --navy: #0b2a52;
@@ -533,7 +533,6 @@ h1, h2, h3 {
 }
 @media (max-width: 859px) {
   .thread { max-height: 260px; min-height: 160px; }
-  .composer { padding-right: 4.4rem; }
 }
 .bubble { max-width: min(100%, 40rem); border-radius: 16px; padding: 0.8rem 0.95rem; overflow-wrap: anywhere; }
 .bubble--user { align-self: flex-end; background: var(--navy); color: var(--white); }
@@ -686,33 +685,57 @@ h1, h2, h3 {
 
 .wa-fab {
   position: fixed;
-  right: clamp(1rem, 3vw, 1.5rem);
-  bottom: clamp(1rem, 3vw, 1.5rem);
+  right: 1.15rem;
+  bottom: 1.15rem;
   z-index: 40;
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.85rem 1.15rem 0.85rem 0.85rem;
+  justify-content: center;
+  gap: 0;
+  height: 3.5rem;
+  min-width: 3.5rem;
+  padding: 0 0.9rem;
   border-radius: 999px;
   background: #25d366;
   color: #fff;
   font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  box-shadow: 0 10px 30px -6px rgba(37, 211, 102, 0.55), 0 4px 10px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -8px rgba(37, 211, 102, 0.7), 0 4px 10px rgba(0, 0, 0, 0.16);
+  transition: bottom 0.25s ease, box-shadow 0.25s ease, padding 0.32s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .wa-fab svg {
-  width: 22px;
-  height: 22px;
+  width: 1.7rem;
+  height: 1.7rem;
   flex: none;
-  background: #fff;
-  color: #128c7e;
-  border-radius: 999px;
-  padding: 4px;
+  color: #fff;
 }
-.wa-fab:hover { color: #fff; }
-@media (max-width: 480px) {
-  .wa-fab__label { display: none; }
-  .wa-fab { padding: 0.85rem; }
+.wa-fab__label {
+  display: block;
+  flex: 0 0 auto;
+  max-width: 0;
+  min-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .wa-fab:hover,
+  .wa-fab:focus-visible {
+    gap: 0.6rem;
+    padding: 0 1.15rem 0 0.95rem;
+    color: #fff;
+    box-shadow: 0 14px 32px -8px rgba(37, 211, 102, 0.75), 0 6px 14px rgba(0, 0, 0, 0.18);
+  }
+  .wa-fab:hover .wa-fab__label,
+  .wa-fab:focus-visible .wa-fab__label {
+    max-width: 13rem;
+    opacity: 1;
+  }
 }
 body.menu-open .wa-fab { display: none; }
 
@@ -725,4 +748,6 @@ body.menu-open .wa-fab { display: none; }
   .nivel-frame img { transition: none; }
   .dots span { animation: none; opacity: 1; }
   .reveal.is-waiting { opacity: 1; transform: none; }
+  .wa-fab,
+  .wa-fab__label { transition: none; }
 }
