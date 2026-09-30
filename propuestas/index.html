@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tres propuestas — Instituto Khépani</title>
-  <meta name="description" content="Tres borradores de diseño para Instituto Khépani en Uriangato, Guanajuato. Sellos, Editorial y Academia. No es el sitio en vivo.">
+  <title>Cuatro propuestas — Instituto Khépani</title>
+  <meta name="description" content="Cuatro borradores de diseño para Instituto Khépani en Uriangato, Guanajuato. Sellos, Editorial, Academia y Presidencial. No es el sitio en vivo.">
   <meta name="robots" content="noindex">
   <style>
     :root {
@@ -61,7 +61,11 @@
       flex: 1 1 auto;
       justify-content: flex-end;
       flex-wrap: nowrap;
+      min-width: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
+    .tabs::-webkit-scrollbar { display: none; }
     .tab {
       appearance: none;
       border: 1px solid var(--border);
@@ -69,10 +73,11 @@
       color: var(--navy);
       font-weight: 650;
       font-size: 13px;
-      padding: 8px 14px;
+      padding: 8px 12px;
       border-radius: 999px;
       cursor: pointer;
       font-family: inherit;
+      flex: 0 0 auto;
     }
     .tab[aria-selected="true"] {
       background: var(--naranja);
@@ -88,7 +93,11 @@
       border-left: 1px solid var(--border);
       max-width: 340px;
     }
-    @media (min-width: 840px) {
+    @media (max-width: 720px) {
+      .brand span { display: none; }
+      .tab { font-size: 12px; padding: 7px 10px; }
+    }
+    @media (min-width: 1100px) {
       .note { display: block; }
     }
     .frames { height: calc(100% - var(--tab-h)); position: relative; background: #fff; }
@@ -104,23 +113,25 @@
   <div class="chrome">
     <div class="brand">
       <b>Instituto Khépani</b>
-      <span>Uriangato · tres borradores</span>
+      <span>Uriangato · cuatro borradores</span>
     </div>
     <div class="tabs" role="tablist" aria-label="Propuestas de diseño">
       <button class="tab" role="tab" id="tab-sellos" aria-controls="view-sellos" aria-selected="true" data-tab="sellos">Sellos</button>
       <button class="tab" role="tab" id="tab-editorial" aria-controls="view-editorial" aria-selected="false" data-tab="editorial">Editorial</button>
       <button class="tab" role="tab" id="tab-academia" aria-controls="view-academia" aria-selected="false" data-tab="academia">Academia</button>
+      <button class="tab" role="tab" id="tab-presidencial" aria-controls="view-presidencial" aria-selected="false" data-tab="presidencial">Presidencial</button>
     </div>
-    <p class="note">Borradores de diseño — no son el sitio en vivo institutokhepani.com · Libramiento San Miguel No. 202, La Joyita · 445 103 0946 · Desde 2007 · ~350 alumnos · 12 grados</p>
+    <p class="note">Borradores de diseño — no son el sitio en vivo institutokhepani.com</p>
   </div>
   <div class="frames">
     <iframe id="view-sellos" title="Propuesta Sellos" src="sellos/" allow="clipboard-write"></iframe>
     <iframe id="view-editorial" title="Propuesta Editorial" src="editorial/" hidden allow="clipboard-write"></iframe>
     <iframe id="view-academia" title="Propuesta Academia" src="academia/" hidden allow="clipboard-write"></iframe>
+    <iframe id="view-presidencial" title="Propuesta Presidencial" src="presidencial/" hidden allow="clipboard-write"></iframe>
   </div>
   <script>
     (function () {
-      var names = ["sellos", "editorial", "academia"];
+      var names = ["sellos", "editorial", "academia", "presidencial"];
       function show(name) {
         if (names.indexOf(name) === -1) name = "sellos";
         names.forEach(function (n) {
