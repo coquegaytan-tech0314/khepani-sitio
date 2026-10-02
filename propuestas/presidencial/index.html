@@ -46,7 +46,7 @@
           </a>
           <nav class="nav" aria-label="Secciones">
             <a href="#niveles">Niveles</a>
-            <a href="#oficio">Oficio</a>
+            <a href="#oficio">Vida escolar</a>
             <a href="#campus">Campus</a>
             <a href="#preguntale">Pregúntale</a>
             <a href="#contacto">Contacto</a>
@@ -106,6 +106,61 @@
         </div>
       </section>
 
+      <div class="discover only-desk">
+        <form class="seek" id="que-buscas" role="search" action="#niveles">
+          <div class="seek__pill">
+            <label class="seek__field" for="que-buscas-input">
+              <span class="seek__prompt">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="M16 16.5L20 20.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                ¿Qué buscas?
+              </span>
+              <input id="que-buscas-input" data-seek-input type="search" enterkeyhint="search" autocomplete="off" placeholder="Primaria, inscripciones, la paz…" />
+            </label>
+            <button class="seek__clear" type="button" data-seek-clear hidden>Borrar</button>
+            <div class="seek__segments" role="group" aria-label="Ir a una parte del borrador">
+              <button type="button" data-goto="niveles" aria-pressed="false">Nivel</button>
+              <button type="button" data-goto="contacto" aria-pressed="false">Inscripciones</button>
+              <button type="button" data-goto="eventos" aria-pressed="false">Eventos</button>
+            </div>
+          </div>
+          <p class="seek__status" data-seek-status role="status">Escriba una palabra, o elija nivel, inscripciones o eventos.</p>
+        </form>
+        <nav class="cats" aria-label="Categorías del campus">
+          <a href="#card-primaria">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5V5.5z" stroke="currentColor" stroke-width="1.7"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span>Primaria</span>
+          </a>
+          <a href="#card-secundaria">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V6.5L12 3l8 3.5V20" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 20v-5h6v5" stroke="currentColor" stroke-width="1.7"/><path d="M9 9h.01M12 9h.01M15 9h.01M9 12.5h.01M12 12.5h.01M15 12.5h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span>Secundaria</span>
+          </a>
+          <a href="#card-prepa">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10l9-5 9 5-9 5-9-5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 12v4.5c0 .5 2.2 2 5 2s5-1.5 5-2V12" stroke="currentColor" stroke-width="1.7"/><path d="M21 10v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span>Preparatoria</span>
+          </a>
+          <a href="#campus">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="11" r="2" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span>Campus</span>
+          </a>
+          <a href="#ingles">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M4 12h16M12 4c2.2 2.4 3.3 5.2 3.3 8S14.2 17.6 12 20c-2.2-2.4-3.3-5.2-3.3-8S9.8 6.4 12 4z" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span>Inglés</span>
+          </a>
+          <a href="#huerto">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19C5 11 10 5 19 4c1 8-1 14-8 16-2.2.6-4.4-.2-6-1z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 15c2-2 4-3 7-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span>Huerto</span>
+          </a>
+          <a href="#eventos">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.7"/><circle cx="16" cy="8" r="2" stroke="currentColor" stroke-width="1.7"/><path d="M4.5 18c.6-2.4 2.2-3.6 3.5-3.6S11 15.6 11.5 18M12.5 18c.6-2.4 2.2-3.6 3.5-3.6s3 .9 3.5 3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span>La paz</span>
+          </a>
+          <a href="#preguntale">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 16.5l-2 3 3.2-1.4A8 8 0 1 0 6 16.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            <span>Pregúntale</span>
+          </a>
+        </nav>
+      </div>
+
       <section class="lema reveal" id="lema" aria-labelledby="lema-titulo">
         <div class="wrap-narrow">
           <p class="eyebrow" id="lema-titulo">En el letrero de la entrada</p>
@@ -122,8 +177,44 @@
           <header>
             <p class="eyebrow">Oferta educativa</p>
             <h2>Tres niveles, un solo campus.</h2>
-            <p class="lede">Elija un nivel. La ficha y la fachada cambian; el predio es el mismo, en Libramiento San Miguel No. 202.</p>
+            <p class="lede lede--tabs">Elija un nivel. La ficha y la fachada cambian; el predio es el mismo, en Libramiento San Miguel No. 202.</p>
+            <p class="lede only-desk">Primaria, Secundaria y Preparatoria comparten Libramiento San Miguel No. 202. Cada ficha es un edificio de esa misma casa.</p>
           </header>
+          <div class="nivel-cards only-desk">
+            <article class="pcard" id="card-primaria" data-keywords="primaria nivel niveles grados cct seis edificio valores ingles">
+              <div class="pcard__media">
+                <img src="../photos/campus-primaria-sep18.jpg" alt="Edificio de Primaria del Instituto Khépani, con arcos, jardín y letrero en la fachada" />
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__kicker">CCT 11PPR1068V · Acuerdo SEG 053/2013</p>
+                <h3>Primaria</h3>
+                <p>Seis grados en el edificio de Primaria. Formación con valores e inglés desde los primeros años, en el mismo proyecto que sigue en Secundaria.</p>
+                <a class="pcard__more" href="#contacto">Pedir informes de Primaria</a>
+              </div>
+            </article>
+            <article class="pcard" id="card-secundaria" data-keywords="secundaria nivel niveles grados cct tres cancha cambridge">
+              <div class="pcard__media">
+                <img src="../photos/campus-secundaria-sep17.jpg" alt="Edificio de Secundaria frente a la cancha" />
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__kicker">CCT 11PES0464H · Acuerdo SEG 051/2013</p>
+                <h3>Secundaria</h3>
+                <p>Tres grados junto a la cancha. Continúa el inglés Cambridge y la formación católica. Correo: secundaria@institutokhepani.com.</p>
+                <a class="pcard__more" href="#contacto">Pedir informes de Secundaria</a>
+              </div>
+            </article>
+            <article class="pcard" id="card-prepa" data-keywords="preparatoria nivel niveles bachillerato toefl cct fachada cafe">
+              <div class="pcard__media">
+                <img src="../photos/galeria-fachada-lateral.webp" alt="Fachada lateral del edificio de Preparatoria" />
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__kicker">CCT 11PBH0047S · Acuerdo SEG 048/2017</p>
+                <h3>Preparatoria</h3>
+                <p>Bachillerato en el edificio de fachada lateral. Centro de evaluación TOEFL y el ciclo Un café por mi futuro. Correo: preparatoria@institutokhepani.com.</p>
+                <a class="pcard__more" href="#contacto">Pedir informes de Preparatoria</a>
+              </div>
+            </article>
+          </div>
           <div class="niveles-grid">
             <div>
               <div role="tablist" aria-label="Niveles">
@@ -148,29 +239,53 @@
 
       <section class="band reveal" id="oficio">
         <div class="wrap">
-          <p class="eyebrow">El oficio de la casa</p>
-          <h2>Lo que esta casa sostiene.</h2>
-          <p class="lede">Cuatro hechos del instituto. Sin cifras de más.</p>
+          <p class="eyebrow eyebrow--tabs">El oficio de la casa</p>
+          <p class="eyebrow only-desk">Vida escolar</p>
+          <h2 class="h-tabs">Lo que esta casa sostiene.</h2>
+          <h2 class="only-desk">La vida en esta casa.</h2>
+          <p class="lede lede--tabs">Cuatro hechos del instituto. Sin cifras de más.</p>
+          <p class="lede only-desk">Formación, inglés, huerto y los doce grados juntos. Nada aquí es una cifra nueva.</p>
           <div class="oficio">
-            <article>
-              <p class="oficio-num">01</p>
-              <h3>Formación católica</h3>
-              <p>Educación inspirada en principios cristianos, de Primaria a Preparatoria, con el lema Creciendo en valores.</p>
+            <article id="valores" data-keywords="formacion catolica valores lema cristianos vida">
+              <figure class="card-shot only-desk">
+                <img src="../photos/letrero-misio-vision.webp" alt="Letrero de misión, visión y valores en la entrada del campus" />
+              </figure>
+              <div class="card-copy">
+                <p class="oficio-num">01</p>
+                <h3>Formación católica</h3>
+                <p>Educación inspirada en principios cristianos, de Primaria a Preparatoria, con el lema Creciendo en valores.</p>
+              </div>
             </article>
-            <article>
-              <p class="oficio-num">02</p>
-              <h3>Cambridge y TOEFL</h3>
-              <p>KET y PET for Schools en Primaria y Secundaria. En Preparatoria, centro de evaluación TOEFL.</p>
+            <article id="ingles" data-keywords="cambridge toefl ingles ket pet miss sandy english vida">
+              <figure class="card-shot only-desk">
+                <img class="fit-contain" src="../photos/miss-sandy-english.jpg" alt="Letrero del aula Miss Sandy's English Class" />
+              </figure>
+              <div class="card-copy">
+                <p class="oficio-num">02</p>
+                <h3>Cambridge y TOEFL</h3>
+                <p>KET y PET for Schools en Primaria y Secundaria. En Preparatoria, centro de evaluación TOEFL.</p>
+              </div>
             </article>
-            <article>
-              <p class="oficio-num">03</p>
-              <h3>Huerto escolar</h3>
-              <p>Se trabaja en el campus, junto a las canchas y los jardines de La Joyita.</p>
+            <article id="huerto" data-keywords="huerto escolar huerta jardines canchas vida">
+              <div class="card-shot card-shot--icon only-desk" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 19C5 11 10 5 19 4c1 8-1 14-8 16-2.2.6-4.4-.2-6-1z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 15c2-2 4-3 7-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                <p>En el campus</p>
+              </div>
+              <div class="card-copy">
+                <p class="oficio-num">03</p>
+                <h3>Huerto escolar</h3>
+                <p>Se trabaja en el campus, junto a las canchas y los jardines de La Joyita.</p>
+              </div>
             </article>
-            <article>
-              <p class="oficio-num">04</p>
-              <h3>Una sola casa</h3>
-              <p>Desde 2007. Cerca de 350 alumnos. Doce grados. Tres niveles escolarizados.</p>
+            <article id="casa" data-keywords="2007 alumnos grados niveles casa campus vida">
+              <figure class="card-shot only-desk">
+                <img src="../photos/galeria-explanada.webp" alt="Explanada central del campus con cerro al fondo" />
+              </figure>
+              <div class="card-copy">
+                <p class="oficio-num">04</p>
+                <h3>Una sola casa</h3>
+                <p>Desde 2007. Cerca de 350 alumnos. Doce grados. Tres niveles escolarizados.</p>
+              </div>
             </article>
           </div>
         </div>
@@ -184,23 +299,23 @@
             <p class="lede">Cancha, bandera, explanada y la Semana por la Paz. La fachada lateral es el edificio de Preparatoria.</p>
           </header>
           <div class="gallery">
-            <figure class="wide">
+            <figure class="wide" data-keywords="cancha techada explanada campus galeria">
               <img src="../photos/campus-cancha-cubierta-sep18.jpg" alt="Cancha techada del campus Instituto Khépani" loading="lazy" />
               <figcaption>Cancha techada <span>Explanada central</span></figcaption>
             </figure>
-            <figure>
+            <figure data-keywords="bandera campus uriangato galeria">
               <img src="../photos/campus-bandera-sep18.jpg" alt="Bandera mexicana en el campus Instituto Khépani" loading="lazy" />
               <figcaption>Bandera del campus <span>Uriangato, Gto.</span></figcaption>
             </figure>
-            <figure>
+            <figure data-keywords="cancha secundaria galeria campus">
               <img src="../photos/galeria-cancha-frontal.webp" alt="Cancha frontal y edificio de Secundaria" loading="lazy" />
               <figcaption>Cancha y Secundaria <span>CCT 11PES0464H</span></figcaption>
             </figure>
-            <figure>
+            <figure id="eventos" data-keywords="paz semana eventos evento cancha galeria">
               <img src="../photos/vida-paz.webp" alt="Alumnos formando la palabra PAZ en la cancha durante la Semana por la Paz" loading="lazy" />
               <figcaption>Semana por la Paz <span>La palabra PAZ, en la cancha</span></figcaption>
             </figure>
-            <figure>
+            <figure data-keywords="preparatoria fachada galeria campus toefl">
               <img src="../photos/galeria-fachada-lateral.webp" alt="Fachada lateral del edificio de Preparatoria" loading="lazy" />
               <figcaption>Preparatoria <span>Fachada lateral · CCT 11PBH0047S</span></figcaption>
             </figure>
@@ -542,10 +657,13 @@
           fab.style.bottom = "calc(" + bottom + "px + env(safe-area-inset-bottom))";
           fab.classList.toggle("is-away", away);
           if (away || !composer) return;
-          var pad = 14;
+          var pad = 20;
           var fr = fab.getBoundingClientRect();
           var cr = composer.getBoundingClientRect();
-          var hit = fr.left < cr.right + pad && fr.right > cr.left - pad && fr.top < cr.bottom + pad && fr.bottom > cr.top - pad;
+          var wide = window.matchMedia("(min-width: 1024px)").matches;
+          var left = fr.left;
+          if (wide) left = Math.min(fr.left, fr.right - 260);
+          var hit = left < cr.right + pad && fr.right > cr.left - pad && fr.top < cr.bottom + pad && fr.bottom > cr.top - pad;
           if (!hit) return;
           var extra = Math.ceil(fr.bottom - (cr.top - pad));
           if (extra > 0) {
@@ -575,12 +693,14 @@
           else if (rect.top < 64) scrollByNow(Math.floor(rect.top - 64));
         }
 
+        var topbar = document.querySelector(".topbar");
         var onScroll = function () {
           var alto = document.documentElement.scrollHeight - window.innerHeight;
           var y = window.scrollY || window.pageYOffset || 0;
           if (document.body.classList.contains("menu-open")) y = menuScrollY;
           var p = alto > 0 ? (y / alto) * 100 : 0;
           if (barra) barra.style.width = Math.min(100, Math.max(0, p)) + "%";
+          if (topbar) topbar.classList.toggle("is-scrolled", y > 8);
           placeFab();
         };
         document.addEventListener("scroll", onScroll, { passive: true });
@@ -622,6 +742,150 @@
         }
         onScroll();
         syncKeyboard();
+
+        var seekForm = document.querySelector(".seek");
+        var seekInput = document.querySelector("[data-seek-input]");
+        var seekStatus = document.querySelector("[data-seek-status]");
+        var seekClear = document.querySelector("[data-seek-clear]");
+        var seekButtons = Array.prototype.slice.call(document.querySelectorAll("[data-goto]"));
+        var deskMq = window.matchMedia("(min-width: 1024px)");
+
+        function fold(s) {
+          return String(s || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+        }
+
+        function seekCards() {
+          return Array.prototype.slice.call(document.querySelectorAll("[data-keywords]"));
+        }
+
+        function clearSeekFilter() {
+          seekCards().forEach(function (card) { card.classList.remove("is-filtered-out"); });
+        }
+
+        function saySeek(text) {
+          if (seekStatus) seekStatus.textContent = text;
+        }
+
+        function applySeek(raw, shouldScroll) {
+          if (!deskMq.matches) {
+            clearSeekFilter();
+            return;
+          }
+          var q = fold(raw);
+          if (seekClear) seekClear.hidden = !q;
+          if (q.length < 3) {
+            clearSeekFilter();
+            saySeek(q ? "Siga escribiendo, o elija nivel, inscripciones o eventos." : "Escriba una palabra, o elija nivel, inscripciones o eventos.");
+            return;
+          }
+          if (q.indexOf("inscrip") !== -1 || q === "informes") {
+            clearSeekFilter();
+            saySeek("Las inscripciones se piden en Informes: teléfono, WhatsApp o correo, de lunes a viernes.");
+            var contacto = document.getElementById("contacto");
+            if (shouldScroll && contacto) contacto.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+            return;
+          }
+          var words = q.split(/\s+/).filter(function (w) { return w.length >= 3; });
+          if (!words.length) {
+            clearSeekFilter();
+            saySeek("Siga escribiendo, o elija nivel, inscripciones o eventos.");
+            return;
+          }
+          var cards = seekCards();
+          var shown = 0;
+          cards.forEach(function (card) {
+            var hay = fold(card.getAttribute("data-keywords"));
+            var ok = words.every(function (w) { return hay.indexOf(w) !== -1; });
+            card.classList.toggle("is-filtered-out", !ok);
+            if (ok) shown += 1;
+          });
+          if (!shown) {
+            clearSeekFilter();
+            saySeek("No hay una ficha con esa palabra. Pruebe nivel, inscripciones o eventos.");
+            return;
+          }
+          saySeek(shown === 1 ? "1 ficha coincide." : shown + " fichas coinciden.");
+          if (!shouldScroll) return;
+          var first = cards.filter(function (card) { return !card.classList.contains("is-filtered-out"); })[0];
+          if (first) first.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        }
+
+        if (seekForm) {
+          seekForm.addEventListener("submit", function (ev) {
+            ev.preventDefault();
+            applySeek(seekInput ? seekInput.value : "", true);
+          });
+        }
+        if (seekInput) {
+          seekInput.addEventListener("input", function () {
+            seekButtons.forEach(function (btn) { btn.setAttribute("aria-pressed", "false"); });
+            applySeek(seekInput.value, false);
+          });
+        }
+        if (seekClear) {
+          seekClear.addEventListener("click", function () {
+            if (seekInput) {
+              seekInput.value = "";
+              seekInput.focus();
+            }
+            clearSeekFilter();
+            saySeek("Escriba una palabra, o elija nivel, inscripciones o eventos.");
+            seekClear.hidden = true;
+          });
+        }
+        seekButtons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var on = btn.getAttribute("aria-pressed") === "true";
+            seekButtons.forEach(function (other) { other.setAttribute("aria-pressed", "false"); });
+            document.querySelectorAll(".is-target").forEach(function (el) { el.classList.remove("is-target"); });
+            if (on) return;
+            btn.setAttribute("aria-pressed", "true");
+            if (seekInput) seekInput.value = "";
+            if (seekClear) seekClear.hidden = true;
+            clearSeekFilter();
+            var id = btn.getAttribute("data-goto");
+            var dest = id ? document.getElementById(id) : null;
+            if (id === "contacto") saySeek("Inscripciones e informes, de lunes a viernes, 8:00 a 15:00.");
+            else if (id === "eventos") saySeek("Semana por la Paz: los alumnos formaron la palabra en la cancha.");
+            else saySeek("Primaria, Secundaria y Preparatoria, en el mismo predio.");
+            if (!dest) return;
+            dest.classList.add("is-target");
+            dest.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+            window.setTimeout(function () { dest.classList.remove("is-target"); }, 1800);
+          });
+        });
+        document.querySelectorAll(".cats a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            document.querySelectorAll(".cats a").forEach(function (other) { other.removeAttribute("aria-current"); });
+            a.setAttribute("aria-current", "true");
+          });
+        });
+        function onDeskChange() {
+          if (!deskMq.matches) {
+            clearSeekFilter();
+            if (seekInput) seekInput.value = "";
+            if (seekClear) seekClear.hidden = true;
+            saySeek("Escriba una palabra, o elija nivel, inscripciones o eventos.");
+            seekButtons.forEach(function (btn) { btn.setAttribute("aria-pressed", "false"); });
+          }
+        }
+        if (deskMq.addEventListener) deskMq.addEventListener("change", onDeskChange);
+        else if (deskMq.addListener) deskMq.addListener(onDeskChange);
+
+        if (fab) {
+          var kickFab = function () {
+            placeFab();
+            window.setTimeout(placeFab, 360);
+          };
+          fab.addEventListener("mouseenter", kickFab);
+          fab.addEventListener("mouseleave", kickFab);
+          fab.addEventListener("focus", kickFab);
+          fab.addEventListener("blur", kickFab);
+        }
 
         if ("serviceWorker" in navigator) {
           window.addEventListener("load", function () {
