@@ -45,6 +45,10 @@ Para un recuperador futuro (fragmentos de los PDF oficiales y, si se quiere, un 
 
 Ese servicio viviría fuera de GitHub Pages. Este repositorio no incluye claves ni un cliente de ningún proveedor. Mantenga `kind: "ejemplo"` cuando el fragmento recuperado no sea el documento vigente del ciclo.
 
+## App de pantalla de inicio
+
+La propuesta se puede instalar desde `propuestas/presidencial/` (manifest, iconos y service worker). En GitHub Pages el alcance es `/khepani-sitio/propuestas/presidencial/`. El service worker guarda la página, el CSS, el asistente, `conocimiento.json` y las fotos de esta propuesta para abrirlas sin red. Sellos, Editorial y Academia no entran en ese alcance.
+
 ## Contraste
 
 En esta propuesta la tinta clara solo va sobre relleno azul marino sólido (franja superior, hero, banda de oficio, encabezado del chat, burbuja de quien pregunta, botones marino y pie). Títulos, fichas de foto y burbujas de Khépani usan tinta marina sobre crema o blanco. No ponga texto blanco sobre fotos ni sobre fondos claros.

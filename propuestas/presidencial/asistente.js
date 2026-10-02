@@ -366,7 +366,10 @@
         if (typing.parentNode) typing.parentNode.removeChild(typing);
         agregarBot(res);
         estado.ocupado = false;
-        if (form && form.getBoundingClientRect().bottom > window.innerHeight - 12) {
+        var vv = window.visualViewport;
+        var limite = (vv ? vv.height : window.innerHeight) - 12;
+        var anclado = form && form.querySelector(".composer.is-docked");
+        if (form && !anclado && form.getBoundingClientRect().bottom > limite) {
           form.scrollIntoView({ block: "end", behavior: reduce ? "auto" : "smooth" });
         }
       }, reduce ? 0 : 420);
