@@ -51,4 +51,4 @@ La propuesta se puede instalar desde `propuestas/presidencial/` (manifest, icono
 
 ## Contraste
 
-En esta propuesta la tinta clara solo va sobre relleno azul marino sólido (franja superior, hero, banda de oficio, encabezado del chat, burbuja de quien pregunta, botones marino y pie). Títulos, fichas de foto y burbujas de Khépani usan tinta marina sobre crema o blanco. No ponga texto blanco sobre fotos ni sobre fondos claros.
+En esta propuesta la tinta clara solo va sobre relleno azul marino sólido (franja superior, hero en teléfono, títulos de la banda de vida escolar, encabezado del chat, burbuja de quien pregunta, botones marino y pie). En escritorio el hero y las fichas de foto usan tinta marina sobre crema o blanco. No ponga texto blanco sobre fotos ni sobre fondos claros.
