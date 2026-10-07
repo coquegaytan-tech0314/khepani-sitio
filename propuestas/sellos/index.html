@@ -467,6 +467,11 @@ textarea {
   color: white;
 }
 
+@media (min-width: 901px) and (max-width: 1120px) {
+  .nav ul { gap: 0.45rem; }
+  .nav a { font-size: 0.92rem; }
+  .nav-cta { margin-left: 0.35rem; }
+}
 @media (max-width: 900px) {
   .nav,
   .nav-cta {
@@ -1557,6 +1562,7 @@ html[data-shot="niveles"] .credentials,
 html[data-shot="niveles"] #propuesta,
 html[data-shot="niveles"] #mv,
 html[data-shot="niveles"] #campus,
+html[data-shot="niveles"] #proximamente,
 html[data-shot="niveles"] #vida,
 html[data-shot="niveles"] #comunidad,
 html[data-shot="niveles"] #contacto,
@@ -1566,12 +1572,75 @@ html[data-shot="credenciales"] #niveles,
 html[data-shot="credenciales"] #propuesta,
 html[data-shot="credenciales"] #mv,
 html[data-shot="credenciales"] #campus,
+html[data-shot="credenciales"] #proximamente,
 html[data-shot="credenciales"] #vida,
 html[data-shot="credenciales"] #comunidad,
 html[data-shot="credenciales"] #contacto,
 html[data-shot="credenciales"] .site-footer { display: none !important; }
 html[data-shot="credenciales"] .credentials { padding-top: 3rem; min-height: 100vh; }
 html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
+
+/* Próximamente — renders. Tinta marina sobre crema; el naranja solo acentúa. */
+.soon {
+  display: grid;
+  gap: var(--space-4);
+}
+.soon figure {
+  margin: 0;
+  min-width: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.soon img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--color-surface-offset);
+}
+.soon figcaption {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  color: var(--color-navy);
+  font-weight: 650;
+  font-size: var(--text-sm);
+  border-top: 1px solid var(--color-divider);
+  overflow-wrap: break-word;
+}
+.soon__mark {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--color-navy);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.soon__detail {
+  display: block;
+  margin-top: 0.28rem;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+.soon__plan {
+  border: 2px solid var(--color-navy);
+  box-shadow: inset 0 5px 0 var(--color-primary);
+}
+.soon__plan figcaption {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+@media (min-width: 900px) {
+  .soon { grid-template-columns: repeat(6, 1fr); gap: var(--space-5); }
+  .soon > :nth-child(1),
+  .soon > :nth-child(2),
+  .soon > :nth-child(3) { grid-column: span 2; }
+  .soon > :nth-child(4),
+  .soon > :nth-child(5) { grid-column: 1 / -1; }
+}
 
 </style>
   </head>
@@ -1591,6 +1660,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
             <li><a href="#propuesta">Propuesta</a></li>
             <li><a href="#mv">Misión</a></li>
             <li><a href="#campus">Campus</a></li>
+            <li><a href="#proximamente">Próximamente</a></li>
             <li><a href="#vida">Vida escolar</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
@@ -1606,6 +1676,7 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
         <a href="#propuesta">Propuesta</a>
         <a href="#mv">Misión</a>
         <a href="#campus">Campus</a>
+        <a href="#proximamente">Próximamente</a>
         <a href="#vida">Vida escolar</a>
         <a href="#contacto">Contacto</a>
         <a href="#contacto" class="btn btn--primary">Solicitar informes</a>
@@ -1985,6 +2056,74 @@ html[data-shot="niveles"] #niveles { padding-top: 2.4rem; }
             <figure class="gallery__item">
               <img src="../photos/galeria-fachada-lateral.webp" data-k="galeria-fachada-lateral" alt="Fachada lateral del edificio principal, blanco con detalles naranjas" loading="lazy" />
               <figcaption>Preparatoria · fachada lateral</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="proximamente" data-reveal aria-labelledby="proximamente-titulo">
+        <div class="container">
+          <header class="section__head">
+            <p class="section__eyebrow">Proyectos futuros</p>
+            <h2 class="section__title" id="proximamente-titulo">Próximamente en Khépani</h2>
+            <p class="section__lede">
+              Un adelanto, con cariño, de lo que se imagina para el campus. La cafetería, un anfiteatro
+              en la parte de abajo, las jardineras frente a administración y el plan maestro completo.
+              Son renders de proyectos futuros: todavía no están construidos, y la obra puede quedar
+              todavía más bonita.
+            </p>
+          </header>
+          <div class="soon">
+            <figure>
+              <picture>
+                <source srcset="../photos/proximamente/cafeteria-aerea.webp" type="image/webp" />
+                <img src="../photos/proximamente/cafeteria-aerea.jpg" width="1176" height="656" alt="Render del proyecto futuro de la cafetería, en vista aérea, con el edificio nuevo, el anfiteatro y las canchas." loading="lazy" decoding="async" />
+              </picture>
+              <figcaption>
+                <span class="soon__mark">Render · proyecto futuro</span>
+                Así quedaría el proyecto de la cafetería
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="../photos/proximamente/anfiteatro.webp" type="image/webp" />
+                <img src="../photos/proximamente/anfiteatro.jpg" width="1170" height="654" alt="Render de un anfiteatro futuro en la parte de abajo del campus, con gradas y escenario circular." loading="lazy" decoding="async" />
+              </picture>
+              <figcaption>
+                <span class="soon__mark">Render · proyecto futuro</span>
+                Un anfiteatro en la parte de abajo
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="../photos/proximamente/jardineras.webp" type="image/webp" />
+                <img src="../photos/proximamente/jardineras.jpg" width="1156" height="532" alt="Render de las jardineras frente al edificio de administración, con bugambilias y la cafetería nueva al fondo." loading="lazy" decoding="async" />
+              </picture>
+              <figcaption>
+                <span class="soon__mark">Render · proyecto futuro</span>
+                Así quedarían las jardineras frente al edificio de administración
+              </figcaption>
+            </figure>
+            <figure class="soon__plan">
+              <picture>
+                <source srcset="../photos/proximamente/plan-maestro.webp" type="image/webp" />
+                <img src="../photos/proximamente/plan-maestro.jpg" width="1204" height="902" alt="Render del plan maestro completo del campus: pista, cancha de fútbol, canchas y edificios." loading="lazy" decoding="async" />
+              </picture>
+              <figcaption>
+                <span class="soon__mark">Render · proyecto futuro</span>
+                El plan maestro completo del campus
+                <span class="soon__detail">La vista de conjunto de todo el proyecto. Todavía no está construido.</span>
+              </figcaption>
+            </figure>
+            <figure>
+              <picture>
+                <source srcset="../photos/proximamente/terraza-pista.webp" type="image/webp" />
+                <img src="../photos/proximamente/terraza-pista.jpg" width="1206" height="679" alt="Render de la terraza de la cafetería, con bancas de madera junto a la pista de atletismo." loading="lazy" decoding="async" />
+              </picture>
+              <figcaption>
+                <span class="soon__mark">Render · proyecto futuro</span>
+                La terraza de la cafetería, con asientos junto a la pista
+              </figcaption>
             </figure>
           </div>
         </div>

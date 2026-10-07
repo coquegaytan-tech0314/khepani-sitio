@@ -2,7 +2,7 @@
    Scope is the directory of this file. On GitHub Pages that is
    /khepani-sitio/propuestas/presidencial/ — the same scope as manifest.webmanifest.
    Asset URLs are relative so they resolve under that subpath. */
-var CACHE = "khepani-presidencial-v2";
+var CACHE = "khepani-presidencial-v3";
 var SHELL = [
   "./",
   "./index.html",
@@ -26,7 +26,12 @@ var SHELL = [
   "../photos/galeria-entrada.webp",
   "../photos/letrero-misio-vision.webp",
   "../photos/miss-sandy-english.jpg",
-  "../photos/galeria-explanada.webp"
+  "../photos/galeria-explanada.webp",
+  "../photos/proximamente/cafeteria-aerea.webp",
+  "../photos/proximamente/anfiteatro.webp",
+  "../photos/proximamente/jardineras.webp",
+  "../photos/proximamente/plan-maestro.webp",
+  "../photos/proximamente/terraza-pista.webp"
 ];
 
 self.addEventListener("install", function (event) {

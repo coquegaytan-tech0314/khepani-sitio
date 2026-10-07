@@ -191,6 +191,10 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   gap: 1.45rem;
 }
+@media (max-width: 1180px) {
+  .site-nav { gap: 0.7rem; }
+  .site-nav a:not(.btn) { letter-spacing: 0.04em; }
+}
 
 .site-nav a:not(.btn) {
   font-size: 0.82rem;
@@ -959,6 +963,32 @@ p:last-child { margin-bottom: 0; }
   .section { padding: 3.6rem 0; }
 }
 
+/* The extra «Próximamente» link no longer fits beside the brand below this width. */
+@media (max-width: 1080px) {
+  .nav-burger { display: flex; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.4rem 1.25rem 1rem;
+    z-index: 30;
+  }
+  .nav-check:checked ~ .site-nav { display: flex; }
+  .site-nav a:not(.btn) {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink);
+  }
+  .site-nav .btn { margin-top: 0.8rem; width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
@@ -1060,6 +1090,67 @@ html[data-shot] .wa-fab { display: none !important; }
   .cred:first-child, .cred:last-child { padding-left: 0; padding-right: 0; border-right: 0; }
 }
 
+/* Próximamente — ensayo de renders. Tinta oscura; naranja y marino solo como acento. */
+.soon {
+  display: grid;
+  gap: 1.1rem;
+}
+.soon figure {
+  margin: 0;
+  min-width: 0;
+}
+.soon img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--cream);
+}
+.soon figcaption {
+  margin-top: 0.55rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+.soon__mark {
+  display: block;
+  margin-bottom: 0.28rem;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0b2a52;
+}
+.soon__detail {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.soon__plan {
+  padding-top: 0.35rem;
+  border-top: 5px solid var(--orange);
+}
+.soon__plan figcaption {
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  color: #0b2a52;
+}
+@media (min-width: 900px) {
+  .soon { grid-template-columns: repeat(6, 1fr); gap: 1.25rem 1rem; }
+  .soon > :nth-child(1),
+  .soon > :nth-child(2),
+  .soon > :nth-child(3) { grid-column: span 2; }
+  .soon > :nth-child(4),
+  .soon > :nth-child(5) { grid-column: 1 / -1; }
+}
+
 </style>
 </head>
 <body>
@@ -1079,6 +1170,7 @@ html[data-shot] .wa-fab { display: none !important; }
         <a href="#propuesta">Propuesta</a>
         <a href="#mision">Misión</a>
         <a href="#campus">Campus</a>
+        <a href="#proximamente">Próximamente</a>
         <a href="#voces">Voces</a>
         <a href="#contacto">Contacto</a>
         <a class="btn" href="#contacto">Inscripciones</a>
@@ -1374,6 +1466,69 @@ html[data-shot] .wa-fab { display: none !important; }
           <figure class="plate">
             <img src="../photos/miss-sandy-english.jpg" alt="Aula Miss Sandy English, segundo grado de Primaria">
             <figcaption>Miss Sandy English. Pasillo de 2° de Primaria.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proximamente" aria-labelledby="proximamente-titulo">
+      <div class="wrap-wide">
+        <header class="section-head">
+          <span class="kicker">Proyectos futuros</span>
+          <h2 id="proximamente-titulo">Próximamente en Khépani</h2>
+          <p>Un adelanto, con cariño, de lo que se imagina para el campus. La cafetería, un anfiteatro en la parte de abajo, las jardineras frente a administración y el plan maestro completo. Son renders de proyectos futuros: todavía no están construidos, y la obra puede quedar todavía más bonita.</p>
+        </header>
+        <div class="soon">
+          <figure>
+            <picture>
+              <source srcset="../photos/proximamente/cafeteria-aerea.webp" type="image/webp">
+              <img src="../photos/proximamente/cafeteria-aerea.jpg" width="1176" height="656" alt="Render del proyecto futuro de la cafetería, en vista aérea, con el edificio nuevo, el anfiteatro y las canchas." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>
+              <span class="soon__mark">Render · proyecto futuro</span>
+              Así quedaría el proyecto de la cafetería
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source srcset="../photos/proximamente/anfiteatro.webp" type="image/webp">
+              <img src="../photos/proximamente/anfiteatro.jpg" width="1170" height="654" alt="Render de un anfiteatro futuro en la parte de abajo del campus, con gradas y escenario circular." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>
+              <span class="soon__mark">Render · proyecto futuro</span>
+              Un anfiteatro en la parte de abajo
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source srcset="../photos/proximamente/jardineras.webp" type="image/webp">
+              <img src="../photos/proximamente/jardineras.jpg" width="1156" height="532" alt="Render de las jardineras frente al edificio de administración, con bugambilias y la cafetería nueva al fondo." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>
+              <span class="soon__mark">Render · proyecto futuro</span>
+              Así quedarían las jardineras frente al edificio de administración
+            </figcaption>
+          </figure>
+          <figure class="soon__plan">
+            <picture>
+              <source srcset="../photos/proximamente/plan-maestro.webp" type="image/webp">
+              <img src="../photos/proximamente/plan-maestro.jpg" width="1204" height="902" alt="Render del plan maestro completo del campus: pista, cancha de fútbol, canchas y edificios." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>
+              <span class="soon__mark">Render · proyecto futuro</span>
+              El plan maestro completo del campus
+              <span class="soon__detail">La vista de conjunto de todo el proyecto. Todavía no está construido.</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <picture>
+              <source srcset="../photos/proximamente/terraza-pista.webp" type="image/webp">
+              <img src="../photos/proximamente/terraza-pista.jpg" width="1206" height="679" alt="Render de la terraza de la cafetería, con bancas de madera junto a la pista de atletismo." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>
+              <span class="soon__mark">Render · proyecto futuro</span>
+              La terraza de la cafetería, con asientos junto a la pista
+            </figcaption>
           </figure>
         </div>
       </div>
