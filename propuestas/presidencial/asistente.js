@@ -717,13 +717,8 @@
         var numero = (estado.kb && estado.kb.cita && estado.kb.cita.whatsapp) || WHATSAPP_CITA;
         var url = enlaceCita(msg, numero);
         var pre = root.querySelector("[data-cita-mensaje]");
-        var link = root.querySelector("[data-cita-link]");
         var abrir = root.querySelector("[data-cita-abrir]");
         if (pre) pre.textContent = msg;
-        if (link) {
-          link.href = url;
-          link.textContent = url;
-        }
         if (abrir) abrir.href = url;
         citaForm.hidden = true;
         if (citaListo) {

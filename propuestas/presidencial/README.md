@@ -20,7 +20,7 @@ Las fichas con `suggest: true` y `prompt` aparecen como sugerencias para esa aud
 
 ## Citas por WhatsApp
 
-El formulario pide nombre de mamá, papá o tutor, nombre del alumno, nivel y grado, día y hora (lunes a viernes, 8:00 a 15:00), teléfono y la pregunta. Si los datos sirven, arma un enlace `https://wa.me/524451030946?text=…` con el resumen y lo abre. La familia toca enviar en WhatsApp. No hay servidor, ni claves, ni se guarda la cita en esta página.
+El formulario pide nombre de mamá, papá o tutor, nombre del alumno, nivel y grado, día y hora (lunes a viernes, 8:00 a 15:00), teléfono y la pregunta. Si los datos sirven, muestra el mensaje en claro y abre WhatsApp al (445) 103-0946 con ese texto ya escrito. La familia toca enviar. No hay servidor, ni claves, ni se guarda la cita en esta página.
 
 ## Dónde conectar un backend con LLM
 

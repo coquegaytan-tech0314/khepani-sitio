@@ -842,14 +842,6 @@ body.menu-open { overflow: hidden; }
   font-weight: 700;
   font-size: 0.86rem;
 }
-.cita-url {
-  display: block;
-  margin: 0 0 0.4rem;
-  color: var(--navy);
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  font-size: 0.95rem;
-}
 .desk.is-cita .thread,
 .desk.is-cita .chips,
 .desk.is-cita .asking,
