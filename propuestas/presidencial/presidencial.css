@@ -1507,3 +1507,67 @@ body.chat-typing .thread {
   .pcard__media img,
   .card-shot img { transition: none; }
 }
+
+/* Próximamente — renders de proyectos futuros. Tinta marina sobre crema. */
+.soon {
+  margin-top: 1.7rem;
+  display: grid;
+  gap: 0.9rem;
+}
+.soon figure {
+  margin: 0;
+  min-width: 0;
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+.soon img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--sand);
+}
+.soon figcaption {
+  margin: 0;
+  background: var(--cream);
+  color: var(--navy);
+  padding: 0.75rem 0.9rem 0.95rem;
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+.soon__mark {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: var(--navy);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.soon__detail {
+  display: block;
+  margin-top: 0.22rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.soon__plan {
+  border: 2px solid var(--navy);
+  box-shadow: inset 0 5px 0 var(--orange);
+}
+.soon__plan figcaption {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  padding: 1rem 1.05rem 1.15rem;
+}
+@media (min-width: 900px) {
+  .soon { grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+  .soon > :nth-child(1),
+  .soon > :nth-child(2),
+  .soon > :nth-child(3) { grid-column: span 2; }
+  .soon > :nth-child(4),
+  .soon > :nth-child(5) { grid-column: 1 / -1; }
+}
