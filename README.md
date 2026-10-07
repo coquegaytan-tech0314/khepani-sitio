@@ -12,4 +12,4 @@ This GitHub Pages preview is for internal review only and should not be treated 
 
 Cuatro borradores en `propuestas/` (Sellos, Editorial, Academia y Presidencial). No sustituyen a institutokhepani.com.
 
-La base de ejemplo del asistente «Pregúntale a Khépani» y el punto donde entraría un backend de recuperación están en `propuestas/presidencial/README.md`.
+La base del asistente «Pregúntale a Khépani» (inscripciones 2026-2027, rangos aproximados y citas por WhatsApp) está en `propuestas/presidencial/README.md`.

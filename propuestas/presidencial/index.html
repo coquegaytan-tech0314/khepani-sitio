@@ -393,7 +393,7 @@
           <header class="chat-intro">
             <p class="eyebrow">Demostración</p>
             <h2>Pregúntale a Khépani</h2>
-            <p class="lede">Un mostrador para padres, alumnos, profesores y personal. Responde desde un archivo en esta página. Calendario, festivos, desfiles, eventos y listas de documentos llevan la marca «información de ejemplo» hasta que la escuela entregue los papeles reales.</p>
+            <p class="lede">Un mostrador para padres, alumnos, profesores y personal. Orienta sobre inscripciones del ciclo 2026-2027: requisitos, becas, descuentos y rangos aproximados de colegiatura. Vacaciones, días festivos, desfiles y las fechas de eventos siguen marcados como información de ejemplo.</p>
           </header>
 
           <div class="desk" data-khepani-chat>
@@ -401,15 +401,93 @@
               <img src="../photos/logo-oficial.png" width="52" height="52" alt="" />
               <div>
                 <h3>Pregúntale a Khépani</h3>
-                <p>La lechuza del escudo, en modo demostración. Archivo local, sin servicios externos.</p>
+                <p>Inscripciones 2026-2027 y citas por WhatsApp. El calendario escolar sigue en muestra.</p>
               </div>
             </div>
             <div class="desk-body">
               <div class="audiences" data-audiences role="tablist" aria-label="Para quién es la respuesta"></div>
               <div class="desk-main">
-                <div class="thread" data-thread role="log" aria-label="Conversación de ejemplo"></div>
+                <div class="thread" data-thread role="log" aria-label="Conversación"></div>
                 <div class="chips" data-chips></div>
                 <p class="asking" data-asking>Le respondo como para padres.</p>
+                <div class="cita" data-cita hidden>
+                  <div class="cita-card">
+                    <div class="cita-head">
+                      <h3 id="cita-titulo">Agendar cita</h3>
+                      <button type="button" class="cita-close" data-cita-cerrar>Volver al chat</button>
+                    </div>
+                    <form data-cita-form novalidate aria-labelledby="cita-titulo">
+                      <p class="cita-lead">La cita se prepara aquí. Al terminar se abre WhatsApp al (445) 103-0946 con el mensaje listo, y tú tocas enviar. El horario de la escuela es de lunes a viernes, de 8:00 a 15:00.</p>
+                      <p class="cita-errores" data-cita-errores role="alert"></p>
+                      <div class="cita-grid">
+                        <div class="cita-field">
+                          <label for="cita-tutor">Nombre de mamá, papá o tutor</label>
+                          <input id="cita-tutor" name="tutor" type="text" autocomplete="name" maxlength="80" required />
+                          <p class="cita-error" data-error-for="tutor"></p>
+                        </div>
+                        <div class="cita-field">
+                          <label for="cita-alumno">Nombre del alumno o alumna</label>
+                          <input id="cita-alumno" name="alumno" type="text" autocomplete="off" maxlength="80" required />
+                          <p class="cita-error" data-error-for="alumno"></p>
+                        </div>
+                        <div class="cita-field">
+                          <label for="cita-nivel">Nivel de interés</label>
+                          <select id="cita-nivel" name="nivel" required>
+                            <option value="">Elige el nivel</option>
+                            <option>Primaria</option>
+                            <option>Secundaria</option>
+                            <option>Preparatoria</option>
+                          </select>
+                          <p class="cita-error" data-error-for="nivel"></p>
+                        </div>
+                        <div class="cita-field">
+                          <label for="cita-grado">Grado de interés</label>
+                          <select id="cita-grado" name="grado" required>
+                            <option value="">Primero elige el nivel</option>
+                          </select>
+                          <p class="cita-error" data-error-for="grado"></p>
+                        </div>
+                        <div class="cita-field">
+                          <label for="cita-dia">Día preferido</label>
+                          <input id="cita-dia" name="dia" type="date" required />
+                          <p class="cita-error" data-error-for="dia"></p>
+                        </div>
+                        <div class="cita-field">
+                          <label for="cita-hora">Hora preferida</label>
+                          <select id="cita-hora" name="hora" required>
+                            <option value="">Elige la hora</option>
+                          </select>
+                          <p class="cita-error" data-error-for="hora"></p>
+                        </div>
+                        <div class="cita-field">
+                          <label for="cita-telefono">Teléfono</label>
+                          <input id="cita-telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="10 dígitos" required />
+                          <p class="cita-error" data-error-for="telefono"></p>
+                        </div>
+                        <div class="cita-field cita-field--full">
+                          <label for="cita-pregunta">¿Qué quieres preguntar?</label>
+                          <textarea id="cita-pregunta" name="pregunta" maxlength="500" required></textarea>
+                          <p class="cita-error" data-error-for="pregunta"></p>
+                        </div>
+                      </div>
+                      <div class="cita-actions">
+                        <button class="btn btn--orange" type="submit">Abrir WhatsApp</button>
+                      </div>
+                    </form>
+                    <div data-cita-listo hidden>
+                      <h3 class="cita-listo-titulo">Listo para enviar</h3>
+                      <p class="cita-lead">Revisa el mensaje. El botón abre WhatsApp y tú confirmas el envío. Esta página no guarda la cita.</p>
+                      <p class="cita-url-label">Mensaje</p>
+                      <pre class="cita-mensaje" data-cita-mensaje></pre>
+                      <p class="cita-url-label">Enlace de WhatsApp</p>
+                      <a class="cita-url" data-cita-link href="https://wa.me/524451030946" target="_blank" rel="noopener noreferrer"></a>
+                      <div class="cita-actions">
+                        <a class="btn btn--orange" data-cita-abrir href="https://wa.me/524451030946" target="_blank" rel="noopener noreferrer">Enviar por WhatsApp</a>
+                        <button type="button" class="cita-close" data-cita-otra>Corregir datos</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <form data-form action="#preguntale">
                   <label class="sr" for="pregunta">Tu pregunta</label>
                   <div class="composer">
@@ -420,7 +498,7 @@
                 <noscript><p class="noscript-note">El asistente de ejemplo necesita JavaScript en el navegador. No usa servicios externos.</p></noscript>
               </div>
             </div>
-            <p class="chat-note">Las respuestas se arman en el navegador con el archivo conocimiento.json. El calendario real se sustituye ahí cuando la escuela lo entregue.</p>
+            <p class="chat-note">Las respuestas se arman en este navegador con conocimiento.json. No hay servidor: la cita se envía cuando tú tocas enviar en WhatsApp. El calendario oficial se sustituye en ese archivo cuando la escuela lo entregue.</p>
           </div>
         </div>
       </section>
@@ -433,7 +511,7 @@
             <p class="lede">Uriangato, Guanajuato. Teléfono, WhatsApp o correo, de 8:00 a 15:00.</p>
             <dl>
               <dt>Dirección</dt>
-              <dd>Libramiento San Miguel No. 202<br />La Joyita, Uriangato, Gto.</dd>
+              <dd>Libramiento San Miguel (Arcángel) No. 202<br />La Joyita, Uriangato, Gto. C.P. 38980</dd>
               <dt>Teléfono / WhatsApp</dt>
               <dd><a href="tel:+524451030946">(445) 103-0946</a></dd>
               <dt>Correo general</dt>
@@ -716,7 +794,7 @@
           if (!fab) return;
           var kb = keyboardInset();
           var gap = 16;
-          var away = document.body.classList.contains("chat-typing") || document.body.classList.contains("menu-open");
+          var away = document.body.classList.contains("chat-typing") || document.body.classList.contains("menu-open") || document.body.classList.contains("cita-open");
           var bottom = gap + kb;
           fab.style.right = "max(1rem, env(safe-area-inset-right))";
           fab.style.bottom = "calc(" + bottom + "px + env(safe-area-inset-bottom))";
