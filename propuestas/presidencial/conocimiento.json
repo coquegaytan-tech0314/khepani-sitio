@@ -1,381 +1,1138 @@
 {
-  "version": 1,
+  "version": 2,
   "locale": "es-MX",
-  "updated": "2026-09-29",
-  "notice": "Las entradas con kind \"ejemplo\" no son calendario ni documentos oficiales. Se reemplazan cuando la escuela entregue los archivos reales. El badge de la página depende de kind.",
+  "updated": "2026-10-07",
+  "notice": "Las entradas con kind \"ejemplo\" son calendario, vacaciones, días festivos, desfiles y fechas de eventos: siguen siendo muestra. Requisitos, becas, descuentos y rangos de colegiatura del ciclo 2026-2027 orientan con datos de la escuela. Los montos son aproximados.",
   "replacement": {
     "file": "propuestas/presidencial/conocimiento.json",
     "futureEndpoint": "POST /api/khepani/preguntar",
-    "requestShape": { "pregunta": "¿Cuándo son las vacaciones?", "audiencia": "padres" },
-    "responseShape": ["id", "title", "answer", "kind", "badge", "topicLabel", "sources"]
+    "requestShape": {
+      "pregunta": "¿Cuándo son las vacaciones?",
+      "audiencia": "padres"
+    },
+    "responseShape": [
+      "id",
+      "title",
+      "answer",
+      "kind",
+      "badge",
+      "topicLabel",
+      "sources",
+      "offerCita"
+    ]
   },
   "audiences": [
-    { "id": "padres", "label": "Padres", "voice": "Le respondo como para padres." },
-    { "id": "alumnos", "label": "Alumnos", "voice": "Te respondo como para alumnos." },
-    { "id": "profesores", "label": "Profesores", "voice": "Le respondo como para profesores." },
-    { "id": "personal", "label": "Personal", "voice": "Le respondo como para personal de recepción." }
+    {
+      "id": "padres",
+      "label": "Padres",
+      "voice": "Le respondo como para padres."
+    },
+    {
+      "id": "alumnos",
+      "label": "Alumnos",
+      "voice": "Te respondo como para alumnos."
+    },
+    {
+      "id": "profesores",
+      "label": "Profesores",
+      "voice": "Le respondo como para profesores."
+    },
+    {
+      "id": "personal",
+      "label": "Personal",
+      "voice": "Le respondo como para personal de recepción."
+    }
   ],
   "welcome": {
-    "padres": "Bienvenido. Puedo orientar sobre inscripciones, vacaciones, días festivos, desfiles y eventos escolares. Cuando la respuesta dependa de un calendario o de un documento, la verá marcada como información de ejemplo: la escuela todavía no carga el calendario oficial.",
-    "alumnos": "Hola. Pregúntame por inscripciones, vacaciones, días festivos, desfiles o eventos. Si te doy una fecha o una lista de papeles, es información de ejemplo hasta que el instituto publique la oficial. No la tomes como circular.",
-    "profesores": "Buen día. Esta demostración responde con un archivo local. Las fechas, los desfiles y las listas de documentos son información de ejemplo: no las reenvíe a las familias como si ya fueran la circular.",
-    "personal": "Recepción. Use estas respuestas como guion de muestra. Antes de dictar un documento, una vacación o un desfile, advierta que es información de ejemplo. El dato vigente se confirma al (445) 103-0946."
+    "padres": "Bienvenido. Puedo orientar sobre el ciclo 2026-2027: requisitos de inscripción, becas, descuentos y rangos aproximados de colegiatura. También sobre vacaciones, días festivos, desfiles y eventos. Si la respuesta es de calendario, la verá marcada como información de ejemplo. Para el costo exacto o una atención personalizada, agenda una cita.",
+    "alumnos": "Hola. Pregúntame por la inscripción 2026-2027, las becas o los rangos aproximados de colegiatura. Si te doy una fecha de vacaciones, un festivo, un desfile o un evento, es información de ejemplo: el calendario oficial todavía no está cargado. Para un dato exacto, tu familia puede agendar una cita.",
+    "profesores": "Buen día. Requisitos, becas y descuentos del ciclo 2026-2027 ya se pueden orientar con esta base. Los montos de colegiatura son rangos aproximados. Vacaciones, festivos, desfiles y fechas de eventos siguen como información de ejemplo: no los reenvíe como circular.",
+    "personal": "Recepción. Requisitos, becas y descuentos del ciclo 2026-2027 se pueden decir con esta base. Las colegiaturas se dan en rango aproximado y el costo exacto se confirma en cita. Antes de dictar una vacación, un festivo o un desfile, advierta que es información de ejemplo. Teléfono: (445) 103-0946."
   },
   "topics": [
-    { "id": "costos", "label": "Colegiaturas", "priority": 100, "words": ["costo", "costos", "colegiatura", "colegiaturas", "mensualidad", "mensualidades", "precio", "precios", "cuota", "cuotas"] },
-    { "id": "desfiles", "label": "Desfiles", "priority": 90, "words": ["desfile", "desfiles", "escolta", "contingente", "contingentes"] },
-    { "id": "documentacion", "label": "Documentación", "priority": 80, "words": ["documento", "documentos", "documentacion", "documentación", "inscripcion", "inscripción", "inscripciones", "inscribir", "requisito", "requisitos", "acta", "curp", "papeles", "papel", "boleta", "boletas", "fotografia", "fotografias", "fotografía", "cartilla"] },
-    { "id": "vacaciones", "label": "Vacaciones", "priority": 70, "words": ["vacacion", "vacaciones", "vacación", "receso", "recesos", "invierno", "verano", "semana santa"] },
-    { "id": "festivos", "label": "Días festivos", "priority": 60, "words": ["festivo", "festivos", "asueto", "asuetos", "puente", "puentes", "guadalupe", "revolucion", "revolución", "independencia", "muertos", "navidad", "constitucion", "constitución"] },
-    { "id": "huerto", "label": "Huerto escolar", "priority": 55, "words": ["huerto", "huerta", "hortaliza", "hortalizas", "siembra", "jornada"] },
-    { "id": "eventos", "label": "Eventos", "priority": 50, "words": ["evento", "eventos", "paz", "deletreo", "bienvenida", "café por mi futuro", "cafe por mi futuro", "un café", "un cafe"] },
-    { "id": "ingles", "label": "Inglés", "priority": 40, "words": ["ingles", "inglés", "cambridge", "toefl", "ket", "pet", "sandy", "english"] },
-    { "id": "identidad", "label": "Formación", "priority": 35, "words": ["catolica", "católica", "catolico", "católico", "valores", "mision", "misión", "vision", "visión", "cristiana", "cristiano", "religion", "religión", "lema"] },
-    { "id": "mascota", "label": "Escudo", "priority": 34, "words": ["lechuza", "buho", "búho", "mascota", "escudo", "emblema"] },
-    { "id": "contacto", "label": "Contacto", "priority": 30, "words": ["telefono", "teléfono", "whatsapp", "correo", "correos", "email", "horario", "horarios", "direccion", "dirección", "ubicacion", "ubicación", "mapa", "contacto", "libramiento", "joyita", "donde queda", "donde quedan", "donde esta", "donde está", "donde estan", "a que hora", "a qué hora"] },
-    { "id": "niveles", "label": "Niveles", "priority": 20, "words": ["primaria", "secundaria", "preparatoria", "prepa", "bachillerato", "grados", "grado", "alumnos", "alumno", "niveles", "nivel", "estudiantes", "estudiante", "cct", "incorporada", "incorporadas"] },
-    { "id": "calendario", "label": "Calendario", "priority": 10, "words": ["calendario", "agenda"] }
-  ],
-  "entries": [
     {
-      "id": "docs-padres",
-      "audiences": ["padres"],
-      "topics": ["documentacion"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 1,
-      "prompt": "¿Qué documentos llevo para inscribir?",
-      "keywords": ["documentos", "inscribir", "inscripcion", "acta", "curp", "boleta"],
-      "title": "Documentos de inscripción",
-      "answer": "Información de ejemplo. La lista oficial de inscripción todavía no está en este archivo. En la muestra se piden acta de nacimiento, CURP, comprobante de domicilio reciente, boleta del grado anterior y fotografías tamaño infantil; en Primaria, también la cartilla de vacunación.\n\nNo tome esta lista como circular. El horario real de atención es de lunes a viernes, de 8:00 a 15:00, en Libramiento San Miguel No. 202, La Joyita. Correo: contacto@institutokhepani.com. Secundaria: secundaria@institutokhepani.com. Preparatoria: preparatoria@institutokhepani.com. Teléfono: (445) 103-0946.",
-      "sources": ["documentos/lista-inscripcion-oficial.pdf"]
+      "id": "costos",
+      "label": "Colegiaturas",
+      "priority": 100,
+      "words": [
+        "costo",
+        "costos",
+        "colegiatura",
+        "colegiaturas",
+        "mensualidad",
+        "mensualidades",
+        "precio",
+        "precios",
+        "cuota",
+        "cuotas",
+        "libro",
+        "libros",
+        "uniforme",
+        "uniformes",
+        "cuanto cuesta",
+        "cuanto cuestan",
+        "cuanto sale",
+        "cuanto cobran",
+        "cuanto vale",
+        "cuanto es la colegiatura",
+        "cuanto es la mensualidad",
+        "cuanto es la inscripcion"
+      ]
     },
     {
-      "id": "docs-alumnos",
-      "audiences": ["alumnos"],
-      "topics": ["documentacion"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 1,
-      "prompt": "¿Qué papeles piden en la inscripción?",
-      "keywords": ["papeles", "inscripcion", "boleta", "documentos"],
-      "title": "Papeles de inscripción",
-      "answer": "Información de ejemplo. Si tu familia va a inscribirte, en esta muestra les piden acta de nacimiento, CURP, comprobante de domicilio, boleta del grado anterior y fotografías. No es la lista oficial.\n\nTu familia puede confirmarla de lunes a viernes, de 8:00 a 15:00, al (445) 103-0946 o en contacto@institutokhepani.com.",
-      "sources": ["documentos/lista-inscripcion-oficial.pdf"]
+      "id": "becas",
+      "label": "Becas",
+      "priority": 110,
+      "words": [
+        "beca",
+        "becas",
+        "promedio",
+        "convocatoria",
+        "8.5",
+        "renovar",
+        "renovacion",
+        "renovación"
+      ]
     },
     {
-      "id": "docs-profesores",
-      "audiences": ["profesores"],
-      "topics": ["documentacion"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 1,
-      "prompt": "¿Qué documentos pide inscripción?",
-      "keywords": ["documentos", "inscripcion", "circular"],
-      "title": "Lista de inscripción para familias",
-      "answer": "Información de ejemplo. No entregue a las familias una lista distinta a la circular vigente: este borrador solo trae una muestra (acta, CURP, comprobante de domicilio, boleta y fotografías).\n\nCanalice la duda a contacto@institutokhepani.com o al (445) 103-0946, de lunes a viernes de 8:00 a 15:00.",
-      "sources": ["documentos/lista-inscripcion-oficial.pdf"]
+      "id": "descuentos",
+      "label": "Descuentos",
+      "priority": 105,
+      "words": [
+        "descuento",
+        "descuentos",
+        "pago anual",
+        "pago semestral",
+        "10%",
+        "diez por ciento",
+        "anticipado",
+        "venta de julio"
+      ]
     },
     {
-      "id": "docs-personal",
-      "audiences": ["personal"],
-      "topics": ["documentacion"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 1,
-      "prompt": "¿Qué digo si piden documentos?",
-      "keywords": ["documentos", "recepcion", "papeles"],
-      "title": "Guion de recepción: documentos",
-      "answer": "Información de ejemplo. Guion de recepción: anote nivel y grado, diga que la lista es provisional y ofrezca el WhatsApp (445) 103-0946. Papeles de muestra: acta de nacimiento, CURP, comprobante de domicilio, boleta y fotografías.\n\nPrimaria se atiende en contacto@institutokhepani.com; Secundaria en secundaria@institutokhepani.com; Preparatoria en preparatoria@institutokhepani.com.",
-      "sources": ["documentos/lista-inscripcion-oficial.pdf"]
+      "id": "desfiles",
+      "label": "Desfiles",
+      "priority": 90,
+      "words": [
+        "desfile",
+        "desfiles",
+        "escolta",
+        "contingente",
+        "contingentes"
+      ]
     },
     {
-      "id": "vacaciones-padres",
-      "audiences": ["padres"],
-      "topics": ["vacaciones"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 2,
-      "prompt": "¿Cuándo son las vacaciones?",
-      "keywords": ["vacaciones", "invierno", "verano", "semana santa"],
-      "title": "Vacaciones del ciclo",
-      "answer": "Información de ejemplo. El calendario oficial del ciclo no está cargado. Fechas de muestra, no confirmadas: receso de invierno del 21 de diciembre de 2026 al 6 de enero de 2027; Semana Santa del 29 de marzo al 2 de abril de 2027; inicio de vacaciones de verano el 12 de julio de 2027.\n\nNo tome estas fechas para planear. Confirme en la dirección o al (445) 103-0946.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "documentacion",
+      "label": "Documentación",
+      "priority": 80,
+      "words": [
+        "documento",
+        "documentos",
+        "documentacion",
+        "documentación",
+        "inscripcion",
+        "inscripción",
+        "inscripciones",
+        "inscribir",
+        "requisito",
+        "requisitos",
+        "acta",
+        "curp",
+        "papeles",
+        "papel",
+        "boleta",
+        "boletas",
+        "fotografia",
+        "fotografias",
+        "fotografía",
+        "cartilla"
+      ]
     },
     {
-      "id": "vacaciones-alumnos",
-      "audiences": ["alumnos"],
-      "topics": ["vacaciones"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 2,
-      "prompt": "¿Cuándo salimos de vacaciones?",
-      "keywords": ["vacaciones", "salimos", "receso"],
-      "title": "Vacaciones",
-      "answer": "Información de ejemplo. Todavía no hay calendario oficial en este archivo. Muestra, no la uses para planear: invierno del 21 de diciembre de 2026 al 6 de enero de 2027, Semana Santa del 29 de marzo al 2 de abril de 2027 y verano desde el 12 de julio de 2027.\n\nAvísale a tu familia y confirma en la dirección.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "vacaciones",
+      "label": "Vacaciones",
+      "priority": 70,
+      "words": [
+        "vacacion",
+        "vacaciones",
+        "vacación",
+        "receso",
+        "recesos",
+        "invierno",
+        "verano",
+        "semana santa"
+      ]
     },
     {
-      "id": "vacaciones-profesores",
-      "audiences": ["profesores"],
-      "topics": ["vacaciones"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 2,
-      "prompt": "¿Ya hay calendario de vacaciones?",
-      "keywords": ["vacaciones", "calendario", "circular"],
-      "title": "Calendario de vacaciones",
-      "answer": "Información de ejemplo. No envíe estas fechas al grupo de familias. Son una muestra mientras llega la circular: invierno del 21 de diciembre de 2026 al 6 de enero de 2027, Semana Santa del 29 de marzo al 2 de abril de 2027, verano desde el 12 de julio de 2027.\n\nEl calendario vigente se pide a dirección.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "festivos",
+      "label": "Días festivos",
+      "priority": 60,
+      "words": [
+        "festivo",
+        "festivos",
+        "asueto",
+        "asuetos",
+        "puente",
+        "puentes",
+        "guadalupe",
+        "revolucion",
+        "revolución",
+        "independencia",
+        "muertos",
+        "navidad",
+        "constitucion",
+        "constitución"
+      ]
     },
     {
-      "id": "vacaciones-personal",
-      "audiences": ["personal"],
-      "topics": ["vacaciones"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 2,
-      "prompt": "¿Qué respondo sobre vacaciones?",
-      "keywords": ["vacaciones", "recepcion", "receso"],
-      "title": "Guion de recepción: vacaciones",
-      "answer": "Información de ejemplo. Si llaman a recepción, lea esto como guion y advierta que es un ejemplo: invierno 21 de diciembre de 2026 al 6 de enero de 2027, Semana Santa 29 de marzo al 2 de abril de 2027, verano desde el 12 de julio de 2027.\n\nNo dicte las fechas como oficiales. Ofrezca confirmar al (445) 103-0946.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "huerto",
+      "label": "Huerto escolar",
+      "priority": 55,
+      "words": [
+        "huerto",
+        "huerta",
+        "hortaliza",
+        "hortalizas",
+        "siembra",
+        "jornada"
+      ]
     },
     {
-      "id": "festivos-padres",
-      "audiences": ["padres"],
-      "topics": ["festivos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 3,
-      "prompt": "¿Qué días festivos siguen?",
-      "keywords": ["festivos", "asueto", "puente"],
-      "title": "Días festivos",
-      "answer": "Información de ejemplo. Estos días cívicos son una muestra, no la lista de asuetos del instituto: 16 de septiembre, 2 de noviembre, 20 de noviembre y 12 de diciembre.\n\nFalta el calendario oficial para saber si hay suspensión de clases. Confirme en dirección antes de apartar viaje.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "eventos",
+      "label": "Eventos",
+      "priority": 50,
+      "words": [
+        "evento",
+        "eventos",
+        "paz",
+        "deletreo",
+        "bienvenida",
+        "café por mi futuro",
+        "cafe por mi futuro",
+        "un café",
+        "un cafe"
+      ]
     },
     {
-      "id": "festivos-alumnos",
-      "audiences": ["alumnos"],
-      "topics": ["festivos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 3,
-      "prompt": "¿Hay día festivo pronto?",
-      "keywords": ["festivo", "asueto", "puente"],
-      "title": "Días festivos",
-      "answer": "Información de ejemplo. En la muestra aparecen el 16 de septiembre, el 2 de noviembre, el 20 de noviembre y el 12 de diciembre. No significa que automáticamente no haya clase: el calendario oficial aún no está cargado.\n\nPregunta en la dirección antes de hacer planes.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "ingles",
+      "label": "Inglés",
+      "priority": 40,
+      "words": [
+        "ingles",
+        "inglés",
+        "cambridge",
+        "toefl",
+        "ket",
+        "pet",
+        "sandy",
+        "english"
+      ]
     },
     {
-      "id": "festivos-profesores",
-      "audiences": ["profesores"],
-      "topics": ["festivos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 3,
-      "prompt": "¿Qué festivos debo considerar?",
-      "keywords": ["festivos", "asueto", "calendario"],
-      "title": "Festivos y asuetos",
-      "answer": "Información de ejemplo. No los pase al horario del grupo como asueto confirmado. Muestra cívica habitual: 16 de septiembre, 2 de noviembre, 20 de noviembre y 12 de diciembre.\n\nLa suspensión de clases depende de la circular, que todavía no está en este archivo.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "identidad",
+      "label": "Formación",
+      "priority": 35,
+      "words": [
+        "catolica",
+        "católica",
+        "catolico",
+        "católico",
+        "valores",
+        "mision",
+        "misión",
+        "vision",
+        "visión",
+        "cristiana",
+        "cristiano",
+        "religion",
+        "religión",
+        "lema"
+      ]
     },
     {
-      "id": "festivos-personal",
-      "audiences": ["personal"],
-      "topics": ["festivos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 3,
-      "prompt": "¿Los festivos del tablero son oficiales?",
-      "keywords": ["festivos", "tablero", "oficial", "asueto"],
-      "title": "Festivos en recepción",
-      "answer": "Información de ejemplo. Si preguntan si el tablero ya es oficial, la respuesta de muestra es no. Días cívicos de ejemplo: 16 de septiembre, 2 de noviembre, 20 de noviembre y 12 de diciembre.\n\nAdvierta que la dirección no ha publicado la lista de asuetos del ciclo.",
-      "sources": ["documentos/calendario-oficial.pdf"]
-    },
-    {
-      "id": "desfiles-padres",
-      "audiences": ["padres"],
-      "topics": ["desfiles"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 4,
-      "prompt": "¿Hay desfile pronto?",
-      "keywords": ["desfile", "escolta", "septiembre", "noviembre"],
-      "title": "Desfiles cívicos",
-      "answer": "Información de ejemplo. No hay convocatoria oficial en este archivo. En la muestra, la escolta se reúne en la cancha del campus a las 7:30 y el traslado al desfile cívico (16 de septiembre o 20 de noviembre) lo marca una circular.\n\nLa hora y el punto de reunión son de ejemplo. Confirme al (445) 103-0946.",
-      "sources": ["documentos/convocatoria-desfiles.pdf"]
-    },
-    {
-      "id": "desfiles-alumnos",
-      "audiences": ["alumnos"],
-      "topics": ["desfiles"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 4,
-      "prompt": "¿Me toca desfile?",
-      "keywords": ["desfile", "escolta", "contingente"],
-      "title": "Desfile y escolta",
-      "answer": "Información de ejemplo. Si te toca escolta o contingente, esta demostración no tiene la lista real. Muestra: reunión en la cancha a las 7:30 el día del desfile.\n\nNo llegues con esa hora hasta que tu coordinador la confirme. La cancha y los edificios están en el mismo campus de La Joyita.",
-      "sources": ["documentos/convocatoria-desfiles.pdf"]
-    },
-    {
-      "id": "desfiles-profesores",
-      "audiences": ["profesores"],
-      "topics": ["desfiles"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 4,
-      "prompt": "¿Cómo se organiza el desfile?",
-      "keywords": ["desfile", "escolta", "logistica"],
-      "title": "Organización del desfile",
-      "answer": "Información de ejemplo. No organice la salida con este guion. Muestra de logística: escolta en la cancha a las 7:30 y traslado según la circular del 16 de septiembre o del 20 de noviembre.\n\nFalta la orden del día oficial.",
-      "sources": ["documentos/convocatoria-desfiles.pdf"]
-    },
-    {
-      "id": "desfiles-personal",
-      "audiences": ["personal"],
-      "topics": ["desfiles"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 4,
-      "prompt": "¿Dónde se forma el desfile?",
-      "keywords": ["desfile", "cancha", "formacion", "recepcion"],
-      "title": "Punto de reunión del desfile",
-      "answer": "Información de ejemplo. Guion de recepción: la hora de muestra son las 7:30 en la cancha, pero la circular todavía no está cargada. No confirme un punto de reunión distinto al que indique dirección.\n\nTeléfono de informes: (445) 103-0946.",
-      "sources": ["documentos/convocatoria-desfiles.pdf"]
-    },
-    {
-      "id": "eventos-padres",
-      "audiences": ["padres"],
-      "topics": ["eventos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 5,
-      "prompt": "¿Qué eventos escolares hay?",
-      "keywords": ["eventos", "paz", "deletreo", "bienvenida", "cafe"],
-      "title": "Eventos escolares",
-      "answer": "Información de ejemplo en las fechas. Tradiciones ya vividas en el instituto, sin día asignado en este archivo: Semana por la Paz, con los alumnos formando palabras en la cancha; Un café por mi futuro, en Preparatoria; el concurso de deletreo de Secundaria; y la bienvenida a la generación de Prepa.\n\nFecha de muestra, no oficial: jornada del huerto escolar el viernes 16 de octubre de 2026.",
-      "sources": ["documentos/calendario-eventos.pdf"]
-    },
-    {
-      "id": "eventos-alumnos",
-      "audiences": ["alumnos"],
-      "topics": ["eventos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 5,
-      "prompt": "¿Qué evento sigue en el campus?",
-      "keywords": ["evento", "paz", "deletreo", "bienvenida"],
-      "title": "Próximo evento",
-      "answer": "Información de ejemplo si buscas el próximo día. Lo que sí se ha vivido en el campus: Semana por la Paz en la cancha, Un café por mi futuro en Prepa, el deletreo de Secundaria y la bienvenida de generación.\n\nUna fecha de muestra del huerto, no confirmada: viernes 16 de octubre de 2026. Pregunta a tu tutor antes de anotarla.",
-      "sources": ["documentos/calendario-eventos.pdf"]
-    },
-    {
-      "id": "eventos-profesores",
-      "audiences": ["profesores"],
-      "topics": ["eventos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 5,
-      "prompt": "¿Qué eventos están en el borrador?",
-      "keywords": ["eventos", "borrador", "huerto", "paz"],
-      "title": "Eventos en el borrador",
-      "answer": "Información de ejemplo. No publique el 16 de octubre de 2026 como jornada del huerto: es una fecha de muestra. Tradiciones documentadas del instituto, sin calendario cargado: Semana por la Paz, Un café por mi futuro, concurso de deletreo y bienvenida de Prepa.",
-      "sources": ["documentos/calendario-eventos.pdf"]
-    },
-    {
-      "id": "eventos-personal",
-      "audiences": ["personal"],
-      "topics": ["eventos"],
-      "kind": "ejemplo",
-      "suggest": true,
-      "order": 5,
-      "prompt": "¿Qué eventos anuncio en recepción?",
-      "keywords": ["eventos", "anuncio", "recepcion", "paz"],
-      "title": "Anuncios de recepción",
-      "answer": "Información de ejemplo. Si va a anunciar en recepción, diga que el calendario de eventos no está cargado. Puede mencionar las tradiciones —Semana por la Paz, Un café por mi futuro, deletreo y bienvenida de Prepa— sin dar fecha.\n\nLa jornada del huerto del viernes 16 de octubre de 2026 es solo una muestra.",
-      "sources": ["documentos/calendario-eventos.pdf"]
-    },
-    {
-      "id": "calendario",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["calendario"],
-      "kind": "ejemplo",
-      "keywords": ["calendario", "agenda"],
-      "title": "Calendario del ciclo",
-      "answer": "Información de ejemplo. El calendario oficial del ciclo no está en este archivo. Puede preguntar por vacaciones, días festivos, desfiles o eventos y recibirá una muestra marcada.\n\nPara el dato vigente: (445) 103-0946 o contacto@institutokhepani.com, de lunes a viernes de 8:00 a 15:00.",
-      "sources": ["documentos/calendario-oficial.pdf"]
+      "id": "mascota",
+      "label": "Escudo",
+      "priority": 34,
+      "words": [
+        "lechuza",
+        "buho",
+        "búho",
+        "mascota",
+        "escudo",
+        "emblema"
+      ]
     },
     {
       "id": "contacto",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["contacto"],
+      "label": "Contacto",
+      "priority": 30,
+      "words": [
+        "telefono",
+        "teléfono",
+        "whatsapp",
+        "correo",
+        "correos",
+        "email",
+        "horario",
+        "horarios",
+        "direccion",
+        "dirección",
+        "ubicacion",
+        "ubicación",
+        "mapa",
+        "contacto",
+        "libramiento",
+        "joyita",
+        "donde queda",
+        "donde quedan",
+        "donde esta",
+        "donde está",
+        "donde estan",
+        "a que hora",
+        "a qué hora"
+      ]
+    },
+    {
+      "id": "niveles",
+      "label": "Niveles",
+      "priority": 20,
+      "words": [
+        "primaria",
+        "secundaria",
+        "preparatoria",
+        "prepa",
+        "bachillerato",
+        "grados",
+        "grado",
+        "alumnos",
+        "alumno",
+        "niveles",
+        "nivel",
+        "estudiantes",
+        "estudiante",
+        "cct",
+        "incorporada",
+        "incorporadas"
+      ]
+    },
+    {
+      "id": "calendario",
+      "label": "Calendario",
+      "priority": 10,
+      "words": [
+        "calendario",
+        "agenda"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
       "kind": "hecho",
-      "keywords": ["telefono", "correo", "horario", "direccion", "whatsapp"],
+      "sources": [],
+      "offerCita": true,
+      "id": "costos",
+      "topics": [
+        "costos"
+      ],
+      "suggest": true,
+      "order": 2,
+      "prompt": "¿Cuánto cuesta la colegiatura?",
+      "keywords": [
+        "colegiatura",
+        "costo",
+        "cuota",
+        "precio",
+        "mensualidad",
+        "libros",
+        "uniforme"
+      ],
+      "title": "Colegiaturas, ciclo 2026-2027",
+      "answer": "Con gusto. Para el ciclo 2026-2027 te comparto rangos aproximados; pueden variar.\n\nPrimaria. La inscripción, que incluye el seguro, anda entre $4,000 y $4,500. La colegiatura mensual anda entre $3,000 y $4,000, en 12 pagos. Los libros andan entre $7,000 y $8,000. Los uniformes andan entre $2,000 y $2,500.\n\nSecundaria. La inscripción anda entre $4,000 y $4,500. La colegiatura mensual anda entre $3,000 y $4,000, en 12 pagos. Los libros andan entre $7,500 y $8,500. Los uniformes andan entre $2,000 y $2,500.\n\nPreparatoria. La inscripción semestral anda entre $3,000 y $3,500. La colegiatura mensual anda entre $2,500 y $3,500, en 6 pagos por semestre. Los libros andan entre $2,000 y $3,000. Los uniformes andan entre $2,000 y $2,500.\n\nEn Primaria y Secundaria, los libros y los uniformes se venden directamente en la escuela, únicamente durante julio.\n\nEstos montos son aproximados y pueden variar. Agenda una cita para conocer el costo exacto y recibir atención personalizada."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "costos-primaria",
+      "topics": [
+        "costos"
+      ],
+      "nivel": "primaria",
+      "keywords": [
+        "primaria",
+        "colegiatura",
+        "costo",
+        "libros",
+        "uniforme",
+        "inscripcion"
+      ],
+      "title": "Colegiatura de Primaria",
+      "answer": "En Primaria, para el ciclo 2026-2027, estos rangos son aproximados y pueden variar.\n\nLa inscripción, que incluye el seguro, anda entre $4,000 y $4,500. La colegiatura mensual anda entre $3,000 y $4,000, en 12 pagos. Los libros andan entre $7,000 y $8,000. Los uniformes andan entre $2,000 y $2,500.\n\nEn Primaria y Secundaria, los libros y los uniformes se venden directamente en la escuela, únicamente durante julio.\n\nEstos montos son aproximados y pueden variar. Agenda una cita para conocer el costo exacto y recibir atención personalizada."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "costos-secundaria",
+      "topics": [
+        "costos"
+      ],
+      "nivel": "secundaria",
+      "keywords": [
+        "secundaria",
+        "colegiatura",
+        "costo",
+        "libros",
+        "uniforme",
+        "inscripcion"
+      ],
+      "title": "Colegiatura de Secundaria",
+      "answer": "En Secundaria, para el ciclo 2026-2027, estos rangos son aproximados y pueden variar.\n\nLa inscripción anda entre $4,000 y $4,500. La colegiatura mensual anda entre $3,000 y $4,000, en 12 pagos. Los libros andan entre $7,500 y $8,500. Los uniformes andan entre $2,000 y $2,500.\n\nEn Primaria y Secundaria, los libros y los uniformes se venden directamente en la escuela, únicamente durante julio.\n\nEstos montos son aproximados y pueden variar. Agenda una cita para conocer el costo exacto y recibir atención personalizada."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "costos-preparatoria",
+      "topics": [
+        "costos"
+      ],
+      "nivel": "preparatoria",
+      "keywords": [
+        "preparatoria",
+        "prepa",
+        "bachillerato",
+        "colegiatura",
+        "costo",
+        "libros",
+        "uniforme"
+      ],
+      "title": "Colegiatura de Preparatoria",
+      "answer": "En Preparatoria, para el ciclo 2026-2027, estos rangos son aproximados y pueden variar.\n\nLa inscripción semestral anda entre $3,000 y $3,500. La colegiatura mensual anda entre $2,500 y $3,500, en 6 pagos por semestre. Los libros andan entre $2,000 y $3,000. Los uniformes andan entre $2,000 y $2,500.\n\nEstos montos son aproximados y pueden variar. Agenda una cita para conocer el costo exacto y recibir atención personalizada."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "docs",
+      "topics": [
+        "documentacion"
+      ],
+      "suggest": true,
+      "order": 1,
+      "prompt": "¿Qué documentos piden para inscribir?",
+      "keywords": [
+        "documentos",
+        "inscribir",
+        "inscripcion",
+        "requisitos",
+        "acta",
+        "curp",
+        "boleta",
+        "papeles"
+      ],
+      "title": "Requisitos de inscripción 2026-2027",
+      "answer": "Para el ciclo 2026-2027, la lista de inscripción depende del nivel.\n\nPrimaria y Secundaria\n\n- 2 copias del certificado y/o boletas de 1.º a 6.º de primaria\n- Carta de buena conducta\n- Constancia de no adeudo\n- 2 copias del acta de nacimiento\n- 2 copias de la CURP\n- 4 fotografías tamaño infantil a color\n- 2 copias de la credencial de elector (madre y padre)\n- Examen médico con tipo de sangre, peso y talla\n- Pago de inscripción correspondiente\n- Pago de seguro de accidentes personales escolar\n\nPreparatoria\n\n- 2 copias del certificado de secundaria\n- Carta de buena conducta\n- Constancia de no adeudo\n- 2 copias del acta de nacimiento\n- 2 copias de la CURP\n- 6 fotografías tamaño infantil en blanco y negro mate\n- 2 copias de la credencial de elector (madre y padre)\n- Examen médico con tipo de sangre, peso y talla\n- Pago de inscripción correspondiente\n- Pago de seguro de accidentes médicos personales\n\nAgenda una cita si quieres entregarlos con calma o resolver un caso. Atendemos de lunes a viernes, de 8:00 a 15:00, en Libramiento San Miguel (Arcángel) No. 202, La Joyita. Teléfono: (445) 103-0946."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "docs-primaria",
+      "topics": [
+        "documentacion"
+      ],
+      "nivel": "primaria",
+      "keywords": [
+        "primaria",
+        "documentos",
+        "boletas",
+        "requisitos"
+      ],
+      "title": "Inscripción de Primaria",
+      "answer": "Para inscribir en Primaria, ciclo 2026-2027, se entrega:\n\n- 2 copias del certificado y/o boletas de 1.º a 6.º de primaria\n- Carta de buena conducta\n- Constancia de no adeudo\n- 2 copias del acta de nacimiento\n- 2 copias de la CURP\n- 4 fotografías tamaño infantil a color\n- 2 copias de la credencial de elector (madre y padre)\n- Examen médico con tipo de sangre, peso y talla\n- Pago de inscripción correspondiente\n- Pago de seguro de accidentes personales escolar\n\nAgenda una cita si quieres entregarlos con calma o resolver un caso. Atendemos de lunes a viernes, de 8:00 a 15:00, en Libramiento San Miguel (Arcángel) No. 202, La Joyita. Teléfono: (445) 103-0946."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "docs-secundaria",
+      "topics": [
+        "documentacion"
+      ],
+      "nivel": "secundaria",
+      "keywords": [
+        "secundaria",
+        "documentos",
+        "boletas",
+        "requisitos"
+      ],
+      "title": "Inscripción de Secundaria",
+      "answer": "Para inscribir en Secundaria, ciclo 2026-2027, se entrega:\n\n- 2 copias del certificado y/o boletas de 1.º a 6.º de primaria\n- Carta de buena conducta\n- Constancia de no adeudo\n- 2 copias del acta de nacimiento\n- 2 copias de la CURP\n- 4 fotografías tamaño infantil a color\n- 2 copias de la credencial de elector (madre y padre)\n- Examen médico con tipo de sangre, peso y talla\n- Pago de inscripción correspondiente\n- Pago de seguro de accidentes personales escolar\n\nAgenda una cita si quieres entregarlos con calma o resolver un caso. Atendemos de lunes a viernes, de 8:00 a 15:00, en Libramiento San Miguel (Arcángel) No. 202, La Joyita. Teléfono: (445) 103-0946."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "docs-preparatoria",
+      "topics": [
+        "documentacion"
+      ],
+      "nivel": "preparatoria",
+      "keywords": [
+        "preparatoria",
+        "prepa",
+        "bachillerato",
+        "certificado",
+        "documentos",
+        "requisitos"
+      ],
+      "title": "Inscripción de Preparatoria",
+      "answer": "Para inscribir en Preparatoria, ciclo 2026-2027, se entrega:\n\n- 2 copias del certificado de secundaria\n- Carta de buena conducta\n- Constancia de no adeudo\n- 2 copias del acta de nacimiento\n- 2 copias de la CURP\n- 6 fotografías tamaño infantil en blanco y negro mate\n- 2 copias de la credencial de elector (madre y padre)\n- Examen médico con tipo de sangre, peso y talla\n- Pago de inscripción correspondiente\n- Pago de seguro de accidentes médicos personales\n\nAgenda una cita si quieres entregarlos con calma o resolver un caso. Atendemos de lunes a viernes, de 8:00 a 15:00, en Libramiento San Miguel (Arcángel) No. 202, La Joyita. Teléfono: (445) 103-0946."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "becas",
+      "topics": [
+        "becas"
+      ],
+      "suggest": true,
+      "order": 3,
+      "prompt": "¿Cómo solicito una beca?",
+      "keywords": [
+        "beca",
+        "becas",
+        "promedio",
+        "convocatoria",
+        "requisitos"
+      ],
+      "title": "Becas, ciclo 2026-2027",
+      "answer": "La convocatoria para solicitar beca está abierta hasta el 27 de febrero. Antes hay que cubrir la inscripción y el seguro de accidentes personales escolar. Si ya tienen beca, se solicita de nuevo en administración.\n\nEl promedio mínimo es 8.5 y la solicitud se llena en tiempo y forma. Sin los requisitos completos no se renueva ninguna beca.\n\nSe piden:\n\n- A) copia del recibo de inscripción al periodo escolar actual o al inmediato\n- B) constancia de no adeudo de materias\n- C) comprobante de domicilio reciente (agua, luz, teléfono, predial u otro)\n- D) comprobante de ingresos familiares recientes (talón de nómina, estado de cuenta, declaración de impuestos o constancia de salario del patrón)\n- E) identificación oficial vigente con fotografía\n- F) carta donde expliquen el motivo de la beca\n\nAgenda una cita si quieres que en administración revisen el caso con calma."
+    },
+    {
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "kind": "hecho",
+      "sources": [],
+      "offerCita": true,
+      "id": "descuentos",
+      "topics": [
+        "descuentos"
+      ],
+      "suggest": true,
+      "order": 4,
+      "prompt": "¿Hay descuento por pago anticipado?",
+      "keywords": [
+        "descuento",
+        "anual",
+        "semestral",
+        "julio",
+        "libros",
+        "uniformes"
+      ],
+      "title": "Descuentos y venta de julio",
+      "answer": "En Primaria y Secundaria hay 10% de descuento por pago anual, si se cubre hasta el 31 de agosto. En Preparatoria hay 10% de descuento en la colegiatura por pago semestral. No aplican dos descuentos a la vez.\n\nEn Primaria y Secundaria, los libros y los uniformes se venden directamente en la escuela, únicamente durante julio.\n\nEl costo de lista se comparte en rango aproximado y puede variar. Agenda una cita si quieres el monto ya con el descuento de tu caso."
+    },
+    {
+      "id": "vacaciones-padres",
+      "audiences": [
+        "padres"
+      ],
+      "topics": [
+        "vacaciones"
+      ],
+      "kind": "ejemplo",
+      "suggest": true,
+      "order": 5,
+      "prompt": "¿Cuándo son las vacaciones?",
+      "keywords": [
+        "vacaciones",
+        "invierno",
+        "verano",
+        "semana santa"
+      ],
+      "title": "Vacaciones del ciclo",
+      "answer": "Información de ejemplo. El calendario oficial del ciclo no está cargado. Fechas de muestra, no confirmadas: receso de invierno del 21 de diciembre de 2026 al 6 de enero de 2027; Semana Santa del 29 de marzo al 2 de abril de 2027; inicio de vacaciones de verano el 12 de julio de 2027.\n\nNo tome estas fechas para planear. Confirme en la dirección o al (445) 103-0946.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "vacaciones-alumnos",
+      "audiences": [
+        "alumnos"
+      ],
+      "topics": [
+        "vacaciones"
+      ],
+      "kind": "ejemplo",
+      "suggest": true,
+      "order": 5,
+      "prompt": "¿Cuándo salimos de vacaciones?",
+      "keywords": [
+        "vacaciones",
+        "salimos",
+        "receso"
+      ],
+      "title": "Vacaciones",
+      "answer": "Información de ejemplo. Todavía no hay calendario oficial en este archivo. Muestra, no la uses para planear: invierno del 21 de diciembre de 2026 al 6 de enero de 2027, Semana Santa del 29 de marzo al 2 de abril de 2027 y verano desde el 12 de julio de 2027.\n\nAvísale a tu familia y confirma en la dirección.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "vacaciones-profesores",
+      "audiences": [
+        "profesores"
+      ],
+      "topics": [
+        "vacaciones"
+      ],
+      "kind": "ejemplo",
+      "suggest": true,
+      "order": 5,
+      "prompt": "¿Ya hay calendario de vacaciones?",
+      "keywords": [
+        "vacaciones",
+        "calendario",
+        "circular"
+      ],
+      "title": "Calendario de vacaciones",
+      "answer": "Información de ejemplo. No envíe estas fechas al grupo de familias. Son una muestra mientras llega la circular: invierno del 21 de diciembre de 2026 al 6 de enero de 2027, Semana Santa del 29 de marzo al 2 de abril de 2027, verano desde el 12 de julio de 2027.\n\nEl calendario vigente se pide a dirección.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "vacaciones-personal",
+      "audiences": [
+        "personal"
+      ],
+      "topics": [
+        "vacaciones"
+      ],
+      "kind": "ejemplo",
+      "suggest": true,
+      "order": 5,
+      "prompt": "¿Qué respondo sobre vacaciones?",
+      "keywords": [
+        "vacaciones",
+        "recepcion",
+        "receso"
+      ],
+      "title": "Guion de recepción: vacaciones",
+      "answer": "Información de ejemplo. Si llaman a recepción, lea esto como guion y advierta que es un ejemplo: invierno 21 de diciembre de 2026 al 6 de enero de 2027, Semana Santa 29 de marzo al 2 de abril de 2027, verano desde el 12 de julio de 2027.\n\nNo dicte las fechas como oficiales. Ofrezca confirmar al (445) 103-0946.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "festivos-padres",
+      "audiences": [
+        "padres"
+      ],
+      "topics": [
+        "festivos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 6,
+      "prompt": "¿Qué días festivos siguen?",
+      "keywords": [
+        "festivos",
+        "asueto",
+        "puente"
+      ],
+      "title": "Días festivos",
+      "answer": "Información de ejemplo. Estos días cívicos son una muestra, no la lista de asuetos del instituto: 16 de septiembre, 2 de noviembre, 20 de noviembre y 12 de diciembre.\n\nFalta el calendario oficial para saber si hay suspensión de clases. Confirme en dirección antes de apartar viaje.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "festivos-alumnos",
+      "audiences": [
+        "alumnos"
+      ],
+      "topics": [
+        "festivos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 6,
+      "prompt": "¿Hay día festivo pronto?",
+      "keywords": [
+        "festivo",
+        "asueto",
+        "puente"
+      ],
+      "title": "Días festivos",
+      "answer": "Información de ejemplo. En la muestra aparecen el 16 de septiembre, el 2 de noviembre, el 20 de noviembre y el 12 de diciembre. No significa que automáticamente no haya clase: el calendario oficial aún no está cargado.\n\nPregunta en la dirección antes de hacer planes.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "festivos-profesores",
+      "audiences": [
+        "profesores"
+      ],
+      "topics": [
+        "festivos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 6,
+      "prompt": "¿Qué festivos debo considerar?",
+      "keywords": [
+        "festivos",
+        "asueto",
+        "calendario"
+      ],
+      "title": "Festivos y asuetos",
+      "answer": "Información de ejemplo. No los pase al horario del grupo como asueto confirmado. Muestra cívica habitual: 16 de septiembre, 2 de noviembre, 20 de noviembre y 12 de diciembre.\n\nLa suspensión de clases depende de la circular, que todavía no está en este archivo.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "festivos-personal",
+      "audiences": [
+        "personal"
+      ],
+      "topics": [
+        "festivos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 6,
+      "prompt": "¿Los festivos del tablero son oficiales?",
+      "keywords": [
+        "festivos",
+        "tablero",
+        "oficial",
+        "asueto"
+      ],
+      "title": "Festivos en recepción",
+      "answer": "Información de ejemplo. Si preguntan si el tablero ya es oficial, la respuesta de muestra es no. Días cívicos de ejemplo: 16 de septiembre, 2 de noviembre, 20 de noviembre y 12 de diciembre.\n\nAdvierta que la dirección no ha publicado la lista de asuetos del ciclo.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "desfiles-padres",
+      "audiences": [
+        "padres"
+      ],
+      "topics": [
+        "desfiles"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 7,
+      "prompt": "¿Hay desfile pronto?",
+      "keywords": [
+        "desfile",
+        "escolta",
+        "septiembre",
+        "noviembre"
+      ],
+      "title": "Desfiles cívicos",
+      "answer": "Información de ejemplo. No hay convocatoria oficial en este archivo. En la muestra, la escolta se reúne en la cancha del campus a las 7:30 y el traslado al desfile cívico (16 de septiembre o 20 de noviembre) lo marca una circular.\n\nLa hora y el punto de reunión son de ejemplo. Confirme al (445) 103-0946.",
+      "sources": [
+        "documentos/convocatoria-desfiles.pdf"
+      ]
+    },
+    {
+      "id": "desfiles-alumnos",
+      "audiences": [
+        "alumnos"
+      ],
+      "topics": [
+        "desfiles"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 7,
+      "prompt": "¿Me toca desfile?",
+      "keywords": [
+        "desfile",
+        "escolta",
+        "contingente"
+      ],
+      "title": "Desfile y escolta",
+      "answer": "Información de ejemplo. Si te toca escolta o contingente, esta demostración no tiene la lista real. Muestra: reunión en la cancha a las 7:30 el día del desfile.\n\nNo llegues con esa hora hasta que tu coordinador la confirme. La cancha y los edificios están en el mismo campus de La Joyita.",
+      "sources": [
+        "documentos/convocatoria-desfiles.pdf"
+      ]
+    },
+    {
+      "id": "desfiles-profesores",
+      "audiences": [
+        "profesores"
+      ],
+      "topics": [
+        "desfiles"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 7,
+      "prompt": "¿Cómo se organiza el desfile?",
+      "keywords": [
+        "desfile",
+        "escolta",
+        "logistica"
+      ],
+      "title": "Organización del desfile",
+      "answer": "Información de ejemplo. No organice la salida con este guion. Muestra de logística: escolta en la cancha a las 7:30 y traslado según la circular del 16 de septiembre o del 20 de noviembre.\n\nFalta la orden del día oficial.",
+      "sources": [
+        "documentos/convocatoria-desfiles.pdf"
+      ]
+    },
+    {
+      "id": "desfiles-personal",
+      "audiences": [
+        "personal"
+      ],
+      "topics": [
+        "desfiles"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 7,
+      "prompt": "¿Dónde se forma el desfile?",
+      "keywords": [
+        "desfile",
+        "cancha",
+        "formacion",
+        "recepcion"
+      ],
+      "title": "Punto de reunión del desfile",
+      "answer": "Información de ejemplo. Guion de recepción: la hora de muestra son las 7:30 en la cancha, pero la circular todavía no está cargada. No confirme un punto de reunión distinto al que indique dirección.\n\nTeléfono de informes: (445) 103-0946.",
+      "sources": [
+        "documentos/convocatoria-desfiles.pdf"
+      ]
+    },
+    {
+      "id": "eventos-padres",
+      "audiences": [
+        "padres"
+      ],
+      "topics": [
+        "eventos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 8,
+      "prompt": "¿Qué eventos escolares hay?",
+      "keywords": [
+        "eventos",
+        "paz",
+        "deletreo",
+        "bienvenida",
+        "cafe"
+      ],
+      "title": "Eventos escolares",
+      "answer": "Información de ejemplo en las fechas. Tradiciones ya vividas en el instituto, sin día asignado en este archivo: Semana por la Paz, con los alumnos formando palabras en la cancha; Un café por mi futuro, en Preparatoria; el concurso de deletreo de Secundaria; y la bienvenida a la generación de Prepa.\n\nFecha de muestra, no oficial: jornada del huerto escolar el viernes 16 de octubre de 2026.",
+      "sources": [
+        "documentos/calendario-eventos.pdf"
+      ]
+    },
+    {
+      "id": "eventos-alumnos",
+      "audiences": [
+        "alumnos"
+      ],
+      "topics": [
+        "eventos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 8,
+      "prompt": "¿Qué evento sigue en el campus?",
+      "keywords": [
+        "evento",
+        "paz",
+        "deletreo",
+        "bienvenida"
+      ],
+      "title": "Próximo evento",
+      "answer": "Información de ejemplo si buscas el próximo día. Lo que sí se ha vivido en el campus: Semana por la Paz en la cancha, Un café por mi futuro en Prepa, el deletreo de Secundaria y la bienvenida de generación.\n\nUna fecha de muestra del huerto, no confirmada: viernes 16 de octubre de 2026. Pregunta a tu tutor antes de anotarla.",
+      "sources": [
+        "documentos/calendario-eventos.pdf"
+      ]
+    },
+    {
+      "id": "eventos-profesores",
+      "audiences": [
+        "profesores"
+      ],
+      "topics": [
+        "eventos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 8,
+      "prompt": "¿Qué eventos están en el borrador?",
+      "keywords": [
+        "eventos",
+        "borrador",
+        "huerto",
+        "paz"
+      ],
+      "title": "Eventos en el borrador",
+      "answer": "Información de ejemplo. No publique el 16 de octubre de 2026 como jornada del huerto: es una fecha de muestra. Tradiciones documentadas del instituto, sin calendario cargado: Semana por la Paz, Un café por mi futuro, concurso de deletreo y bienvenida de Prepa.",
+      "sources": [
+        "documentos/calendario-eventos.pdf"
+      ]
+    },
+    {
+      "id": "eventos-personal",
+      "audiences": [
+        "personal"
+      ],
+      "topics": [
+        "eventos"
+      ],
+      "kind": "ejemplo",
+      "suggest": false,
+      "order": 8,
+      "prompt": "¿Qué eventos anuncio en recepción?",
+      "keywords": [
+        "eventos",
+        "anuncio",
+        "recepcion",
+        "paz"
+      ],
+      "title": "Anuncios de recepción",
+      "answer": "Información de ejemplo. Si va a anunciar en recepción, diga que el calendario de eventos no está cargado. Puede mencionar las tradiciones —Semana por la Paz, Un café por mi futuro, deletreo y bienvenida de Prepa— sin dar fecha.\n\nLa jornada del huerto del viernes 16 de octubre de 2026 es solo una muestra.",
+      "sources": [
+        "documentos/calendario-eventos.pdf"
+      ]
+    },
+    {
+      "id": "calendario",
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "topics": [
+        "calendario"
+      ],
+      "kind": "ejemplo",
+      "keywords": [
+        "calendario",
+        "agenda"
+      ],
+      "title": "Calendario del ciclo",
+      "answer": "Información de ejemplo. El calendario oficial del ciclo no está en este archivo. Puede preguntar por vacaciones, días festivos, desfiles o eventos y recibirá una muestra marcada.\n\nPara el dato vigente: (445) 103-0946 o contacto@institutokhepani.com, de lunes a viernes de 8:00 a 15:00.",
+      "sources": [
+        "documentos/calendario-oficial.pdf"
+      ]
+    },
+    {
+      "id": "contacto",
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "topics": [
+        "contacto"
+      ],
+      "kind": "hecho",
+      "keywords": [
+        "telefono",
+        "correo",
+        "horario",
+        "direccion",
+        "whatsapp"
+      ],
       "title": "Contacto del instituto",
-      "answer": "Instituto Khépani está en Libramiento San Miguel No. 202, La Joyita, Uriangato, Guanajuato. Teléfono y WhatsApp: (445) 103-0946.\n\nCorreo general: contacto@institutokhepani.com. Secundaria: secundaria@institutokhepani.com. Preparatoria: preparatoria@institutokhepani.com. Horario de atención: lunes a viernes, de 8:00 a 15:00.",
+      "answer": "Instituto Khépani está en Libramiento San Miguel (Arcángel) No. 202, La Joyita, Uriangato, Guanajuato, C.P. 38980. Teléfono y WhatsApp: (445) 103-0946.\n\nCorreo general: contacto@institutokhepani.com. Secundaria: secundaria@institutokhepani.com. Preparatoria: preparatoria@institutokhepani.com. Horario de atención: lunes a viernes, de 8:00 a 15:00.",
       "sources": []
     },
     {
       "id": "niveles",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["niveles"],
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "topics": [
+        "niveles"
+      ],
       "kind": "hecho",
-      "keywords": ["primaria", "secundaria", "preparatoria", "alumnos", "grados"],
+      "keywords": [
+        "primaria",
+        "secundaria",
+        "preparatoria",
+        "alumnos",
+        "grados"
+      ],
       "title": "Niveles y campus",
-      "answer": "Instituto Khépani, en Uriangato, Guanajuato, trabaja desde 2007 con cerca de 350 alumnos. Son 12 grados en 3 niveles escolarizados —Primaria, Secundaria y Preparatoria— en el mismo campus de La Joyita.\n\nPrimaria, CCT 11PPR1068V. Secundaria, CCT 11PES0464H, correo secundaria@institutokhepani.com. Preparatoria, CCT 11PBH0047S, correo preparatoria@institutokhepani.com. La formación es católica.",
+      "answer": "Instituto Khépani, en Uriangato, Guanajuato, trabaja desde 2007 con cerca de 350 alumnos. Son 12 grados en 3 niveles escolarizados —Primaria, Secundaria y Preparatoria— en el mismo campus de La Joyita.\n\nPrimaria: CCT 11PPR1068V, incorporación SEG Acuerdo 053/2013 del 24 de julio de 2013, modalidad escolarizada. Secundaria: CCT 11PES0464H, incorporación SEG Acuerdo 051-2013 del 22 de julio de 2013, modalidad escolarizada, correo secundaria@institutokhepani.com. Preparatoria: CCT 11PBH0047S, incorporación SEG Acuerdo 048/2017 del 27 de julio de 2017, modalidad escolarizada, correo preparatoria@institutokhepani.com. La formación es católica.",
       "sources": []
     },
     {
       "id": "ingles",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["ingles"],
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "topics": [
+        "ingles"
+      ],
       "kind": "hecho",
-      "keywords": ["cambridge", "ket", "pet", "toefl", "ingles"],
+      "keywords": [
+        "cambridge",
+        "ket",
+        "pet",
+        "toefl",
+        "ingles"
+      ],
       "title": "Inglés en el campus",
       "answer": "De Primaria a Secundaria se preparan las certificaciones Cambridge English KET y PET for Schools, con exámenes en la propia institución. En Preparatoria, el instituto es centro de evaluación TOEFL.\n\nEn el campus está el aula identificada como Miss Sandy's English Class.",
       "sources": []
     },
     {
       "id": "huerto",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["huerto"],
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "topics": [
+        "huerto"
+      ],
       "kind": "hecho",
-      "keywords": ["huerto", "huerta"],
+      "keywords": [
+        "huerto",
+        "huerta"
+      ],
       "title": "Huerto escolar",
       "answer": "El campus tiene huerto escolar, junto a las canchas y los jardines de La Joyita. En esta demostración no hay fechas de jornada: si necesita el día, hay que esperar el calendario oficial o llamar al (445) 103-0946.",
-      "sources": ["documentos/calendario-eventos.pdf"]
+      "sources": [
+        "documentos/calendario-eventos.pdf"
+      ]
     },
     {
       "id": "mascota",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["mascota"],
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "topics": [
+        "mascota"
+      ],
       "kind": "hecho",
-      "keywords": ["lechuza", "buho", "mascota", "escudo"],
+      "keywords": [
+        "lechuza",
+        "buho",
+        "mascota",
+        "escudo"
+      ],
       "title": "La lechuza del escudo",
       "answer": "La mascota del instituto es la lechuza del escudo oficial: va sobre el libro y la antorcha, con el lema Creciendo en valores. El nombre del colegio es Instituto Khépani, en Uriangato, Guanajuato.",
       "sources": []
     },
     {
       "id": "identidad",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["identidad"],
+      "audiences": [
+        "padres",
+        "alumnos",
+        "profesores",
+        "personal"
+      ],
+      "topics": [
+        "identidad"
+      ],
       "kind": "hecho",
-      "keywords": ["catolica", "valores", "mision", "lema"],
+      "keywords": [
+        "catolica",
+        "valores",
+        "mision",
+        "lema"
+      ],
       "title": "Formación y lema",
       "answer": "La formación del instituto es católica, con el lema Creciendo en valores. En el letrero de la entrada, la misión habla de formar personas respetuosas, autónomas, responsables y competentes.\n\nLos valores escritos ahí son compromiso, libertad, tolerancia, dignidad, amor, generosidad, amistad, respeto, honestidad, perseverancia y responsabilidad.",
       "sources": []
-    },
-    {
-      "id": "costos",
-      "audiences": ["padres", "alumnos", "profesores", "personal"],
-      "topics": ["costos"],
-      "kind": "aviso",
-      "keywords": ["colegiatura", "costo", "cuota", "precio"],
-      "title": "Colegiaturas",
-      "answer": "Esta demostración no incluye colegiaturas, cuotas ni costos de inscripción. Para cifras oficiales escriba a contacto@institutokhepani.com o llame al (445) 103-0946, de lunes a viernes de 8:00 a 15:00.",
-      "sources": ["documentos/cuotas-oficiales.pdf"]
     }
-  ]
+  ],
+  "cita": {
+    "chip": "Agendar cita",
+    "button": "Agenda una cita",
+    "whatsapp": "524451030946",
+    "phoneDisplay": "(445) 103-0946",
+    "horario": "Lunes a viernes, de 8:00 a 15:00"
+  }
 }
