@@ -1,7 +1,8 @@
-/* Pregúntale a Khépani — demostración local.
-   PUNTO DE CONEXIÓN: sustituya el cuerpo de responder() dentro de crearMotor
-   por una llamada al backend. El contrato está en README.md.
-   Hoy no hay red, claves ni modelo externo: solo conocimiento.json. */
+/* Pregúntale a Khépani.
+   Cada pregunta hace POST a ASISTENTE_URL. Si falla, tarda más de 20 s
+   o no responde 200, responder() usa conocimiento.json.
+   No hay clave en este archivo. La respuesta del modelo se pinta como
+   texto; los enlaces se crean con nodos <a>, nunca con innerHTML. */
 (function (root, factory) {
   var api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
@@ -124,6 +125,9 @@
     Preparatoria: ["1.er semestre", "2.º semestre", "3.er semestre", "4.º semestre", "5.º semestre", "6.º semestre"]
   };
   var WHATSAPP_CITA = "524451030946";
+  var ASISTENTE_URL = "https://us-central1-khepani-guanajuato.cloudfunctions.net/asistente";
+  var ASISTENTE_TIMEOUT_MS = 20000;
+  var HISTORIAL_MAX = 8;
 
   function dos(n) { return (n < 10 ? "0" : "") + n; }
 
@@ -277,9 +281,7 @@
       };
     }
 
-    /* responder(pregunta, audiencia) → { id, title, answer, kind, badge, topicLabel, sources }
-       FUTURE LLM: reemplace este cuerpo por fetch al endpoint del README
-       y devuelva el mismo objeto. No cambie montar(). */
+    /* Respaldo local. La red vive en pedirAsistente(); esto corre si esa llamada no sirve. */
     function responder(pregunta, audiencia) {
       var aud = audienciaOk(audiencia || "padres");
       var bruto = String(pregunta || "").slice(0, 500);
@@ -341,39 +343,138 @@
     return { responder: responder };
   }
 
-  function escapar(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  function hrefSeguro(token) {
+    var corte = String(token || "").replace(/[.,;:!?)\]]+$/g, "");
+    var sufijo = String(token || "").slice(corte.length);
+    var href = "";
+    var externo = false;
+    if (/^https?:\/\//i.test(corte)) {
+      try {
+        var u = new URL(corte);
+        if (u.protocol === "http:" || u.protocol === "https:") {
+          href = u.href;
+          externo = true;
+        }
+      } catch (err) { href = ""; }
+    } else if (/^www\./i.test(corte)) {
+      try {
+        var w = new URL("https://" + corte);
+        if (w.protocol === "https:") {
+          href = w.href;
+          externo = true;
+        }
+      } catch (err2) { href = ""; }
+    } else if (/^[A-Za-z0-9._+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/.test(corte)) {
+      href = "mailto:" + corte;
+    } else if (telefonoValido(corte)) {
+      href = "tel:+52" + telefonoValido(corte);
+    }
+    return { corte: corte, sufijo: sufijo, href: href, externo: externo };
+  }
+
+  /* Texto plano. Los enlaces son nodos <a> con href ya filtrado. */
+  function anexarPlano(parent, linea) {
+    var re = /(https?:\/\/[^\s<>"']+|www\.[^\s<>"']+|[A-Za-z0-9._+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}|\(\d{3}\)\s*\d{3}[\s-]?\d{4})/g;
+    var text = String(linea || "");
+    var last = 0;
+    var m;
+    while ((m = re.exec(text))) {
+      if (m.index > last) parent.appendChild(document.createTextNode(text.slice(last, m.index)));
+      var token = m[0];
+      var info = hrefSeguro(token);
+      if (!info.href) {
+        parent.appendChild(document.createTextNode(token));
+      } else {
+        var a = document.createElement("a");
+        a.href = info.href;
+        a.textContent = info.corte;
+        if (info.externo) {
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+        }
+        parent.appendChild(a);
+        if (info.sufijo) parent.appendChild(document.createTextNode(info.sufijo));
+      }
+      last = m.index + token.length;
+    }
+    if (last < text.length) parent.appendChild(document.createTextNode(text.slice(last)));
+  }
+
+  function pintarRespuesta(parent, texto) {
+    String(texto || "").replace(/\r\n/g, "\n").trim().split(/\n\n+/).forEach(function (bloque) {
+      if (!bloque) return;
+      var lines = bloque.split("\n");
+      var items = lines.length > 0 && lines.every(function (l) { return /^[-•]\s+\S/.test(l.trim()); });
+      if (items) {
+        var ul = document.createElement("ul");
+        lines.forEach(function (l) {
+          var li = document.createElement("li");
+          anexarPlano(li, l.replace(/^[-•]\s+/, "").trim());
+          ul.appendChild(li);
+        });
+        parent.appendChild(ul);
+        return;
+      }
+      var p = document.createElement("p");
+      lines.forEach(function (linea, i) {
+        if (i) p.appendChild(document.createElement("br"));
+        anexarPlano(p, linea);
+      });
+      parent.appendChild(p);
     });
   }
 
-  function enriquecer(texto) {
-    var safe = escapar(texto);
-    safe = safe.replace(
-      /([a-z0-9._+-]+@institutokhepani\.com)/g,
-      '<a href="mailto:$1">$1</a>'
-    );
-    safe = safe.replace(
-      /\(445\) 103-0946/g,
-      '<a href="tel:+524451030946">(445) 103-0946</a>'
-    );
-    return safe;
-  }
-
-  function aParrafos(texto) {
-    return String(texto || "")
-      .split(/\n\n+/)
-      .map(function (p) {
-        var lines = p.split("\n");
-        var items = lines.length > 0 && lines.every(function (l) { return /^[-•]\s+/.test(l.trim()); });
-        if (items) {
-          return "<ul>" + lines.map(function (l) {
-            return "<li>" + enriquecer(l.replace(/^[-•]\s+/, "")) + "</li>";
-          }).join("") + "</ul>";
-        }
-        return "<p>" + enriquecer(p).replace(/\n/g, "<br>") + "</p>";
-      })
-      .join("");
+  function pedirAsistente(message, history) {
+    var ctrl = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = 0;
+    var cuerpo = {
+      message: String(message || ""),
+      history: (history || []).slice(-HISTORIAL_MAX).map(function (h) {
+        return {
+          role: h && h.role === "assistant" ? "assistant" : "user",
+          content: String(h && h.content || "")
+        };
+      }),
+      audiencia: "publico"
+    };
+    var req = fetch(ASISTENTE_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(cuerpo),
+      signal: ctrl ? ctrl.signal : undefined,
+      cache: "no-store"
+    }).then(function (r) {
+      if (!r.ok) throw new Error("http");
+      return r.json();
+    }).then(function (data) {
+      if (!data || typeof data.answer !== "string" || !String(data.answer).trim()) throw new Error("shape");
+      return {
+        id: "asistente",
+        title: "",
+        answer: String(data.answer).trim(),
+        kind: "aviso",
+        badge: null,
+        topics: [],
+        topicLabel: "",
+        sources: [],
+        offerCita: data.offerCita === true,
+        openCita: false,
+        nivel: ""
+      };
+    });
+    var timed = new Promise(function (_, reject) {
+      timer = setTimeout(function () {
+        if (ctrl) ctrl.abort();
+        reject(new Error("timeout"));
+      }, ASISTENTE_TIMEOUT_MS);
+    });
+    return Promise.race([req, timed]).then(function (res) {
+      clearTimeout(timer);
+      return res;
+    }, function (err) {
+      clearTimeout(timer);
+      return Promise.reject(err);
+    });
   }
 
   function montar(root, kbListo) {
@@ -396,7 +497,8 @@
       kb: null,
       motor: null,
       ocupado: false,
-      huboPregunta: false
+      huboPregunta: false,
+      historial: []
     };
 
     function voz() {
@@ -468,17 +570,22 @@
       chips.appendChild(row);
     }
 
-    function burbuja(clase, quien, htmlInterior) {
+    function burbuja(clase, quien) {
       var el = document.createElement("article");
       el.className = "bubble " + clase;
-      el.innerHTML = '<p class="who">' + escapar(quien) + "</p>" + htmlInterior;
+      var who = document.createElement("p");
+      who.className = "who";
+      who.textContent = quien;
+      el.appendChild(who);
       thread.appendChild(el);
       thread.scrollTop = thread.scrollHeight;
       return el;
     }
 
     function agregarUsuario(texto) {
-      burbuja("bubble--user", "Tú", aParrafos(texto));
+      var el = burbuja("bubble--user", "Tú");
+      pintarRespuesta(el, texto);
+      thread.scrollTop = thread.scrollHeight;
     }
 
     function nivelEtiqueta(id) {
@@ -489,11 +596,20 @@
     }
 
     function agregarBot(res) {
-      var extra = "";
-      if (res.topicLabel) extra += '<p class="tema">' + escapar(res.topicLabel) + "</p>";
-      extra += aParrafos(res.answer);
-      if (res.badge) extra += '<p class="badge">' + escapar(res.badge) + "</p>";
-      var el = burbuja("bubble--bot", "Khépani", extra);
+      var el = burbuja("bubble--bot", "Khépani");
+      if (res.topicLabel) {
+        var tema = document.createElement("p");
+        tema.className = "tema";
+        tema.textContent = res.topicLabel;
+        el.appendChild(tema);
+      }
+      pintarRespuesta(el, res.answer);
+      if (res.badge) {
+        var badge = document.createElement("p");
+        badge.className = "badge";
+        badge.textContent = res.badge;
+        el.appendChild(badge);
+      }
       if (res.offerCita) {
         var offer = document.createElement("p");
         offer.className = "cita-offer";
@@ -507,6 +623,7 @@
         offer.appendChild(btn);
         el.appendChild(offer);
       }
+      thread.scrollTop = thread.scrollHeight;
       return el;
     }
 
@@ -514,7 +631,18 @@
       var el = document.createElement("article");
       el.className = "bubble bubble--bot";
       el.setAttribute("data-typing", "");
-      el.innerHTML = '<p class="who">Khépani</p><p class="dots" role="status" aria-label="Buscando la respuesta"><span></span><span></span><span></span></p>';
+      var who = document.createElement("p");
+      who.className = "who";
+      who.textContent = "Khépani";
+      var dots = document.createElement("p");
+      dots.className = "dots";
+      dots.setAttribute("role", "status");
+      dots.setAttribute("aria-label", "Buscando la respuesta");
+      dots.appendChild(document.createElement("span"));
+      dots.appendChild(document.createElement("span"));
+      dots.appendChild(document.createElement("span"));
+      el.appendChild(who);
+      el.appendChild(dots);
       thread.appendChild(el);
       thread.scrollTop = thread.scrollHeight;
       return el;
@@ -538,10 +666,18 @@
         agregarBot({
           kind: "aviso",
           title: "Audiencia",
-          answer: "Sigo en la demostración, ahora con respuestas pensadas para " + etiquetaAud(id) + ".",
+          answer: "Si el asistente no responde, sigo con la base local pensada para " + etiquetaAud(id) + ".",
           badge: null,
           topicLabel: ""
         });
+      }
+    }
+
+    function recordar(pregunta, respuesta) {
+      estado.historial.push({ role: "user", content: String(pregunta || "") });
+      estado.historial.push({ role: "assistant", content: String(respuesta || "") });
+      if (estado.historial.length > HISTORIAL_MAX) {
+        estado.historial = estado.historial.slice(-HISTORIAL_MAX);
       }
     }
 
@@ -553,10 +689,14 @@
       if (input) input.value = "";
       agregarUsuario(t);
       var typing = agregarTyping();
-      window.setTimeout(function () {
-        var res = estado.motor.responder(t, estado.audiencia);
+      var history = estado.historial.slice(-HISTORIAL_MAX);
+      var cerrado = false;
+      function cerrar(res) {
+        if (cerrado) return;
+        cerrado = true;
         if (typing.parentNode) typing.parentNode.removeChild(typing);
         agregarBot(res);
+        recordar(t, res.answer);
         if (res.openCita) abrirCita();
         estado.ocupado = false;
         var vv = window.visualViewport;
@@ -565,7 +705,10 @@
         if (form && !anclado && form.getBoundingClientRect().bottom > limite) {
           form.scrollIntoView({ block: "end", behavior: reduce ? "auto" : "smooth" });
         }
-      }, reduce ? 0 : 420);
+      }
+      pedirAsistente(t, history).then(cerrar, function () {
+        cerrar(estado.motor.responder(t, estado.audiencia));
+      });
     }
 
     function arrancar(kb) {
@@ -764,7 +907,11 @@
       })
       .then(arrancar)
       .catch(function () {
-        thread.innerHTML = '<p class="chat-error">No se pudo abrir la base de ejemplo (conocimiento.json).</p>';
+        thread.textContent = "";
+        var p = document.createElement("p");
+        p.className = "chat-error";
+        p.textContent = "No se pudo abrir la base de ejemplo (conocimiento.json).";
+        thread.appendChild(p);
       });
   }
 

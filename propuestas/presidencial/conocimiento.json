@@ -5,20 +5,18 @@
   "notice": "Las entradas con kind \"ejemplo\" son calendario, vacaciones, días festivos, desfiles y fechas de eventos: siguen siendo muestra. Requisitos, becas, descuentos y rangos de colegiatura del ciclo 2026-2027 orientan con datos de la escuela. Los montos son aproximados.",
   "replacement": {
     "file": "propuestas/presidencial/conocimiento.json",
-    "futureEndpoint": "POST /api/khepani/preguntar",
+    "futureEndpoint": "https://us-central1-khepani-guanajuato.cloudfunctions.net/asistente",
     "requestShape": {
-      "pregunta": "¿Cuándo son las vacaciones?",
-      "audiencia": "padres"
+      "message": "¿Cuándo son las vacaciones?",
+      "history": [],
+      "audiencia": "publico"
     },
     "responseShape": [
-      "id",
-      "title",
       "answer",
-      "kind",
-      "badge",
-      "topicLabel",
-      "sources",
-      "offerCita"
+      "offerCita",
+      "cita",
+      "model",
+      "guarded"
     ]
   },
   "audiences": [

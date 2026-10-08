@@ -2,7 +2,7 @@
 
 Borrador de diseño para la revisión interna de Instituto Khépani. No es el sitio en vivo (`institutokhepani.com`).
 
-«Pregúntale a Khépani» contesta en el navegador. No llama a un modelo externo ni guarda claves. `asistente.js` elige una ficha de `conocimiento.json` según el tema de la pregunta, el nivel (si lo dice) y la audiencia (Padres, Alumnos, Profesores, Personal).
+«Pregúntale a Khépani» pregunta primero al asistente en la nube. No hay claves en este repositorio. Si la llamada falla, tarda más de unos 20 segundos o no responde 200, `asistente.js` elige una ficha de `conocimiento.json` según el tema de la pregunta, el nivel (si lo dice) y la audiencia (Padres, Alumnos, Profesores, Personal).
 
 El ciclo 2026-2027 ya orienta con datos de la escuela: requisitos de inscripción, becas, descuentos, venta de libros y uniformes en julio, y claves de incorporación. Las colegiaturas se dicen en rango aproximado y siempre invitan a agendar cita para el costo exacto. Vacaciones, días festivos, desfiles y las fechas de eventos siguen con `kind: "ejemplo"`.
 
@@ -20,38 +20,30 @@ Las fichas con `suggest: true` y `prompt` aparecen como sugerencias para esa aud
 
 ## Citas por WhatsApp
 
-El formulario pide nombre de mamá, papá o tutor, nombre del alumno, nivel y grado, día y hora (lunes a viernes, 8:00 a 15:00), teléfono y la pregunta. Si los datos sirven, muestra el mensaje en claro y abre WhatsApp al (445) 103-0946 con ese texto ya escrito. La familia toca enviar. No hay servidor, ni claves, ni se guarda la cita en esta página.
+El formulario pide nombre de mamá, papá o tutor, nombre del alumno, nivel y grado, día y hora (lunes a viernes, 8:00 a 15:00), teléfono y la pregunta. Si los datos sirven, muestra el mensaje en claro y abre WhatsApp al (445) 103-0946 con ese texto ya escrito. La familia toca enviar. Esta página no guarda la cita ni la manda al asistente.
 
-## Dónde conectar un backend con LLM
+## Asistente en la nube
 
-El único punto de sustitución es la función `responder` dentro de `crearMotor`, en `asistente.js`.
-
-Hoy devuelve:
+Cada pregunta hace `POST` a `https://us-central1-khepani-guanajuato.cloudfunctions.net/asistente` con `Content-Type: application/json`:
 
 ```json
 {
-  "id": "vacaciones-padres",
-  "title": "Vacaciones del ciclo",
-  "answer": "Información de ejemplo. …",
-  "kind": "ejemplo",
-  "badge": "Información de ejemplo",
-  "topicLabel": "Vacaciones",
-  "sources": ["documentos/calendario-oficial.pdf"],
-  "offerCita": false
+  "message": "¿Cuánto cuesta la secundaria?",
+  "history": [
+    { "role": "user", "content": "…" },
+    { "role": "assistant", "content": "…" }
+  ],
+  "audiencia": "publico"
 }
 ```
 
-`badge` es `"Información de ejemplo"` solo cuando `kind` es `"ejemplo"`. `montar()` pinta el hilo y no hace falta cambiarlo si la respuesta conserva esa forma.
+`history` son los últimos 8 turnos, sin contar la pregunta que va en `message`. La respuesta es `{answer, offerCita, cita:{whatsapp, phone}, model, guarded}`.
 
-Para un recuperador futuro (fragmentos de los PDF oficiales y, si se quiere, un modelo), reemplace el cuerpo de `responder` por una llamada a su API:
+`answer` se muestra como texto plano. Las direcciones, los correos y el teléfono se vuelven enlaces con nodos del documento; el HTML del modelo no se inserta. Si `offerCita` es verdadero, aparece el botón «Agenda una cita», que abre el mismo formulario de arriba. El número del formulario sigue siendo `wa.me/524451030946`.
 
-`POST /api/khepani/preguntar`
+Si `fetch` falla, se agota el tiempo (~20 s) o el estado no es 200, responde el emparejamiento de `conocimiento.json`. Ese respaldo conserva la forma anterior (`answer`, `kind`, `badge`, `topicLabel`, `offerCita`). `badge` es «Información de ejemplo» solo cuando `kind` es `"ejemplo"`.
 
-```json
-{ "pregunta": "¿Cuándo son las vacaciones?", "audiencia": "padres" }
-```
-
-Ese servicio viviría fuera de GitHub Pages. Este repositorio no incluye claves ni un cliente de ningún proveedor. Mantenga `kind: "ejemplo"` cuando el fragmento recuperado no sea el documento vigente del ciclo.
+El service worker no guarda las peticiones al asistente. La caché del shell es solo de esta propuesta.
 
 ## App de pantalla de inicio
 
