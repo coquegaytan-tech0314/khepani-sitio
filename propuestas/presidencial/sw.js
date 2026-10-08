@@ -2,7 +2,8 @@
    Scope is the directory of this file. On GitHub Pages that is
    /khepani-sitio/propuestas/presidencial/ — the same scope as manifest.webmanifest.
    Asset URLs are relative so they resolve under that subpath. */
-var CACHE = "khepani-presidencial-v7";
+var CACHE = "khepani-presidencial-v8";
+var ASISTENTE_HOST = "us-central1-khepani-guanajuato.cloudfunctions.net";
 var SHELL = [
   "./",
   "./index.html",
@@ -62,11 +63,18 @@ function sameOrigin(url) {
   return url.origin === self.location.origin;
 }
 
+function esAsistente(url) {
+  return url.hostname === ASISTENTE_HOST && url.pathname.replace(/\/+$/, "") === "/asistente";
+}
+
 self.addEventListener("fetch", function (event) {
   var req = event.request;
-  if (req.method !== "GET") return;
   var url;
   try { url = new URL(req.url); } catch (err) { return; }
+  /* POST (y cualquier otro método) al asistente sale directo a la red.
+     No se guarda en la caché del shell, ni siquiera si alguien lo pide por GET. */
+  if (esAsistente(url)) return;
+  if (req.method !== "GET") return;
   if (!sameOrigin(url)) return;
 
   if (req.mode === "navigate") {
