@@ -599,3 +599,13 @@ a:hover { color: var(--navy); }
   .topbar, .header, .mobile-cta, .visit { display: none; }
   .hero, .admissions { background: none; color: #000; }
 }
+
+
+/* Fable trial crop of vida-paz.webp: keep the PAZ formation, hide the quote at the top */
+.gallery__item.gallery__item--wide.gallery__item--paz img,
+.gallery__item--wide.gallery__item--paz:last-child img {
+  aspect-ratio: 2 / 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center bottom;
+}
