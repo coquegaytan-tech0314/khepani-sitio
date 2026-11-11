@@ -1,0 +1,23 @@
+{
+  "name": "Instituto Khépani",
+  "short_name": "Khépani",
+  "description": "Primaria, Secundaria y Preparatoria en Uriangato, Guanajuato. Propuesta de diseño (borrador).",
+  "lang": "es-MX",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#0b2a52",
+  "categories": ["education"],
+  "icons": [
+    { "src": "../photos/logo-oficial.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "../photos/logo-oficial.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "../photos/logo-oficial.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Agendar cita", "url": "./index.html#cita" },
+    { "name": "Pregúntale a Khépani", "url": "./index.html#preguntale" }
+  ]
+}
