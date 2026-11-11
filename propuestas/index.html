@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Cuatro propuestas — Instituto Khépani</title>
-  <meta name="description" content="Cuatro borradores de diseño para Instituto Khépani en Uriangato, Guanajuato. Sellos, Editorial, Academia y Presidencial. No es el sitio en vivo.">
+  <title>Seis propuestas — Instituto Khépani</title>
+  <meta name="description" content="Borradores de diseño para Instituto Khépani en Uriangato, Guanajuato. Sellos, Editorial, Academia, Presidencial y Fable 5.2 (v1 y pulida). No es el sitio en vivo.">
   <meta name="robots" content="noindex">
   <style>
     :root {
@@ -132,13 +132,15 @@
   <div class="chrome">
     <div class="brand">
       <b>Instituto Khépani</b>
-      <span>Uriangato · cuatro borradores</span>
+      <span>Uriangato · seis borradores</span>
     </div>
     <div class="tabs" role="tablist" aria-label="Propuestas de diseño">
       <button class="tab" role="tab" id="tab-sellos" aria-controls="view-sellos" aria-selected="true" data-tab="sellos">Sellos</button>
       <button class="tab" role="tab" id="tab-editorial" aria-controls="view-editorial" aria-selected="false" data-tab="editorial">Editorial</button>
       <button class="tab" role="tab" id="tab-academia" aria-controls="view-academia" aria-selected="false" data-tab="academia">Academia</button>
       <button class="tab" role="tab" id="tab-presidencial" aria-controls="view-presidencial" aria-selected="false" data-tab="presidencial">Presidencial</button>
+      <button class="tab" role="tab" id="tab-fable-5-2-v1" aria-controls="view-fable-5-2-v1" aria-selected="false" data-tab="fable-5-2-v1">Fable 5.2 · v1</button>
+      <button class="tab" role="tab" id="tab-fable-5-2" aria-controls="view-fable-5-2" aria-selected="false" data-tab="fable-5-2">Fable 5.2 · Pulida</button>
     </div>
     <p class="note">Borradores de diseño — no son el sitio en vivo institutokhepani.com</p>
   </div>
@@ -147,10 +149,12 @@
     <iframe id="view-editorial" title="Propuesta Editorial" src="editorial/" hidden allow="clipboard-write"></iframe>
     <iframe id="view-academia" title="Propuesta Academia" src="academia/" hidden allow="clipboard-write"></iframe>
     <iframe id="view-presidencial" title="Propuesta Presidencial" src="presidencial/" hidden allow="clipboard-write"></iframe>
+    <iframe id="view-fable-5-2-v1" title="Propuesta Fable 5.2 · v1" src="fable-5-2-v1/" hidden allow="clipboard-write"></iframe>
+    <iframe id="view-fable-5-2" title="Propuesta Fable 5.2 · Pulida" src="fable-5-2/" hidden allow="clipboard-write"></iframe>
   </div>
   <script>
     (function () {
-      var names = ["sellos", "editorial", "academia", "presidencial"];
+      var names = ["sellos", "editorial", "academia", "presidencial", "fable-5-2-v1", "fable-5-2"];
       function show(name) {
         if (names.indexOf(name) === -1) name = "sellos";
         names.forEach(function (n) {
