@@ -1721,3 +1721,100 @@ figcaption { margin-top: var(--s-3); font-size: var(--text-sm); color: var(--mut
   .topbar, .site-header, .fab, .menu, .chat, .map iframe { display: none !important; }
   .section { padding-block: 1.5rem; }
 }
+
+
+/* ---------- Flyers de inscripciones ---------- */
+.flyers {
+  display: grid;
+  gap: var(--s-6);
+}
+@media (min-width: 720px) {
+  .flyers { grid-template-columns: 1fr 1fr; gap: var(--s-8); }
+}
+.flyer-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--r-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.flyer-card:hover,
+.flyer-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-2);
+}
+.flyer-card figure { margin: 0; }
+.flyer-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--sky-50);
+}
+.flyer-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 1rem 1.15rem 1.15rem;
+}
+.flyer-card figcaption strong {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--navy-800);
+  letter-spacing: -0.02em;
+}
+.flyer-card figcaption span {
+  color: var(--muted);
+  font-size: var(--text-sm);
+}
+.flyers__note {
+  margin-top: var(--s-8);
+  max-width: 40rem;
+  color: var(--body);
+}
+.flyers__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-5);
+}
+.flyer-lightbox {
+  border: 0;
+  padding: 0;
+  max-width: min(96vw, 52rem);
+  max-height: 96vh;
+  background: transparent;
+}
+.flyer-lightbox::backdrop {
+  background: rgba(8, 29, 58, 0.82);
+}
+.flyer-lightbox img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  background: var(--white);
+}
+.flyer-lightbox__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: var(--navy-800);
+  color: var(--white);
+  cursor: pointer;
+}
+.flyer-lightbox__close .icon { width: 20px; height: 20px; }
+.flyer-lightbox__close:hover { background: var(--navy-700); }
