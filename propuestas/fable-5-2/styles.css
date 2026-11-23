@@ -1721,3 +1721,101 @@ figcaption { margin-top: var(--s-3); font-size: var(--text-sm); color: var(--mut
   .topbar, .site-header, .fab, .menu, .chat, .map iframe { display: none !important; }
   .section { padding-block: 1.5rem; }
 }
+
+
+/* ---------- Inscripciones abiertas ---------- */
+.enroll {
+  display: grid;
+  gap: var(--s-6);
+}
+@media (min-width: 720px) {
+  .enroll { grid-template-columns: 1fr 1fr; gap: var(--s-8); }
+}
+.enroll__card {
+  padding: clamp(1.5rem, 1rem + 2.4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--white);
+}
+.enroll__card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--navy-800);
+  letter-spacing: -0.02em;
+  margin-top: 0.2rem;
+}
+.enroll__cct {
+  margin-top: 0.2rem;
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+.enroll__prices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+  margin-top: var(--s-6);
+}
+.enroll__prices div {
+  padding-top: var(--s-3);
+  border-top: 2px solid var(--navy-800);
+}
+.enroll__prices dt {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.enroll__prices dd {
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--navy-800);
+  font-variant-numeric: tabular-nums;
+}
+.enroll__card .link-arrow { margin-top: var(--s-6); }
+.enroll__promo {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-5);
+  margin-top: var(--s-8);
+  padding: var(--s-6);
+  border-radius: var(--r-lg);
+  background: var(--red-50);
+}
+.enroll__promo-pct {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--red-600);
+}
+.enroll__promo p:last-child {
+  color: var(--navy-800);
+  font-weight: 650;
+}
+.enroll__address {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: var(--s-5);
+  color: var(--body);
+}
+.enroll__address .icon {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--navy-800);
+}
+.enroll__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-5);
+}

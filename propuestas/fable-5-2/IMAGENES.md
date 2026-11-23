@@ -32,3 +32,4 @@ ni esas bases.
 | Fachada de Primaria | `primaria.jpg` |
 | Próximamente | `proximamente/cafeteria-aerea.jpg`, `plan-maestro.jpg`, `anfiteatro.jpg`, `jardineras.jpg`, `terraza-pista.jpg` |
 | Iconos / og:image / JSON-LD | `logo-oficial.png`, `campus-secundaria-flag-sep18.jpg` |
+

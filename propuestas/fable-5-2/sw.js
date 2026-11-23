@@ -4,13 +4,14 @@
    - Nunca intercepta peticiones a otros dominios (asistente/Cloud Function, WhatsApp, Maps).
    - No se toca conocimiento.json ni la Cloud Function. */
 const PREFIJO = "khepani-fable-5-2-";
-const CACHE = PREFIJO + "v1";
+const CACHE = PREFIJO + "v3";
 
 const BASICOS = [
   "./",
   "index.html",
   "styles.css",
   "app.js",
+  "inscripciones.js",
   "manifest.webmanifest"
 ];
 
