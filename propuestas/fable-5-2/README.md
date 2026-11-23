@@ -80,7 +80,7 @@ desvanecen al deslizarlas, para que nada se vea cortado en seco.
 
 - Solo datos reales del instituto; los textos salen del encargo y de
   `conocimiento.json`.
-- Precios únicamente en rangos, nunca exactos. Nada sobre 2027-2028.
+- Precios en rangos, salvo la inscripción y la colegiatura de Primaria y Secundaria, que se muestran con los montos exactos del flyer de inscripciones aprobado para esta vista previa. Nada sobre 2027-2028.
 - Las tradiciones se listan sin fechas. Las fechas de calendario solo aparecen
   dentro de las respuestas del asistente y marcadas como ejemplo.
 - Los renders de «Próximamente» llevan la etiqueta «Render · proyecto futuro».
