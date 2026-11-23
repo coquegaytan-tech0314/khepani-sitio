@@ -26,6 +26,7 @@ dependencias de npm: es HTML, CSS y JavaScript sin librerías.
 | `index.html` | La página completa (una sola). |
 | `styles.css` | Estilos. Paleta: azul marino, rojo, azul cielo y blanco. |
 | `app.js` | Menú, pestañas de admisiones, animaciones, cita y montaje del asistente. |
+| `inscripciones.js` | Datos del ciclo vigente (precios y promoción). Actualizar cada ciclo escolar aquí. |
 | `sw.js` | Service worker propio (modo sin conexión). |
 | `manifest.webmanifest` | Datos de la aplicación instalable. |
 | `img/` | Fotos reales del campus ya optimizadas (ver `IMAGENES.md`). |
@@ -80,7 +81,7 @@ desvanecen al deslizarlas, para que nada se vea cortado en seco.
 
 - Solo datos reales del instituto; los textos salen del encargo y de
   `conocimiento.json`.
-- Precios en rangos, salvo la inscripción y la colegiatura de Primaria y Secundaria, que se muestran con los montos exactos del flyer de inscripciones aprobado para esta vista previa. Nada sobre 2027-2028.
+- Precios en rangos, salvo la inscripción y la colegiatura de Primaria y Secundaria, que se muestran con los montos exactos vigentes del ciclo. Esos montos, el nombre del ciclo y el texto de la promoción se actualizan en `inscripciones.js` (y en el HTML de respaldo). Actualizar cada ciclo escolar ahí. Nada sobre 2027-2028.
 - Las tradiciones se listan sin fechas. Las fechas de calendario solo aparecen
   dentro de las respuestas del asistente y marcadas como ejemplo.
 - Los renders de «Próximamente» llevan la etiqueta «Render · proyecto futuro».

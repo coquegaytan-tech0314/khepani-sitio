@@ -33,4 +33,3 @@ ni esas bases.
 | Próximamente | `proximamente/cafeteria-aerea.jpg`, `plan-maestro.jpg`, `anfiteatro.jpg`, `jardineras.jpg`, `terraza-pista.jpg` |
 | Iconos / og:image / JSON-LD | `logo-oficial.png`, `campus-secundaria-flag-sep18.jpg` |
 
-| Flyers de inscripciones 2026-2027 (Primaria y Secundaria) | `img/flyer-primaria.svg` y `img/flyer-secundaria.svg` (JPEG de 1024 px, menos de 250 KB, incrustado) |
