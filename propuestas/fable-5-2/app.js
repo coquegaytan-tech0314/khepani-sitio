@@ -389,27 +389,5 @@
     });
   }
 
-  /* ---------- Flyers a tamaño completo ---------- */
-  var flyerDlg = doc.getElementById("flyer-lightbox");
-  var flyerImg = flyerDlg ? flyerDlg.querySelector("img") : null;
-  $$("[data-flyer]").forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      if (!flyerDlg || !flyerImg || typeof flyerDlg.showModal !== "function") return;
-      e.preventDefault();
-      var thumb = link.querySelector("img");
-      flyerImg.src = link.getAttribute("href");
-      flyerImg.alt = thumb ? thumb.alt : "";
-      flyerDlg.showModal();
-    });
-  });
-  if (flyerDlg) {
-    flyerDlg.addEventListener("click", function (e) {
-      if (e.target === flyerDlg) flyerDlg.close();
-    });
-    var flyerClose = flyerDlg.querySelector("[data-flyer-close]");
-    if (flyerClose) {
-      flyerClose.addEventListener("click", function () { flyerDlg.close(); });
-    }
-  }
 
 })();

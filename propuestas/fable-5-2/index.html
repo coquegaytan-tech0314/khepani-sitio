@@ -134,7 +134,7 @@
       <a href="#ingles">Inglés</a>
       <a href="#valores">Formación en valores</a>
       <a href="#campus">Campus</a>
-      <a href="#inscripciones">Inscripciones 2026-2027</a>
+      <a href="#inscripciones">Inscripciones <span data-insc="ciclo-label">2026–2027</span></a>
       <a href="#becas">Becas y descuentos</a>
       <a href="#preguntale">Pregúntale a Khépani</a>
       <a href="#contacto">Contacto</a>
@@ -161,7 +161,7 @@
           <p class="hero__lede">Primaria, Secundaria y Preparatoria en un mismo campus, en La Joyita. Desde 2007 acompañamos a cerca de 350 alumnas y alumnos con formación católica e inglés con certificaciones Cambridge.</p>
           <div class="hero__cta">
             <a class="btn btn--red btn--lg" href="#cita">Agendar cita</a>
-            <a class="btn btn--ghost btn--lg" href="#inscripciones">Inscripciones 2026-2027</a>
+            <a class="btn btn--ghost btn--lg" href="#inscripciones">Inscripciones <span data-insc="ciclo-label">2026–2027</span></a>
           </div>
           <a class="wa-link" href="https://wa.me/524451030946?text=Hola%2C%20quiero%20informes%20de%20inscripciones%20ciclo%202026-2027%2C%20Instituto%20Kh%C3%A9pani%20Uriangato." target="_blank" rel="noopener noreferrer">
             <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
@@ -465,37 +465,58 @@
     <section class="section" id="inscripciones" aria-labelledby="inscripciones-titulo">
       <div class="wrap">
         <header class="section__head" data-reveal>
-          <p class="eyebrow">Inscripciones abiertas · ciclo 2026-2027</p>
-          <h2 id="inscripciones-titulo">Inscripciones abiertas 2026–2027</h2>
-          <p class="lede">Consulta los flyers de Primaria y Secundaria, con los precios vigentes y el 20% de descuento en noviembre y diciembre por pago en efectivo. Tócalos para verlos a tamaño completo.</p>
+          <p class="eyebrow">Inscripciones abiertas · ciclo <span data-insc="ciclo">2026-2027</span></p>
+          <h2 id="inscripciones-titulo">Inscripciones abiertas <span data-insc="ciclo-label">2026–2027</span></h2>
         </header>
 
-        <div class="flyers" data-reveal>
-          <a class="flyer-card" href="img/flyer-primaria.svg" data-flyer target="_blank" rel="noopener noreferrer">
-            <figure>
-              <img src="img/flyer-primaria.svg" width="1024" height="1024" alt="Flyer de inscripciones abiertas de Primaria del Instituto Khépani: inscripción $4,400, colegiatura $3,590 y 20% de descuento en noviembre y diciembre por pago en efectivo. WhatsApp (445) 103-0946, Libramiento San Miguel no. 202." loading="lazy" decoding="async">
-              <figcaption>
-                <strong>Primaria</strong>
-                <span>Inscripción $4,400 · Colegiatura $3,590</span>
-              </figcaption>
-            </figure>
-          </a>
-          <a class="flyer-card" href="img/flyer-secundaria.svg" data-flyer target="_blank" rel="noopener noreferrer">
-            <figure>
-              <img src="img/flyer-secundaria.svg" width="1024" height="1024" alt="Flyer de inscripciones abiertas de Secundaria del Instituto Khépani: inscripción $4,450, colegiatura $3,700 y 20% de descuento en noviembre y diciembre por pago en efectivo. WhatsApp (445) 103-0946, Libramiento San Miguel no. 202." loading="lazy" decoding="async">
-              <figcaption>
-                <strong>Secundaria</strong>
-                <span>Inscripción $4,450 · Colegiatura $3,700</span>
-              </figcaption>
-            </figure>
-          </a>
+        <div class="enroll" data-reveal>
+          <article class="enroll__card" data-insc-nivel="primaria">
+            <h3 data-insc-field="nombre">Primaria</h3>
+            <p class="enroll__cct">CCT <span data-insc-field="cct">11PPR1068V</span></p>
+            <dl class="enroll__prices">
+              <div>
+                <dt>Inscripción</dt>
+                <dd data-insc-field="inscripcion">$4,400</dd>
+              </div>
+              <div>
+                <dt>Colegiatura</dt>
+                <dd data-insc-field="colegiatura">$3,590</dd>
+              </div>
+            </dl>
+            <a class="link-arrow" href="#admisiones" data-tab-target="primaria">Requisitos de Primaria <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="enroll__card" data-insc-nivel="secundaria">
+            <h3 data-insc-field="nombre">Secundaria</h3>
+            <p class="enroll__cct">CCT <span data-insc-field="cct">11PES0464H</span></p>
+            <dl class="enroll__prices">
+              <div>
+                <dt>Inscripción</dt>
+                <dd data-insc-field="inscripcion">$4,450</dd>
+              </div>
+              <div>
+                <dt>Colegiatura</dt>
+                <dd data-insc-field="colegiatura">$3,700</dd>
+              </div>
+            </dl>
+            <a class="link-arrow" href="#admisiones" data-tab-target="secundaria">Requisitos de Secundaria <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
         </div>
 
-        <p class="flyers__note" data-reveal>20% de descuento en noviembre y diciembre, en pago en efectivo. Agenda tu cita o escríbenos por WhatsApp.</p>
-        <div class="flyers__cta" data-reveal>
-          <a class="btn btn--wa btn--lg" href="https://wa.me/524451030946?text=Hola%2C%20quiero%20informes%20de%20inscripciones%20ciclo%202026-2027%2C%20Instituto%20Kh%C3%A9pani%20Uriangato." target="_blank" rel="noopener noreferrer">
+        <aside class="enroll__promo" data-reveal>
+          <p class="enroll__promo-pct" data-insc="promo-corto">20%</p>
+          <p data-insc="promo">20% de descuento pagando en efectivo en noviembre y diciembre</p>
+        </aside>
+
+        <p class="enroll__address" data-reveal>
+          <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+          <span data-insc="direccion">Libramiento San Miguel no. 202</span>
+        </p>
+
+        <div class="enroll__cta" data-reveal>
+          <a class="btn btn--wa btn--lg" href="https://wa.me/524451030946?text=Hola%2C%20quiero%20informes%20de%20inscripciones%20ciclo%202026-2027%2C%20Instituto%20Kh%C3%A9pani%20Uriangato." target="_blank" rel="noopener noreferrer" data-insc-href="whatsapp">
             <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
-            WhatsApp (445) 103-0946
+            WhatsApp <span data-insc="whatsapp">(445) 103-0946</span>
           </a>
           <a class="btn btn--red btn--lg" href="#cita">Agendar cita</a>
         </div>
@@ -506,9 +527,9 @@
     <section class="section" id="admisiones" aria-labelledby="admisiones-titulo">
       <div class="wrap">
         <header class="section__head" data-reveal>
-          <p class="eyebrow">Admisiones · ciclo 2026-2027</p>
+          <p class="eyebrow">Admisiones · ciclo <span data-insc="ciclo">2026-2027</span></p>
           <h2 id="admisiones-titulo">Lo que necesitas para inscribir.</h2>
-          <p class="lede">Elige el nivel para ver los documentos y los costos del ciclo 2026-2027. En Primaria y Secundaria, la inscripción y la colegiatura son las del flyer de inscripciones. En Preparatoria, los costos se dan en rango aproximado. Libros, uniformes y el detalle de tu caso se confirman en una cita.</p>
+          <p class="lede">Elige el nivel para ver los documentos y los costos del ciclo <span data-insc="ciclo">2026-2027</span>. En Primaria y Secundaria, la inscripción y la colegiatura son las de la sección de inscripciones. En Preparatoria, los costos se dan en rango aproximado. Libros, uniformes y el detalle de tu caso se confirman en una cita.</p>
         </header>
 
         <div class="adm" data-tabs data-reveal>
@@ -540,15 +561,15 @@
               <div class="adm__col">
                 <h4>Costos</h4>
                 <table class="costs">
-                  <caption class="sr-only">Costos de Primaria, ciclo 2026-2027, según el flyer de inscripciones</caption>
-                  <tbody>
-                    <tr><th scope="row">Inscripción</th><td>$4,400</td></tr>
-                    <tr><th scope="row">Colegiatura mensual <small>12 pagos</small></th><td>$3,590</td></tr>
+                  <caption class="sr-only">Costos de Primaria, ciclo <span data-insc="ciclo">2026-2027</span></caption>
+                  <tbody data-insc-nivel="primaria">
+                    <tr><th scope="row">Inscripción</th><td data-insc-field="inscripcion">$4,400</td></tr>
+                    <tr><th scope="row">Colegiatura mensual <small>12 pagos</small></th><td data-insc-field="colegiatura">$3,590</td></tr>
                     <tr><th scope="row">Libros</th><td>$7,000 a $8,000</td></tr>
                     <tr><th scope="row">Uniformes</th><td>$2,000 a $2,500</td></tr>
                   </tbody>
                 </table>
-                <p class="note">Inscripción y colegiatura según el flyer de inscripciones. En noviembre y diciembre hay 20% de descuento por pago en efectivo. Libros y uniformes son rangos aproximados y pueden variar.</p>
+                <p class="note">Inscripción y colegiatura del ciclo vigente. <span data-insc="promo">20% de descuento pagando en efectivo en noviembre y diciembre</span>. Libros y uniformes son rangos aproximados y pueden variar.</p>
                 <dl class="adm__extras">
                   <div><dt>Descuento</dt><dd>10% por pago anual, si se cubre hasta el 31 de agosto. No aplican dos descuentos a la vez.</dd></div>
                   <div><dt>Libros y uniformes</dt><dd>Se venden directamente en la escuela, únicamente durante julio.</dd></div>
@@ -579,15 +600,15 @@
               <div class="adm__col">
                 <h4>Costos</h4>
                 <table class="costs">
-                  <caption class="sr-only">Costos de Secundaria, ciclo 2026-2027, según el flyer de inscripciones</caption>
-                  <tbody>
-                    <tr><th scope="row">Inscripción</th><td>$4,450</td></tr>
-                    <tr><th scope="row">Colegiatura mensual <small>12 pagos</small></th><td>$3,700</td></tr>
+                  <caption class="sr-only">Costos de Secundaria, ciclo <span data-insc="ciclo">2026-2027</span></caption>
+                  <tbody data-insc-nivel="secundaria">
+                    <tr><th scope="row">Inscripción</th><td data-insc-field="inscripcion">$4,450</td></tr>
+                    <tr><th scope="row">Colegiatura mensual <small>12 pagos</small></th><td data-insc-field="colegiatura">$3,700</td></tr>
                     <tr><th scope="row">Libros</th><td>$7,500 a $8,500</td></tr>
                     <tr><th scope="row">Uniformes</th><td>$2,000 a $2,500</td></tr>
                   </tbody>
                 </table>
-                <p class="note">Inscripción y colegiatura según el flyer de inscripciones. En noviembre y diciembre hay 20% de descuento por pago en efectivo. Libros y uniformes son rangos aproximados y pueden variar.</p>
+                <p class="note">Inscripción y colegiatura del ciclo vigente. <span data-insc="promo">20% de descuento pagando en efectivo en noviembre y diciembre</span>. Libros y uniformes son rangos aproximados y pueden variar.</p>
                 <dl class="adm__extras">
                   <div><dt>Descuento</dt><dd>10% por pago anual, si se cubre hasta el 31 de agosto. No aplican dos descuentos a la vez.</dd></div>
                   <div><dt>Libros y uniformes</dt><dd>Se venden directamente en la escuela, únicamente durante julio.</dd></div>
@@ -897,7 +918,7 @@
       </nav>
       <nav class="footer__col" aria-label="Admisiones">
         <h2>Admisiones</h2>
-        <a href="#inscripciones">Inscripciones 2026-2027</a>
+        <a href="#inscripciones">Inscripciones <span data-insc="ciclo-label">2026–2027</span></a>
         <a href="#becas">Becas y descuentos</a>
         <a href="#cita">Agendar cita</a>
         <a href="#contacto">Contacto y mapa</a>
@@ -922,15 +943,9 @@
   </a>
 
   <script src="../presidencial/asistente.js" defer></script>
+  <script src="inscripciones.js" defer></script>
   <script src="app.js" defer></script>
 
-  <dialog class="flyer-lightbox" id="flyer-lightbox" aria-label="Flyer a tamaño completo">
-    <button class="flyer-lightbox__close" type="button" data-flyer-close>
-      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
-      <span class="sr-only">Cerrar flyer</span>
-    </button>
-    <img alt="">
-  </dialog>
 
 </body>
 </html>
