@@ -26,7 +26,7 @@ dependencias de npm: es HTML, CSS y JavaScript sin librerías.
 | `index.html` | La página completa (una sola). |
 | `styles.css` | Estilos. Paleta: azul marino, rojo, azul cielo y blanco. |
 | `app.js` | Menú, pestañas de admisiones, animaciones, cita y montaje del asistente. |
-| `inscripciones.js` | Datos del ciclo vigente (precios, promoción de Primaria y Secundaria, becas de Preparatoria y ficha de pre-inscripción). Actualizar cada ciclo escolar aquí. |
+| `inscripciones.js` | Datos del ciclo vigente (precios, promociones de inscripción, becas de Preparatoria y ficha de pre-inscripción). Actualizar cada ciclo escolar aquí. |
 | `sw.js` | Service worker propio (modo sin conexión). |
 | `manifest.webmanifest` | Datos de la aplicación instalable. |
 | `img/` | Fotos reales del campus ya optimizadas (ver `IMAGENES.md`). |
@@ -81,7 +81,7 @@ desvanecen al deslizarlas, para que nada se vea cortado en seco.
 
 - Solo datos reales del instituto; los textos salen del encargo y de
   `conocimiento.json`.
-- Precios en rangos, salvo los costos vigentes de inscripción y colegiatura de Primaria y Secundaria, y los de Preparatoria (inscripción semestral con seguro, mensualidad de julio a diciembre, uniforme, y libros aproximados), que se muestran con los montos del ciclo. Esos montos, el nombre del ciclo, la promoción de Primaria y Secundaria, la convocatoria de becas de Preparatoria y los campos de la ficha de pre-inscripción se actualizan en `inscripciones.js` (y en el HTML de respaldo). Actualizar cada ciclo escolar ahí. Nada sobre 2027-2028.
+- Precios en rangos, salvo los costos vigentes de inscripción y colegiatura de Primaria y Secundaria, y los de Preparatoria (inscripción semestral con seguro, mensualidad de julio a diciembre, uniforme, y libros aproximados), que se muestran con los montos del ciclo. Esos montos, el nombre del ciclo, las promociones de inscripción, la convocatoria de becas de Preparatoria y los campos de la ficha de pre-inscripción se actualizan en `inscripciones.js` (y en el HTML de respaldo). Actualizar cada ciclo escolar ahí. Nada sobre 2027-2028.
 - Las tradiciones se listan sin fechas. Las fechas de calendario solo aparecen
   dentro de las respuestas del asistente y marcadas como ejemplo.
 - Los renders de «Próximamente» llevan la etiqueta «Render · proyecto futuro».
@@ -112,7 +112,7 @@ desvanecen al deslizarlas, para que nada se vea cortado en seco.
 
 ## Aplicación instalable
 
-- Caché propia: `khepani-fable-5-2-v4`. Solo borra versiones viejas con ese
+- Caché propia: `khepani-fable-5-2-v5`. Solo borra versiones viejas con ese
   mismo prefijo, así que no afecta a Presidencial.
 - Alcance: solo esta carpeta, más los dos archivos del asistente.
 - Nunca intercepta al asistente en la nube, WhatsApp ni Google Maps.
