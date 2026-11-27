@@ -534,11 +534,26 @@
         </div>
 
         <aside class="enroll__promo" data-reveal>
-          <p class="enroll__promo-pct" data-insc="promo-corto">20%</p>
-          <div class="enroll__promo-copy">
-            <p data-insc="promo">20% de descuento pagando en efectivo en noviembre y diciembre</p>
-            <p class="enroll__promo-scope" data-insc="promo-alcance">Aplica solo en Primaria y Secundaria</p>
-          </div>
+          <p class="enroll__promo-kicker">Descuentos en la inscripción</p>
+          <ol class="enroll__promo-timeline">
+            <li>
+              <p class="enroll__promo-pct" data-insc="promoNovDic.pct">20%</p>
+              <div>
+                <p class="enroll__promo-when" data-insc="promoNovDic.periodo">Nov–Dic</p>
+                <p data-insc="promoNovDic.texto">20% de descuento en la inscripción pagando en efectivo en noviembre y diciembre. No aplica en colegiaturas.</p>
+                <p class="enroll__promo-scope" data-insc="promoNovDic.alcance">Aplica solo en Primaria y Secundaria</p>
+              </div>
+            </li>
+            <li>
+              <p class="enroll__promo-pct" data-insc="promoEneFeb.pct">10%</p>
+              <div>
+                <p class="enroll__promo-when" data-insc="promoEneFeb.periodo">Ene–Feb</p>
+                <p data-insc="promoEneFeb.texto">10% de descuento en la inscripción en enero y febrero. No aplica en colegiaturas.</p>
+                <p class="enroll__promo-scope" data-insc="promoEneFeb.alcance">Aplica en Primaria, Secundaria y Preparatoria</p>
+              </div>
+            </li>
+          </ol>
+          <p class="enroll__promo-note" data-insc="promoUnico">No aplican dos descuentos a la vez.</p>
         </aside>
 
         <article class="enroll__panel enroll__panel--becas" data-reveal aria-labelledby="becas-prepa-titulo">
@@ -627,7 +642,7 @@
                     <tr><th scope="row">Uniformes</th><td>$2,000 a $2,500</td></tr>
                   </tbody>
                 </table>
-                <p class="note">Inscripción y colegiatura del ciclo vigente. <span data-insc="promo">20% de descuento pagando en efectivo en noviembre y diciembre</span>. Libros y uniformes son rangos aproximados y pueden variar.</p>
+                <p class="note">Inscripción y colegiatura del ciclo vigente. <span data-insc="promoNovDic.texto">20% de descuento en la inscripción pagando en efectivo en noviembre y diciembre. No aplica en colegiaturas.</span> <span data-insc="promoEneFeb.texto">10% de descuento en la inscripción en enero y febrero. No aplica en colegiaturas.</span> <span data-insc="promoUnico">No aplican dos descuentos a la vez.</span> Libros y uniformes son rangos aproximados y pueden variar.</p>
                 <dl class="adm__extras">
                   <div><dt>Descuento</dt><dd>10% por pago anual, si se cubre hasta el <span data-insc-nivel="primaria"><span data-insc-field="pagoAnualLimite">31 de agosto</span></span>. No aplican dos descuentos a la vez.</dd></div>
                   <div><dt>Libros y uniformes</dt><dd>Se venden directamente en la escuela, únicamente durante julio.</dd></div>
@@ -666,7 +681,7 @@
                     <tr><th scope="row">Uniformes</th><td>$2,000 a $2,500</td></tr>
                   </tbody>
                 </table>
-                <p class="note">Inscripción y colegiatura del ciclo vigente. <span data-insc="promo">20% de descuento pagando en efectivo en noviembre y diciembre</span>. Libros y uniformes son rangos aproximados y pueden variar.</p>
+                <p class="note">Inscripción y colegiatura del ciclo vigente. <span data-insc="promoNovDic.texto">20% de descuento en la inscripción pagando en efectivo en noviembre y diciembre. No aplica en colegiaturas.</span> <span data-insc="promoEneFeb.texto">10% de descuento en la inscripción en enero y febrero. No aplica en colegiaturas.</span> <span data-insc="promoUnico">No aplican dos descuentos a la vez.</span> Libros y uniformes son rangos aproximados y pueden variar.</p>
                 <dl class="adm__extras">
                   <div><dt>Descuento</dt><dd>10% por pago anual, si se cubre hasta el <span data-insc-nivel="secundaria"><span data-insc-field="pagoAnualLimite">25 de agosto</span></span>. No aplican dos descuentos a la vez.</dd></div>
                   <div><dt>Libros y uniformes</dt><dd>Se venden directamente en la escuela, únicamente durante julio.</dd></div>
@@ -705,7 +720,7 @@
                     <tr><th scope="row"><span data-insc-field="uniformeLabel">Uniforme (1 diario + 1 deportes)</span></th><td data-insc-field="uniforme">$2,500</td></tr>
                   </tbody>
                 </table>
-                <p class="note">Inscripción, mensualidad y uniforme del ciclo vigente, según la hoja de costos de Preparatoria. Los libros se indican como aproximados. Esta mensualidad corresponde a seis pagos de julio a diciembre. Esta promoción del 20% en efectivo de noviembre y diciembre no aplica en Preparatoria.</p>
+                <p class="note">Inscripción, mensualidad y uniforme del ciclo vigente, según la hoja de costos de Preparatoria. Los libros se indican como aproximados. Esta mensualidad corresponde a seis pagos de julio a diciembre. <span data-insc="promoNovDic.excluidoPrepa">El 20% de descuento en la inscripción de noviembre y diciembre no aplica en Preparatoria.</span> <span data-insc="promoEneFeb.texto">10% de descuento en la inscripción en enero y febrero. No aplica en colegiaturas.</span> <span data-insc="promoUnico">No aplican dos descuentos a la vez.</span></p>
                 <dl class="adm__extras">
                   <div><dt>Descuento</dt><dd><span data-insc-field="descuento">10% de descuento en colegiatura por pago semestral</span>. <span data-insc-field="descuentoNota">No aplican dos descuentos a la vez.</span></dd></div>
                 </dl>
@@ -751,6 +766,22 @@
             <h3>Descuentos</h3>
             <ul class="aid__discounts">
               <li>
+                <strong class="aid__pct" data-insc="promoNovDic.pct">20%</strong>
+                <div>
+                  <p class="aid__what">En la inscripción · <span data-insc="promoNovDic.periodo">Nov–Dic</span></p>
+                  <p data-insc="promoNovDic.texto">20% de descuento en la inscripción pagando en efectivo en noviembre y diciembre. No aplica en colegiaturas.</p>
+                  <p class="enroll__promo-scope" data-insc="promoNovDic.alcance">Aplica solo en Primaria y Secundaria</p>
+                </div>
+              </li>
+              <li>
+                <strong class="aid__pct" data-insc="promoEneFeb.pct">10%</strong>
+                <div>
+                  <p class="aid__what">En la inscripción · <span data-insc="promoEneFeb.periodo">Ene–Feb</span></p>
+                  <p data-insc="promoEneFeb.texto">10% de descuento en la inscripción en enero y febrero. No aplica en colegiaturas.</p>
+                  <p class="enroll__promo-scope" data-insc="promoEneFeb.alcance">Aplica en Primaria, Secundaria y Preparatoria</p>
+                </div>
+              </li>
+              <li>
                 <strong class="aid__pct">10%</strong>
                 <div>
                   <p class="aid__what">Por pago anual</p>
@@ -765,7 +796,7 @@
                 </div>
               </li>
             </ul>
-            <p class="note">Se aplica un solo descuento: no se pueden usar dos a la vez.</p>
+            <p class="note" data-insc="promoUnico">No aplican dos descuentos a la vez.</p>
             <a class="link-arrow" href="#cita">Agenda una cita para conocer el monto con el descuento de tu caso <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </article>
         </div>

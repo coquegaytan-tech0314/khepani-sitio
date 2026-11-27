@@ -1820,13 +1820,34 @@ figcaption { margin-top: var(--s-3); font-size: var(--text-sm); color: var(--mut
 }
 .enroll__promo {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
   gap: var(--s-5);
   margin-top: var(--s-8);
   padding: var(--s-6);
   border-radius: var(--r-lg);
   background: var(--red-50);
+}
+.enroll__promo-kicker {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red-700);
+}
+.enroll__promo-timeline {
+  display: grid;
+  gap: var(--s-5);
+}
+.enroll__promo-timeline li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px solid #f3c4cb;
+}
+.enroll__promo-timeline li:first-child {
+  padding-top: 0;
+  border-top: 0;
 }
 .enroll__promo-pct {
   font-family: var(--font-display);
@@ -1836,18 +1857,28 @@ figcaption { margin-top: var(--s-3); font-size: var(--text-sm); color: var(--mut
   letter-spacing: -0.03em;
   color: var(--red-600);
 }
-.enroll__promo-copy {
-  min-width: 0;
-}
-.enroll__promo-copy p:first-child {
+.enroll__promo-when {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--navy-800);
-  font-weight: 650;
 }
+.enroll__promo-timeline p + p { margin-top: 0.25rem; }
 .enroll__promo-scope {
   margin-top: 0.3rem;
   font-size: var(--text-sm);
   font-weight: 700;
   color: var(--navy-800);
+}
+.enroll__promo-note {
+  margin-top: 0.15rem;
+  font-size: var(--text-sm);
+  font-weight: 650;
+  color: var(--navy-800);
+}
+.aid__discounts .enroll__promo-scope {
+  margin-top: 0.2rem;
 }
 .enroll__address {
   display: flex;

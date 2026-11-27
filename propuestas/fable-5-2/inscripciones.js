@@ -5,9 +5,10 @@
  * Esta es la única fuente de los datos que cambian de un ciclo a otro:
  * el nombre del ciclo, los costos de Primaria, Secundaria y Preparatoria,
  * la leyenda de que la inscripción incluye el seguro, las fechas límite del
- * descuento por pago anual, la promoción de Primaria y Secundaria, la
- * convocatoria de becas de Preparatoria y los campos de la ficha de
- * pre-inscripción. El HTML ya
+ * descuento por pago anual, las promociones de inscripción (20% en
+ * noviembre y diciembre, solo Primaria y Secundaria; 10% en enero y
+ * febrero, en los tres niveles), la convocatoria de becas de
+ * Preparatoria y los campos de la ficha de pre-inscripción. El HTML ya
  * trae estos mismos valores escritos, para que la sección se vea aunque
  * no cargue JavaScript. Al cargar, este archivo los vuelve a pintar en
  * la sección de inscripciones y en las tablas de Admisiones, para que
@@ -58,9 +59,20 @@
         descuentoNota: "No aplican dos descuentos a la vez."
       }
     },
-    promo: "20% de descuento pagando en efectivo en noviembre y diciembre",
-    promoCorto: "20%",
-    promoAlcance: "Aplica solo en Primaria y Secundaria",
+    promoNovDic: {
+      pct: "20%",
+      periodo: "Nov–Dic",
+      texto: "20% de descuento en la inscripción pagando en efectivo en noviembre y diciembre. No aplica en colegiaturas.",
+      alcance: "Aplica solo en Primaria y Secundaria",
+      excluidoPrepa: "El 20% de descuento en la inscripción de noviembre y diciembre no aplica en Preparatoria."
+    },
+    promoEneFeb: {
+      pct: "10%",
+      periodo: "Ene–Feb",
+      texto: "10% de descuento en la inscripción en enero y febrero. No aplica en colegiaturas.",
+      alcance: "Aplica en Primaria, Secundaria y Preparatoria"
+    },
+    promoUnico: "No aplican dos descuentos a la vez.",
     seguroIncluido: "Incluye seguro de accidentes personales escolar",
     seguroRequisito: "Seguro de accidentes personales escolar (incluido en la inscripción)",
     becasPrepa: {
@@ -136,9 +148,6 @@
       var clave = el.getAttribute("data-insc");
       if (clave === "ciclo") texto(el, data.ciclo);
       else if (clave === "ciclo-label") texto(el, data.cicloLabel);
-      else if (clave === "promo") texto(el, data.promo);
-      else if (clave === "promo-corto") texto(el, data.promoCorto);
-      else if (clave === "promo-alcance") texto(el, data.promoAlcance);
       else if (clave === "direccion") texto(el, data.direccion);
       else if (clave === "whatsapp" && data.whatsapp) texto(el, data.whatsapp.display);
       else if (clave === "seguro-incluido") texto(el, data.seguroIncluido);
@@ -146,6 +155,10 @@
       else if (clave === "becas-prepa-convocatoria" && data.becasPrepa) texto(el, data.becasPrepa.convocatoria);
       else if (clave === "becas-prepa-nota" && data.becasPrepa) texto(el, data.becasPrepa.nota);
       else if (clave === "preinscripcion-campos") texto(el, camposPreinscripcion(data));
+      else if (clave && clave.indexOf(".") !== -1) {
+        var valor = valorPorRuta(data, clave);
+        if (typeof valor === "string") texto(el, valor);
+      }
     });
 
     document.querySelectorAll("[data-insc-href]").forEach(function (el) {
