@@ -1784,6 +1784,33 @@ figcaption { margin-top: var(--s-3); font-size: var(--text-sm); color: var(--mut
   font-variant-numeric: tabular-nums;
 }
 .enroll__card .link-arrow { margin-top: auto; padding-top: var(--s-6); }
+.enroll__prices .enroll__book {
+  grid-column: 1 / -1;
+}
+.approx-badge {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.2em 0.55em 0.16em;
+  border-radius: var(--r-pill);
+  background: var(--red-600);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.enroll__prices dt .approx-badge,
+.costs th .approx-badge {
+  display: table;
+  margin-top: 0.4rem;
+  margin-left: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 .enroll__prices--rich dt {
   text-transform: none;
   letter-spacing: 0.01em;

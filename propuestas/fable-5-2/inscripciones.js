@@ -25,7 +25,10 @@
         nombre: "Primaria",
         cct: "11PPR1068V",
         inscripcion: "$4,400",
-        colegiatura: "$3,590"
+        colegiatura: "$3,590",
+        libros: "$7,000 a $8,000",
+        librosAproximado: true,
+        librosLeyenda: "Precio aproximado"
       },
       secundaria: {
         nombre: "Secundaria",
@@ -159,6 +162,10 @@
         bloque.querySelectorAll("[data-insc-field]").forEach(function (el) {
           var campo = el.getAttribute("data-insc-field");
           if (campo && nivel[campo] != null) texto(el, nivel[campo]);
+        });
+        bloque.querySelectorAll("[data-insc-approx]").forEach(function (el) {
+          var campo = el.getAttribute("data-insc-approx");
+          el.hidden = !(campo && nivel[campo + "Aproximado"] === true);
         });
       });
     });
