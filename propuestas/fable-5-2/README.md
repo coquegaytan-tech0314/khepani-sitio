@@ -112,7 +112,7 @@ desvanecen al deslizarlas, para que nada se vea cortado en seco.
 
 ## Aplicación instalable
 
-- Caché propia: `khepani-fable-5-2-v4`. Solo borra versiones viejas con ese
+- Caché propia: `khepani-fable-5-2-v5`. Solo borra versiones viejas con ese
   mismo prefijo, así que no afecta a Presidencial.
 - Alcance: solo esta carpeta, más los dos archivos del asistente.
 - Nunca intercepta al asistente en la nube, WhatsApp ni Google Maps.
