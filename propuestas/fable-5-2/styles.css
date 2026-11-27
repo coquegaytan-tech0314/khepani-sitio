@@ -1893,6 +1893,22 @@ figcaption { margin-top: var(--s-3); font-size: var(--text-sm); color: var(--mut
   letter-spacing: 0;
   font-weight: 650;
 }
+.enroll__prices dt .insc-incluye,
+.costs th .insc-incluye {
+  display: table;
+  margin-top: 0.35rem;
+  margin-left: 0;
+  padding: 0;
+  background: none;
+  color: var(--navy-800);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  line-height: 1.35;
+  white-space: normal;
+}
 .enroll__discount {
   margin-top: var(--s-5);
   font-size: var(--text-sm);

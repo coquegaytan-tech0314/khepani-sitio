@@ -4,8 +4,10 @@
  *
  * Esta es la única fuente de los datos que cambian de un ciclo a otro:
  * el nombre del ciclo, los costos de Primaria, Secundaria y Preparatoria,
- * la promoción de Primaria y Secundaria, la convocatoria de becas de
- * Preparatoria y los campos de la ficha de pre-inscripción. El HTML ya
+ * la leyenda de que la inscripción incluye el seguro, las fechas límite del
+ * descuento por pago anual, la promoción de Primaria y Secundaria, la
+ * convocatoria de becas de Preparatoria y los campos de la ficha de
+ * pre-inscripción. El HTML ya
  * trae estos mismos valores escritos, para que la sección se vea aunque
  * no cargue JavaScript. Al cargar, este archivo los vuelve a pintar en
  * la sección de inscripciones y en las tablas de Admisiones, para que
@@ -25,23 +27,27 @@
         nombre: "Primaria",
         cct: "11PPR1068V",
         inscripcion: "$4,400",
+        inscripcionLabel: "Inscripción",
         colegiatura: "$3,590",
         libros: "$7,000 a $8,000",
         librosAproximado: true,
-        librosLeyenda: "Precio aproximado"
+        librosLeyenda: "Precio aproximado",
+        pagoAnualLimite: "31 de agosto"
       },
       secundaria: {
         nombre: "Secundaria",
         cct: "11PES0464H",
         inscripcion: "$4,450",
-        colegiatura: "$3,700"
+        inscripcionLabel: "Inscripción",
+        colegiatura: "$3,700",
+        pagoAnualLimite: "25 de agosto"
       },
       preparatoria: {
         nombre: "Preparatoria",
         cct: "11PBH0047S",
         acuerdo: "Inc. SEG Acuerdo 048/2017",
         inscripcion: "$3,250",
-        inscripcionLabel: "Inscripción semestral + seguro de accidentes personales escolar",
+        inscripcionLabel: "Inscripción semestral",
         colegiatura: "$3,070",
         colegiaturaNota: "× 6 (julio–diciembre)",
         libros: "$2,800",
@@ -55,6 +61,8 @@
     promo: "20% de descuento pagando en efectivo en noviembre y diciembre",
     promoCorto: "20%",
     promoAlcance: "Aplica solo en Primaria y Secundaria",
+    seguroIncluido: "Incluye seguro de accidentes personales escolar",
+    seguroRequisito: "Seguro de accidentes personales escolar (incluido en la inscripción)",
     becasPrepa: {
       convocatoria: "La convocatoria de solicitud de beca será el 27 de febrero, con pago previo de inscripción y seguro de accidentes personales escolar, en el área de administración. Promedio mínimo 8.5.",
       nota: "Sin los requisitos no se renovará ninguna beca.",
@@ -133,6 +141,8 @@
       else if (clave === "promo-alcance") texto(el, data.promoAlcance);
       else if (clave === "direccion") texto(el, data.direccion);
       else if (clave === "whatsapp" && data.whatsapp) texto(el, data.whatsapp.display);
+      else if (clave === "seguro-incluido") texto(el, data.seguroIncluido);
+      else if (clave === "seguro-requisito") texto(el, data.seguroRequisito);
       else if (clave === "becas-prepa-convocatoria" && data.becasPrepa) texto(el, data.becasPrepa.convocatoria);
       else if (clave === "becas-prepa-nota" && data.becasPrepa) texto(el, data.becasPrepa.nota);
       else if (clave === "preinscripcion-campos") texto(el, camposPreinscripcion(data));
